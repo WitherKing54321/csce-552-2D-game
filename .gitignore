@@ -1,3 +1,25 @@
-# Godot 4+ specific ignores
+# Godot editor cache
 .godot/
-/android/
+
+# Import cache directory (auto-generated)
+.import/
+
+# (Keep the small *.import files next to assets — do NOT ignore them)
+
+# Exported builds / bundles
+export/
+*.exe
+*.pck
+*.apk
+*.aab
+*.zip
+*.dmg
+
+# Mono / C# (only if you ever use the .NET build)
+.mono/
+data_*/
+mono_crash.*
+
+# OS junk
+.DS_Store
+Thumbs.db
