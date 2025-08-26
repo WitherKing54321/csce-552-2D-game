@@ -1,2 +1,12 @@
-# Normalize EOL for all files that Git considers text files.
-* text=auto eol=lf
+* text=auto
+
+# Normalize common Godot text assets to LF
+*.gd   text eol=lf
+*.tscn text eol=lf
+*.tres text eol=lf
+*.cfg  text eol=lf
+*.md   text eol=lf
+*.yml  text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
+*.glsl text eol=lf
