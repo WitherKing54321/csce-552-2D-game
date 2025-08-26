@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://ba0hh5pd8m2bk"]
+
+[ext_resource type="Script" uid="uid://c0hrupcf2vh04" path="res://player.gd" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://bdmtdesbwcosw" path="res://MinecraftDiamondHelmet.png" id="2_h2yge"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
+size = Vector2(1432, 1164)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
+size = Vector2(13299, 3245)
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("1_0xm2m")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+position = Vector2(2129, -231)
+scale = Vector2(9.74, 9.17111)
+texture = ExtResource("2_h2yge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(2129, -231)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="Ground" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground"]
+position = Vector2(33.0002, 2029)
+scale = Vector2(90.2857, 25.5433)
+texture = ExtResource("2_h2yge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+light_mask = 0
+position = Vector2(26, 2032)
+shape = SubResource("RectangleShape2D_0xm2m")
+debug_color = Color(0, 0.644169, 0.286197, 0.42)
