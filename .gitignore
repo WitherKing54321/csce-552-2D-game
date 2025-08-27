@@ -23,3 +23,7 @@ mono_crash.*
 # OS junk
 .DS_Store
 Thumbs.db
+
+# Keep Godot export folder marker file
+!export/.gdignore
+
