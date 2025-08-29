@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://ds8xikeuo8y3p"]
+
+[ext_resource type="Script" uid="uid://c161vwlqltq42" path="res://player.gd" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://dblqlo5toggpl" path="res://MinecraftDiamondHelmet.png" id="2_h2yge"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
+size = Vector2(146, 126)
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("1_0xm2m")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+position = Vector2(158, 55)
+texture = ExtResource("2_h2yge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(158, 55)
+shape = SubResource("RectangleShape2D_1bvp3")
