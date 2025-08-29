@@ -1,37 +1,45 @@
-[gd_scene load_steps=5 format=3 uid="uid://ba0hh5pd8m2bk"]
+[gd_scene load_steps=7 format=3 uid="uid://ba0hh5pd8m2bk"]
 
-[ext_resource type="Script" uid="uid://c0hrupcf2vh04" path="res://player.gd" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://bposq7mw4gtma" path="res://scripts/Player.gd" id="1_rvslj"]
 [ext_resource type="Texture2D" uid="uid://bdmtdesbwcosw" path="res://MinecraftDiamondHelmet.png" id="2_h2yge"]
+[ext_resource type="Texture2D" uid="uid://fqogcvi0qdrd" path="res://may.png" id="2_rarhs"]
+[ext_resource type="Script" uid="uid://cdu1o073qpqdw" path="res://scripts/Camera.gd" id="3_0bbpv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
-size = Vector2(1432, 1164)
+size = Vector2(24, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
-size = Vector2(13299, 3245)
+size = Vector2(252.235, 81.0824)
 
 [node name="Main" type="Node2D"]
 
 [node name="Player" type="CharacterBody2D" parent="."]
-script = ExtResource("1_0xm2m")
+top_level = true
+script = ExtResource("1_rvslj")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
-position = Vector2(2129, -231)
-scale = Vector2(9.74, 9.17111)
-texture = ExtResource("2_h2yge")
+position = Vector2(174.728, 49.1953)
+texture = ExtResource("2_rarhs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(2129, -231)
+position = Vector2(174.728, 49.1953)
 shape = SubResource("RectangleShape2D_1bvp3")
 
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(158.968, 90.7786)
+process_callback = 0
+script = ExtResource("3_0bbpv")
+
 [node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(600.834, 1083.47)
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground"]
-position = Vector2(33.0002, 2029)
-scale = Vector2(90.2857, 25.5433)
+position = Vector2(-438.944, -955.317)
+scale = Vector2(1.70392, 0.64248)
 texture = ExtResource("2_h2yge")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
 light_mask = 0
-position = Vector2(26, 2032)
+position = Vector2(-438.146, -955.09)
 shape = SubResource("RectangleShape2D_0xm2m")
 debug_color = Color(0, 0.644169, 0.286197, 0.42)
