@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdmtdesbwcosw"
-path="res://.godot/imported/MinecraftDiamondHelmet.png-fc3a1d3a49aed489968f827f4a306106.ctex"
+uid="uid://cw8ib6kgtjfnn"
+path="res://.godot/imported/MayaIdleCycle3.png-91656e724ad453892b092dbdd7faff46.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://MinecraftDiamondHelmet.png"
-dest_files=["res://.godot/imported/MinecraftDiamondHelmet.png-fc3a1d3a49aed489968f827f4a306106.ctex"]
+source_file="res://Animations/MayaIdle/MayaIdleCycle3.png"
+dest_files=["res://.godot/imported/MayaIdleCycle3.png-91656e724ad453892b092dbdd7faff46.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fqogcvi0qdrd"
-path="res://.godot/imported/may.png-bddc8527b30d90d982c5da3cb71a06e1.ctex"
+uid="uid://3s5yb8hp32q4"
+path="res://.godot/imported/MayaJump-Fall4.png-dd2ffffa34890d741e2e6561dd4ec9e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://may.png"
-dest_files=["res://.godot/imported/may.png-bddc8527b30d90d982c5da3cb71a06e1.ctex"]
+source_file="res://Animations/MayaJump-Fall/MayaJump-Fall4.png"
+dest_files=["res://.godot/imported/MayaJump-Fall4.png-dd2ffffa34890d741e2e6561dd4ec9e2.ctex"]
 
 [params]
 
