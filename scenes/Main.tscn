@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://ba0hh5pd8m2bk"]
+[gd_scene load_steps=42 format=4 uid="uid://ba0hh5pd8m2bk"]
 
 [ext_resource type="Script" uid="uid://bposq7mw4gtma" path="res://scripts/Player.gd" id="1_rvslj"]
 [ext_resource type="Script" uid="uid://cdu1o073qpqdw" path="res://scripts/Camera.gd" id="3_0bbpv"]
@@ -229,14 +229,6 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_hq6as"]
-animations = [{
-"frames": [],
-"loop": true,
-"name": &"new_animation",
-"speed": 5.0
-}]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1nqs0"]
 size = Vector2(8.75687, 8.56199)
 
@@ -263,10 +255,6 @@ tile_set = SubResource("TileSet_c01mt")
 position = Vector2(-0.385544, 1.37714)
 sprite_frames = SubResource("SpriteFrames_bjd11")
 animation = &"glide"
-
-[node name="BIRD" type="AnimatedSprite2D" parent="Player"]
-sprite_frames = SubResource("SpriteFrames_hq6as")
-animation = &"new_animation"
 
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2(600.834, 1083.47)
