@@ -1,12 +1,22 @@
 extends CharacterBody2D
 
 const SPEED := 150.0
-const JUMP_VELOCITY := -400.0   # negative goes UP in Godot 2D
+const JUMP_VELOCITY := -300.0
 const GRAVITY := 1500.0
+const GLIDE_GRAVITY := 1.0   # reduced gravity while gliding
 
 @onready var sprite = $AnimatedSprite2D
 
-var was_on_floor := false   # to detect landing
+var was_on_floor := false
+
+# --- Double jump control ---
+var max_jumps := 2
+var jumps_left := 2
+# ----------------------------
+
+# --- Glide control ---
+var is_gliding := false
+# ---------------------
 
 func _ready():
 	sprite.play("idle")
@@ -21,30 +31,52 @@ func _physics_process(delta):
 	elif velocity.x < 0:
 		sprite.flip_h = false
 
-	# Gravity
+	# Gravity (normal unless gliding)
 	if not is_on_floor():
-		velocity.y += GRAVITY * delta
+		if is_gliding:
+			velocity.y += GLIDE_GRAVITY * delta
+		else:
+			velocity.y += GRAVITY * delta
+
+	# Reset jumps when on floor
+	if is_on_floor():
+		jumps_left = max_jumps
+		is_gliding = false  # reset glide when landed
 
 	# Jump input
-	if is_on_floor() and Input.is_action_just_pressed("move_jump"):
+	if Input.is_action_just_pressed("move_jump") and jumps_left > 0:
 		velocity.y = JUMP_VELOCITY
+		jumps_left -= 1
 
-	# ---------------------------
+		# --- Jump animations ---
+		if jumps_left == max_jumps - 1:
+			sprite.play("jump")
+		elif jumps_left == 0:
+			sprite.play("double_jump")
+		# -----------------------
+
+	# -------------------------
+	# Glide input handling
+	# -------------------------
+		while Input.is_action_pressed("glide") and not is_on_floor():
+			sprite.play("glide")
+
+	# -------------------------
 	# Animation state machine
-	# ---------------------------
-	if not is_on_floor():
-		if velocity.y < 0: # going up
-			if sprite.animation != "jump":
+	# -------------------------
+	if not is_on_floor() and not is_gliding:
+		if velocity.y < 0:
+			if sprite.animation not in ["jump", "double_jump"]:
 				sprite.play("jump")
-		else: # going down
+		else:
 			if sprite.animation != "fall":
 				sprite.play("fall")
-	elif velocity.x != 0:
-		sprite.play("run")
-	else:
-		sprite.play("idle")
+	elif not is_gliding:  # don’t override glide animations
+		if velocity.x != 0:
+			sprite.play("run")
+		else:
+			sprite.play("idle")
 
 	move_and_slide()
 
-	# Track landing for next frame
 	was_on_floor = is_on_floor()
