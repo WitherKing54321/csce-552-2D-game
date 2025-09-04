@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://ba0hh5pd8m2bk"]
+[gd_scene load_steps=42 format=4 uid="uid://ba0hh5pd8m2bk"]
 
 [ext_resource type="Script" uid="uid://bposq7mw4gtma" path="res://player/scripts/Player.gd" id="1_rvslj"]
 [ext_resource type="Script" uid="uid://cdu1o073qpqdw" path="res://player/scripts/Camera.gd" id="3_0bbpv"]
@@ -17,7 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://bhjvitc7tm6kl" path="res://Animations/Birdappear/Glide4.png" id="7_cmqll"]
 [ext_resource type="Texture2D" uid="uid://c4aww6j3p0s1n" path="res://Animations/glide/Glide8.png" id="7_dg70y"]
 [ext_resource type="Texture2D" uid="uid://xy4fst3vw04p" path="res://Animations/WizardDoubleJump/Double jump5.png" id="7_e2s0e"]
-[ext_resource type="Texture2D" uid="uid://btl728mqik0cc" path="res://Animations/WizardDoubleJump/Double jump2.png" id="7_kxyth"]
 [ext_resource type="Texture2D" uid="uid://cw8ib6kgtjfnn" path="res://Animations/MayaIdle/MayaIdleCycle3.png" id="7_lhr70"]
 [ext_resource type="Texture2D" uid="uid://c4ylw4c3kqitt" path="res://Animations/Birddissapear/Glide9.png" id="8_8cp6k"]
 [ext_resource type="Texture2D" uid="uid://dhkgb1hwino7n" path="res://Animations/MayaRun/MayaRUn1.png" id="8_ft6cd"]
@@ -31,7 +30,6 @@
 [ext_resource type="Texture2D" uid="uid://cmf1kssqawr4v" path="res://Animations/MayaRun/MayaRUn4.png" id="11_1nqs0"]
 [ext_resource type="Texture2D" uid="uid://85jngkk0xgej" path="res://Animations/MayaJump-Fall/MayaJump-Fall3.png" id="11_2ofn6"]
 [ext_resource type="Texture2D" uid="uid://b7sh8j3qlpg66" path="res://Animations/MayaRun/MayaRUn5.png" id="12_1iba3"]
-[ext_resource type="Texture2D" uid="uid://3wc2oi4nmbhs" path="res://Animations/WizardDoubleJump/Double jump8.png" id="13_cobve"]
 [ext_resource type="Texture2D" uid="uid://brae8gy7dsgr2" path="res://Animations/MayaRun/MayaRUn6.png" id="13_yxlcp"]
 [ext_resource type="Texture2D" uid="uid://d2dhsff6s3ls1" path="res://Animations/MayaRun/MayaRUn7.png" id="14_ebg2g"]
 [ext_resource type="Texture2D" uid="uid://facy02wlh08w" path="res://Animations/MayaRun/MayaRUn8.png" id="15_2ofn6"]
@@ -96,6 +94,23 @@ sources/1 = SubResource("TileSetAtlasSource_vcsgt")
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("4_hq6as")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_kxyth")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_cobve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_cmqll")
+}],
+"loop": true,
+"name": &"bird_appear",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("8_8cp6k")
 }, {
 "duration": 1.0,
@@ -110,12 +125,9 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_kxyth")
-}, {
-"duration": 1.0,
 "texture": ExtResource("5_fs0b5")
 }, {
-"duration": 1.5,
+"duration": 1.0,
 "texture": ExtResource("6_ma7h6")
 }, {
 "duration": 1.0,
@@ -126,14 +138,8 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("9_v0vrg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_v0vrg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_cobve")
 }],
-"loop": false,
+"loop": true,
 "name": &"double_jump",
 "speed": 17.0
 }, {
@@ -146,42 +152,6 @@ animations = [{
 "speed": 20.0
 }, {
 "frames": [{
-"duration": 0.7,
-"texture": ExtResource("4_hq6as")
-}, {
-"duration": 0.7,
-"texture": ExtResource("5_kxyth")
-}, {
-"duration": 0.7,
-"texture": ExtResource("6_cobve")
-}, {
-"duration": 0.7,
-"texture": ExtResource("7_cmqll")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_e2s0e")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_gsxep")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_v0vrg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_dg70y")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_e2s0e")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_gsxep")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_v0vrg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_dg70y")
-}, {
 "duration": 1.0,
 "texture": ExtResource("4_e2s0e")
 }, {
@@ -196,7 +166,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"glide",
-"speed": 10.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -284,7 +254,7 @@ tile_set = SubResource("TileSet_c01mt")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 position = Vector2(-0.385544, 1.37714)
 sprite_frames = SubResource("SpriteFrames_bjd11")
-animation = &"fall"
+animation = &"glide"
 
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2(600.834, 1083.47)
