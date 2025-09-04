@@ -2,8 +2,8 @@ extends PlayerState
 class_name JumpState
 
 # Preload once (check the exact paths/case)
-var JUMP_SOUND: AudioStream = preload("res://Sounds/Jump.wav")
-var DOUBLEJUMP_SOUND: AudioStream = preload("res://Sounds/DoubleJump.wav")
+var JUMP_SOUND: AudioStream = preload("res://Sounds/8-bit-jump.wav")
+var DOUBLEJUMP_SOUND: AudioStream = preload("res://Sounds/8-bit-doublejump.wav")
 
 func _play_sound(player, stream: AudioStream) -> void:
 	var sfx := AudioStreamPlayer.new()   # use AudioStreamPlayer2D if you want positional audio

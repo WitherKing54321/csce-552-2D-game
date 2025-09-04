@@ -1,13 +1,13 @@
 extends PlayerState
 class_name RunState
 
-var RUN_SOUND: AudioStream = preload("res://Sounds/RunSoundBase.wav")
+var RUN_SOUND: AudioStream = preload("res://Sounds/8-bit-RunSoundBase.wav")
 var run_sfx: AudioStreamPlayer
 
 func enter(player):
 	player.anim.play("run")
 
-	# start running sound
+	# start running soundd
 	run_sfx = AudioStreamPlayer.new()
 	run_sfx.stream = RUN_SOUND
 	player.add_child(run_sfx)
