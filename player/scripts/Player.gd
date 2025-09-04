@@ -7,7 +7,7 @@ const GRAVITY := 1500.0
 
 var current_state: PlayerState
 var has_double_jumped := false
-var facing_dir := 1  # 1 = right, -1 = left
+var facing_dir := 1  # 1 = right, -1 = leftd
 
 
 @onready var anim = $AnimatedSprite2D
