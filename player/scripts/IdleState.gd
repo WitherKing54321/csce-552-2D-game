@@ -6,6 +6,10 @@ func enter(player):
 	player.has_double_jumped = false
 
 func physics_update(player, delta):
+	if Input.is_action_just_pressed("hurt"):
+		var amount = 25
+		player.take_damage(amount)
+	
 	if Input.is_action_pressed("fight"):
 		player.change_state(FightState.new())
 		return

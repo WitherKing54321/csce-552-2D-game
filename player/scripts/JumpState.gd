@@ -18,7 +18,7 @@ func enter(player):
 		player.velocity.y = player.JUMP_VELOCITY
 		player.anim.play("jump")
 		_play_sound(player, JUMP_SOUND)
-		# don't force has_double_jumped = false here; it should be reset on lanwwwwwwwwwwwwwwwwwwding
+		# don't force has_double_jumped = false here; it should be reset on landing
 	else:
 		player.velocity.y = player.DOUBLE_JUMP_VELOCITY
 		# player.anim.play("double_jump")

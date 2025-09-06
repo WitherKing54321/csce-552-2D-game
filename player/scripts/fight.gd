@@ -19,7 +19,7 @@ func play_attack(player):
 
 func set_attack_timer():
 	match combo_step:
-		1: attack_timer = 0.25  # fight1 duration
+		1: attack_timer = 0.8  # fight1 duration
 		2: attack_timer = 0.8  # fight2 duration
 		3: attack_timer = 1.0  # fight3 duration
 
