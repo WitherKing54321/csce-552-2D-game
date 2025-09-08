@@ -4,9 +4,19 @@ class_name HurtState
 const KNOCKBACK_X := 50
 const KNOCKBACK_Y := -150
 
+var HURT_SOUND: AudioStream = preload("res://Sounds/8-bit-hurt.wav")
+var hurt_sfx: AudioStreamPlayer
+
+func _play_sound(player, stream: AudioStream) -> void:
+	hurt_sfx = AudioStreamPlayer.new()   # use AudioStreamPlayer2D if you want positional audio
+	hurt_sfx.stream = stream
+	player.add_child(hurt_sfx)
+	hurt_sfx.play()
+	
 func enter(player):
 	# Play hurt animation
 	player.anim.play("hurt")
+	_play_sound(player, HURT_SOUND)
 	
 	# Knockback direction: opposite of facing
 	var direction = -1 if player.anim.flip_h else 1
