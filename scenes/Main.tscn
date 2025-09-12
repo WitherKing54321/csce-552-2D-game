@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=4 uid="uid://ba0hh5pd8m2bk"]
+[gd_scene load_steps=92 format=4 uid="uid://ba0hh5pd8m2bk"]
 
 [ext_resource type="Script" uid="uid://bposq7mw4gtma" path="res://player/scripts/Player.gd" id="1_rvslj"]
 [ext_resource type="Script" uid="uid://cdu1o073qpqdw" path="res://player/scripts/Camera.gd" id="3_0bbpv"]
@@ -55,6 +55,7 @@
 [ext_resource type="Texture2D" uid="uid://8x2mbxymfuic" path="res://Animations/Sword/Combat12.png" id="21_a3hxr"]
 [ext_resource type="Texture2D" uid="uid://t5t4ge022j33" path="res://Animations/Sword/Combat21.png" id="30_qd1pt"]
 [ext_resource type="Texture2D" uid="uid://o58r2voa4yl0" path="res://Dummy_asset.png" id="52_in2eo"]
+[ext_resource type="Script" uid="uid://cvci7jcsvfgmp" path="res://scenes/dummy.gd" id="55_csfbn"]
 [ext_resource type="Texture2D" uid="uid://bj5ro6sflqmjn" path="res://GUISprites/healthbarbackground.png" id="59_o1tg2"]
 [ext_resource type="Texture2D" uid="uid://birxl7dyk56l8" path="res://GUISprites/healthbarFill.png" id="61_lfilp"]
 [ext_resource type="Texture2D" uid="uid://b0wtb68pqplpw" path="res://GUISprites/healthover.png" id="71_fcv70"]
@@ -552,17 +553,20 @@ position = Vector2(1.4764, -0.667999)
 shape = SubResource("RectangleShape2D_1nqs0")
 
 [node name="Dummy" type="StaticBody2D" parent="."]
-position = Vector2(325, 158)
+position = Vector2(420, 71)
 collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Dummy"]
-visibility_layer = 2
-position = Vector2(-1, 1)
-shape = SubResource("RectangleShape2D_dyyw8")
+script = ExtResource("55_csfbn")
 
 [node name="Sprite2D" type="Sprite2D" parent="Dummy"]
 position = Vector2(-1, 1)
 texture = ExtResource("52_in2eo")
+
+[node name="Hurtbox" type="Area2D" parent="Dummy"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dummy/Hurtbox"]
+visibility_layer = 2
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_dyyw8")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -586,7 +590,7 @@ texture_over = ExtResource("71_fcv70")
 texture_progress = ExtResource("61_lfilp")
 
 [node name="NucklaveeSmall" type="CharacterBody2D" parent="." groups=["enemies"]]
-position = Vector2(226, 154)
+position = Vector2(257, 143)
 script = ExtResource("73_cm7k6")
 
 [node name="NuckAnimatedSprite2D" type="AnimatedSprite2D" parent="NucklaveeSmall"]
@@ -600,7 +604,7 @@ frame_progress = 0.745693
 position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_csfbn")
 
-[node name="Hitbox" type="Area2D" parent="NucklaveeSmall"]
+[node name="Hitbox" type="Area2D" parent="NucklaveeSmall" groups=["player"]]
 position = Vector2(0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NucklaveeSmall/Hitbox" groups=["enemies"]]

@@ -16,7 +16,7 @@ func enter(nuck):
 	has_hit_player = false
 	nuck.anim.play("attack")
 	# Ensure the hitbox starts disabled
-	nuck.attack_hitbox.monitoring = false
+	nuck.hitbox.monitoring = false
 	print("Nuck enters Attack State")
 
 func physics_update(nuck, delta):
@@ -24,14 +24,14 @@ func physics_update(nuck, delta):
 	
 	# Enable hitbox during swing window
 	if timer >= hit_start and timer <= hit_end:
-		nuck.attack_hitbox.monitoring = true
+		nuck.hitbox.monitoring = true
 	else:
-		nuck.attack_hitbox.monitoring = false
+		nuck.hitbox.monitoring = false
 	
 	# End attack
 	if timer >= attack_duration:
 		nuck.attack = false
-		nuck.attack_hitbox.monitoring = false
+		nuck.hitbox.monitoring = false
 		nuck.change_state(NuckChaseState.new())
 
 # Called when the Nuck's attack hitbox overlaps the player
