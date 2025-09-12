@@ -1,4 +1,4 @@
-[gd_scene load_steps=98 format=4 uid="uid://ba0hh5pd8m2bk"]
+[gd_scene load_steps=97 format=4 uid="uid://ba0hh5pd8m2bk"]
 
 [ext_resource type="Script" uid="uid://bposq7mw4gtma" path="res://player/scripts/Player.gd" id="1_rvslj"]
 [ext_resource type="Script" uid="uid://cdu1o073qpqdw" path="res://player/scripts/Camera.gd" id="3_0bbpv"]
@@ -73,7 +73,7 @@
 [ext_resource type="Texture2D" uid="uid://birxl7dyk56l8" path="res://GUISprites/healthbarFill.png" id="61_lfilp"]
 [ext_resource type="Texture2D" uid="uid://b0wtb68pqplpw" path="res://GUISprites/healthover.png" id="71_fcv70"]
 [ext_resource type="Texture2D" uid="uid://b31q8kfojr835" path="res://NucklaveeSmall/NucklaveeSmallAnimations/walkCycle/NuckalaveeWasted1.png" id="73_aw8hi"]
-[ext_resource type="Script" uid="uid://t7848o0ja8lr" path="res://scenes/Enemy.gd" id="73_cm7k6"]
+[ext_resource type="Script" uid="uid://t7848o0ja8lr" path="res://scenes/nucklavee_small.gd" id="73_cm7k6"]
 [ext_resource type="Texture2D" uid="uid://crh76ydpptf42" path="res://NucklaveeSmall/NucklaveeSmallAnimations/walkCycle/NuckalaveeWasted2.png" id="74_cm7k6"]
 [ext_resource type="Texture2D" uid="uid://dkryau1oxlly4" path="res://NucklaveeSmall/NucklaveeSmallAnimations/attack/NucklaveeAttacks1.png" id="74_oqdxe"]
 [ext_resource type="Texture2D" uid="uid://b5br7uoran2wd" path="res://NucklaveeSmall/NucklaveeSmallAnimations/attack/NucklaveeAttacks2.png" id="75_4pmbt"]
@@ -468,7 +468,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"attack",
-"speed": 6.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -500,9 +500,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_csfbn"]
 size = Vector2(8, 8)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oqdxe"]
-size = Vector2(6, 13)
-
 [node name="Main" type="Node2D"]
 
 [node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
@@ -524,7 +521,7 @@ script = ExtResource("3_0bbpv")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 position = Vector2(-0.385544, 1.37714)
 sprite_frames = SubResource("SpriteFrames_bjd11")
-animation = &"death"
+animation = &"hurt"
 
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2(600.834, 1083.47)
@@ -580,24 +577,16 @@ texture_under = ExtResource("59_o1tg2")
 texture_over = ExtResource("71_fcv70")
 texture_progress = ExtResource("61_lfilp")
 
-[node name="NucklaveeSmall" type="CharacterBody2D" parent="." groups=["player"]]
-position = Vector2(226, 154)
+[node name="NucklaveeSmall" type="CharacterBody2D" parent="."]
+position = Vector2(263, 124)
 script = ExtResource("73_cm7k6")
 
 [node name="NuckAnimatedSprite2D" type="AnimatedSprite2D" parent="NucklaveeSmall"]
 position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_gexia")
 animation = &"attack"
-frame = 7
-frame_progress = 0.962292
+frame_progress = 0.514118
 
 [node name="NuckCollisionShape2D" type="CollisionShape2D" parent="NucklaveeSmall"]
 position = Vector2(-1, 7)
 shape = SubResource("RectangleShape2D_csfbn")
-
-[node name="Hitbox" type="Area2D" parent="NucklaveeSmall"]
-position = Vector2(0, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NucklaveeSmall/Hitbox"]
-position = Vector2(-8, 4)
-shape = SubResource("RectangleShape2D_oqdxe")

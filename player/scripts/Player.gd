@@ -28,13 +28,13 @@ func update_health_bar():
 	bar.max_value = max_health
 	bar.value = health
 
-func take_damage(amount):
-	health -= amount
-	hurt()
-	if health <= 0:
-		health = 0
-		die()
-	update_health_bar()
+#func take_damage(amount):
+	#health -= amount
+	#hurt()
+	#if health <= 0:
+		#health = 0
+		#die()
+	#update_health_bar()
 
 func _ready():
 	change_state(IdleState.new())
