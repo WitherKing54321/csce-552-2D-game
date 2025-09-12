@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=4 uid="uid://ba0hh5pd8m2bk"]
+[gd_scene load_steps=98 format=4 uid="uid://ba0hh5pd8m2bk"]
 
 [ext_resource type="Script" uid="uid://bposq7mw4gtma" path="res://player/scripts/Player.gd" id="1_rvslj"]
 [ext_resource type="Script" uid="uid://cdu1o073qpqdw" path="res://player/scripts/Camera.gd" id="3_0bbpv"]
@@ -42,18 +42,32 @@
 [ext_resource type="Texture2D" uid="uid://brae8gy7dsgr2" path="res://Animations/MayaRun/MayaRUn6.png" id="13_yxlcp"]
 [ext_resource type="Texture2D" uid="uid://cva6sorpd1hu" path="res://Animations/WizardDeath/WizardDeath9.png" id="14_aw8hi"]
 [ext_resource type="Texture2D" uid="uid://d2dhsff6s3ls1" path="res://Animations/MayaRun/MayaRUn7.png" id="14_ebg2g"]
+[ext_resource type="Texture2D" uid="uid://bq8ijkwdy8xdt" path="res://Animations/Sword/Combat6.png" id="15_0owt5"]
 [ext_resource type="Texture2D" uid="uid://facy02wlh08w" path="res://Animations/MayaRun/MayaRUn8.png" id="15_2ofn6"]
 [ext_resource type="Texture2D" uid="uid://wwvw5808yoad" path="res://Animations/WizardDeath/WizardDeath10.png" id="15_cm7k6"]
+[ext_resource type="Texture2D" uid="uid://cmdtinbe04rmc" path="res://Animations/Sword/Combat2.png" id="15_o1tg2"]
 [ext_resource type="Texture2D" uid="uid://cnto4sopfv5us" path="res://Animations/WizardDeath/WizardDeath11.png" id="16_csfbn"]
 [ext_resource type="Texture2D" uid="uid://bxhhhs1prbhup" path="res://Animations/Sword/Combat3.png" id="16_hyu0y"]
+[ext_resource type="Texture2D" uid="uid://dbqeyicjfllpo" path="res://Animations/Sword/Combat7.png" id="16_o1tg2"]
 [ext_resource type="Texture2D" uid="uid://be3e4vx0wuk2n" path="res://Animations/MayaRun/MayaRUn9.png" id="16_xa025"]
 [ext_resource type="Texture2D" uid="uid://b1vy8owhwgb6q" path="res://Animations/MayaRun/MayaRUn10.png" id="17_36rkl"]
+[ext_resource type="Texture2D" uid="uid://bk22map6iu4bq" path="res://Animations/Sword/Combat8.png" id="17_hyu0y"]
+[ext_resource type="Texture2D" uid="uid://drrquihb1pkah" path="res://Animations/Sword/Combat4.png" id="17_lfilp"]
 [ext_resource type="Texture2D" uid="uid://dmj1sldgv4gtn" path="res://Animations/WizardDeath/WizardDeath12.png" id="17_sj5fg"]
 [ext_resource type="Texture2D" uid="uid://cddiimhuxnpxs" path="res://Animations/Sword/Combat9.png" id="18_lfilp"]
+[ext_resource type="Texture2D" uid="uid://bwniu5nqbfhrv" path="res://Animations/Sword/Combat5.png" id="18_nu61c"]
 [ext_resource type="Texture2D" uid="uid://cpjqdredefyqw" path="res://Animations/Sword/Combat10.png" id="19_nu61c"]
 [ext_resource type="Texture2D" uid="uid://odhnvdkomu14" path="res://butler.png" id="20_1nqs0"]
+[ext_resource type="Texture2D" uid="uid://dywmcjyc8e1cm" path="res://Animations/Sword/Combat11.png" id="20_e2bht"]
 [ext_resource type="Texture2D" uid="uid://8x2mbxymfuic" path="res://Animations/Sword/Combat12.png" id="21_a3hxr"]
+[ext_resource type="Texture2D" uid="uid://cnrq68bj0l8xq" path="res://Animations/Sword/Combat13.png" id="22_gcaob"]
+[ext_resource type="Texture2D" uid="uid://na7fm3vu105m" path="res://Animations/Sword/Combat14.png" id="23_aqa1v"]
+[ext_resource type="Texture2D" uid="uid://b8tiugvdb37i0" path="res://Animations/Sword/Combat18.png" id="27_fcv70"]
+[ext_resource type="Texture2D" uid="uid://cvddd5ubbos6g" path="res://Animations/Sword/Combat19.png" id="28_mou0d"]
+[ext_resource type="Texture2D" uid="uid://51uxbhy08bs3" path="res://Animations/Sword/Combat20.png" id="29_ugmlg"]
 [ext_resource type="Texture2D" uid="uid://t5t4ge022j33" path="res://Animations/Sword/Combat21.png" id="30_qd1pt"]
+[ext_resource type="Texture2D" uid="uid://ccyum1x32cqqg" path="res://Animations/Sword/Combat22.png" id="31_vwcyu"]
+[ext_resource type="Texture2D" uid="uid://djo10ovei4uyd" path="res://Animations/Sword/Combat23.png" id="32_rsknx"]
 [ext_resource type="Texture2D" uid="uid://o58r2voa4yl0" path="res://Dummy_asset.png" id="52_in2eo"]
 [ext_resource type="Texture2D" uid="uid://bj5ro6sflqmjn" path="res://GUISprites/healthbarbackground.png" id="59_o1tg2"]
 [ext_resource type="Texture2D" uid="uid://birxl7dyk56l8" path="res://GUISprites/healthbarFill.png" id="61_lfilp"]
@@ -74,12 +88,6 @@
 [ext_resource type="Texture2D" uid="uid://cafh0c1lob7kp" path="res://NucklaveeSmall/NucklaveeSmallAnimations/walkCycle/NuckalaveeWasted7.png" id="79_le2d2"]
 [ext_resource type="Texture2D" uid="uid://bwt40utyun4oi" path="res://NucklaveeSmall/NucklaveeSmallAnimations/attack/NucklaveeAttacks7.png" id="80_nc5fr"]
 [ext_resource type="Texture2D" uid="uid://bfmwgj6wv6awq" path="res://NucklaveeSmall/NucklaveeSmallAnimations/attack/NucklaveeAttacks8.png" id="81_3fqo2"]
-[ext_resource type="Texture2D" uid="uid://cq32pdrmnw3lv" path="res://NucklaveeSmall/NucklaveeSmallAnimations/Hurt/NuckHurt.png" id="82_4pmbt"]
-[ext_resource type="Texture2D" uid="uid://bl0s0ien05xee" path="res://NucklaveeSmall/NucklaveeSmallAnimations/death/NuckDeath1.png" id="82_nc5fr"]
-[ext_resource type="Texture2D" uid="uid://ct38g76dr40vr" path="res://NucklaveeSmall/NucklaveeSmallAnimations/death/NuckDeath2.png" id="83_3fqo2"]
-[ext_resource type="Texture2D" uid="uid://cusgybcsa1vgo" path="res://NucklaveeSmall/NucklaveeSmallAnimations/death/NuckDeath3.png" id="84_nlgwl"]
-[ext_resource type="Texture2D" uid="uid://ds4a2k6cimhpe" path="res://NucklaveeSmall/NucklaveeSmallAnimations/death/NuckDeath4.png" id="85_csdio"]
-[ext_resource type="Texture2D" uid="uid://ik3xrvocxkk0" path="res://NucklaveeSmall/NucklaveeSmallAnimations/death/NuckDeath5.png" id="86_p6l88"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
 size = Vector2(15.8658, 21.6088)
@@ -177,7 +185,25 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("15_o1tg2")
+}, {
+"duration": 1.0,
 "texture": ExtResource("16_hyu0y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_lfilp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_nu61c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_0owt5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_o1tg2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_hyu0y")
 }],
 "loop": true,
 "name": &"fight1",
@@ -186,6 +212,21 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("18_lfilp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_nu61c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_e2bht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_a3hxr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_gcaob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_aqa1v")
 }],
 "loop": true,
 "name": &"fight2",
@@ -193,35 +234,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("19_nu61c")
+"texture": ExtResource("27_fcv70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_mou0d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_ugmlg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_qd1pt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_vwcyu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_rsknx")
 }],
 "loop": true,
 "name": &"fight3",
 "speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("21_a3hxr")
-}],
-"loop": true,
-"name": &"fight4",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("30_qd1pt")
-}],
-"loop": true,
-"name": &"fight5",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("18_lfilp")
-}],
-"loop": true,
-"name": &"fight6",
-"speed": 5.0
 }, {
 "frames": [{
 "duration": 0.7,
@@ -348,9 +380,6 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cm7k6"]
-size = Vector2(21, 20)
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vcsgt"]
 texture = ExtResource("4_rarhs")
 texture_region_size = Vector2i(24, 24)
@@ -443,34 +472,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("82_nc5fr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("83_3fqo2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("84_nlgwl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("85_csdio")
-}, {
-"duration": 1.0,
-"texture": ExtResource("86_p6l88")
-}],
-"loop": false,
-"name": &"death",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("82_4pmbt")
-}],
-"loop": false,
-"name": &"hurt",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": ExtResource("73_aw8hi")
 }, {
 "duration": 1.0,
@@ -497,7 +498,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_csfbn"]
-size = Vector2(10, 8)
+size = Vector2(8, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oqdxe"]
 size = Vector2(6, 13)
@@ -523,13 +524,7 @@ script = ExtResource("3_0bbpv")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 position = Vector2(-0.385544, 1.37714)
 sprite_frames = SubResource("SpriteFrames_bjd11")
-animation = &"fight6"
-
-[node name="Hurtbox" type="Area2D" parent="Player" groups=["enemies", "player", "player_swords"]]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Hurtbox" groups=["player", "player_swords"]]
-position = Vector2(-17.5, 1)
-shape = SubResource("RectangleShape2D_cm7k6")
+animation = &"death"
 
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2(600.834, 1083.47)
@@ -585,27 +580,30 @@ texture_under = ExtResource("59_o1tg2")
 texture_over = ExtResource("71_fcv70")
 texture_progress = ExtResource("61_lfilp")
 
-[node name="NucklaveeSmall" type="CharacterBody2D" parent="." groups=["enemies"]]
+[node name="NucklaveeSmall" type="CharacterBody2D" parent="." groups=["player"]]
 position = Vector2(226, 154)
 script = ExtResource("73_cm7k6")
+speed = null
+attack_range = null
+chase_range = null
+gravity = null
 
 [node name="NuckAnimatedSprite2D" type="AnimatedSprite2D" parent="NucklaveeSmall"]
 position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_gexia")
 animation = &"attack"
-frame = 4
-frame_progress = 0.745693
+frame = 7
+frame_progress = 0.962292
 
 [node name="NuckCollisionShape2D" type="CollisionShape2D" parent="NucklaveeSmall"]
-position = Vector2(0, 7)
+position = Vector2(-1, 7)
 shape = SubResource("RectangleShape2D_csfbn")
 
 [node name="Hitbox" type="Area2D" parent="NucklaveeSmall"]
 position = Vector2(0, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NucklaveeSmall/Hitbox" groups=["enemies"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NucklaveeSmall/Hitbox"]
 position = Vector2(-8, 4)
 shape = SubResource("RectangleShape2D_oqdxe")
 
-[connection signal="body_entered" from="Player/Hurtbox" to="Player" method="_on_hurtbox_body_entered"]
 [connection signal="body_entered" from="NucklaveeSmall/Hitbox" to="Player" method="_on_hitbox_body_entered"]

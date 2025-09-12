@@ -6,8 +6,9 @@ class_name Nuck
 @export var chase_range := 50
 @export var gravity := 800
 
-@onready var hitbox: Area2D = $Hitbox
+@onready var hitbox: = $Hitbox
 
+var health = 100
 var player: Node = null
 var anim: AnimatedSprite2D
 var state: NuckState = null
@@ -16,18 +17,16 @@ var directionFacingRight = true
 
 
 func _ready():
+	# Connect the attack hitbox signal
+	hitbox.connect("body_entered", Callable(self, "_on_attack_hit"))
+	
 	player = get_tree().get_first_node_in_group("player")
 	anim = $NuckAnimatedSprite2D  # <-- use AnimatedSprite2D
 	change_state(NuckIdleState.new())
-	$Hitbox.connect("body_entered", Callable(self, "_on_Hitbox_body_entered"))
-	
-func _on_Hitbox_body_entered(body):
-	if body.is_in_group("player"):
-		var hs = HurtState.new()
-		hs.damage_taken = 50   # assign damage value
-		player.change_state(hs)
- 
-
+	#Connect all player swords
+	for sword in get_tree().get_nodes_in_group("player_swords"):
+		sword.connect("body_entered", Callable(self, "_on_sword_hit"))
+	#$Hitbox.connect("body_entered", Callable(self, "_on_Hitbox_body_entered"))
 
 func _physics_process(delta):
 	if state:
@@ -41,6 +40,15 @@ func _physics_process(delta):
 		directionFacingRight = false
 	$NuckAnimatedSprite2D.flip_h = not directionFacingRight
 	
+func _on_sword_hit(body):
+	# Check if the collision is with this enemy
+	#if body == self:
+	print("Ouch! Sword hit me!")
+	var hurt_state = NuckHurtState.new()
+	hurt_state.damage_taken = 20  # amount of damage for testing
+	change_state(hurt_state)
+	#return
+
 
 func change_state(new_state: NuckState):
 	if state:

@@ -4,6 +4,7 @@ class_name DeathState
 var animation_finished := false
 
 func enter(player):
+	player.deathActive = 1
 	var input_dir = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	if input_dir != 0:
 		player.anim.flip_h = input_dir < 0

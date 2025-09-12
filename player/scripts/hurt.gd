@@ -7,16 +7,16 @@ const KNOCKBACK_Y := -150
 var damage_taken: int = 0
 
 func enter(player):
-	print("ENTER HURT STATE")
-
-	# Apply damage
-	player.health -= damage_taken
-	print(player.health)
-	if player.health < 1:
-		player.health = 0
-		player.die()
-		return
-	player.update_health_bar()
+	if player.deathActive == 0:
+		print("ENTER HURT STATE")
+		# Apply damage
+		player.health -= damage_taken
+		player.update_health_bar()
+		print(player.health)
+		if player.health < 1:
+			player.health = 0
+			player.die()
+			return
 
 	# Play hurt animation
 	player.anim.play("hurt")

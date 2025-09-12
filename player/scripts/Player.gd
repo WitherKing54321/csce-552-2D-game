@@ -5,7 +5,7 @@ const SPEED := 150.0
 const JUMP_VELOCITY := -300.0
 const DOUBLE_JUMP_VELOCITY := -400.0
 const GRAVITY := 1500.0
-
+@onready var hurtbox = $Hurtbox  # direct child of Player
 var current_state: PlayerState
 var has_double_jumped := false
 var facing_dir := 1  # 1 = right, -1 = leftd
@@ -13,6 +13,7 @@ var facing_dir := 1  # 1 = right, -1 = leftd
 var max_health := 100
 var health := 100
 var deathActive := 0
+var attack_damage = 10
 
 func die():
 	deathActive += 1
@@ -28,17 +29,11 @@ func update_health_bar():
 	bar.max_value = max_health
 	bar.value = health
 
-#func take_damage(amount):
-	#health -= amount
-	#hurt()
-	#if health <= 0:
-		#health = 0
-		#die()
-	#update_health_bar()
 
 func _ready():
 	change_state(IdleState.new())
 	update_health_bar()
+	$Hurtbox.add_to_group("player_swords")
 
 func change_state(new_state: PlayerState):
 	if current_state:
@@ -50,7 +45,18 @@ func _process(delta):
 	if current_state:
 		current_state.update(self, delta)
 
+func _enable_hurtbox():
+	var hurtbox = get_node("Hurtbox")
+	hurtbox.monitoring = true
+	print("hurtbox on")
+	
+func _disable_hurtbox():
+	var hurtbox = $Hurtbox
+	hurtbox.monitoring = false
+	print("Hurtbox disabled")
+
 func _physics_process(delta):
+
 	velocity.y += GRAVITY * delta
 	if current_state:
 		current_state.physics_update(self, delta)

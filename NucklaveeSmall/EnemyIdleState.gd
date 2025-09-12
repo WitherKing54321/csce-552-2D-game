@@ -15,6 +15,14 @@ func enter(nuck):
 		nuck.anim.play("walk")
 
 func physics_update(nuck, delta):
+	# ====== TEST DAMAGE ======
+	if Input.is_action_just_pressed("hurt"):
+		var hurt_state = NuckHurtState.new()
+		hurt_state.damage_taken = 20  # amount of damage for testing
+		nuck.change_state(hurt_state)
+		return  # stop further movement logic this frame
+
+	# ====== PATROL LOGIC ======
 	var offset = nuck.position.x - start_position.x
 	
 	if moving_right:
@@ -25,5 +33,7 @@ func physics_update(nuck, delta):
 		nuck.velocity.x = -patrol_speed
 		if offset <= 0:
 			moving_right = true
+
+	# ====== CHASE PLAYER ======
 	if nuck.player and nuck.position.distance_to(nuck.player.position) < nuck.chase_range:
 		nuck.change_state(NuckChaseState.new())
