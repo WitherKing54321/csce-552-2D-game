@@ -1,4 +1,4 @@
-[gd_scene load_steps=102 format=4 uid="uid://ba0hh5pd8m2bk"]
+[gd_scene load_steps=103 format=4 uid="uid://ba0hh5pd8m2bk"]
 
 [ext_resource type="Script" uid="uid://bposq7mw4gtma" path="res://player/scripts/Player.gd" id="1_rvslj"]
 [ext_resource type="Script" uid="uid://cdu1o073qpqdw" path="res://player/scripts/Camera.gd" id="3_0bbpv"]
@@ -533,12 +533,14 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nc5fr"]
 size = Vector2(16, 9)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3mhcn"]
+size = Vector2(8, 14)
+
 [node name="Main" type="Node2D"]
 
 [node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
 top_level = true
 position = Vector2(126, -101)
-collision_layer = 2
 script = ExtResource("1_rvslj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
@@ -617,8 +619,15 @@ script = ExtResource("73_nc5fr")
 [node name="nuckAnimated" type="AnimatedSprite2D" parent="nuck"]
 sprite_frames = SubResource("SpriteFrames_nov6g")
 animation = &"nuckAttack"
-frame_progress = 0.591887
+frame = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="nuck"]
 position = Vector2(0, 7.5)
 shape = SubResource("RectangleShape2D_nc5fr")
+
+[node name="AttackArea" type="Area2D" parent="nuck"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="nuck/AttackArea"]
+position = Vector2(-7, 6)
+shape = SubResource("RectangleShape2D_3mhcn")
+disabled = true

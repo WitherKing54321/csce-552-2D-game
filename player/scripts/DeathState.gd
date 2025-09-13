@@ -15,7 +15,7 @@ func enter(player):
 	_death_player.stream = DEATH_SFX
 	_death_player.play()
 	# ---------------------------
-
+	player.deathActive = 1
 	var input_dir = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	if input_dir != 0:
 		player.anim.flip_h = input_dir < 0

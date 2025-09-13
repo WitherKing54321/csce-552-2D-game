@@ -5,7 +5,6 @@ func enter(Enemy):
 	print("enter nuck deathstate")
 	# Stop movement
 	#Enemy.velocity = Vector2.ZERO
-	
 	# Play death animation
 	Enemy.anim.play("nuckDeath")
 	#Enemy.attack = false
