@@ -8,7 +8,7 @@ const GRAVITY := 1500.0
 
 var current_state: PlayerState
 var has_double_jumped := false
-var facing_dir := 1  # 1 = right, -1 = leftd
+var facing_dir := -1  # 1 = right, -1 = leftd
 # Health variables
 var max_health := 100
 var health := 100

@@ -12,5 +12,4 @@ func physics_update(Enemy, delta):
 	Enemy.velocity.x = Enemy.dir.x * Enemy.speed
 
 	if Enemy.position.distance_to(Enemy.player.position) < Enemy.attack_range:
-		print("ATTTACCCKKK")
 		Enemy.change_state(EnemyAttackState.new())

@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=4 uid="uid://ba0hh5pd8m2bk"]
+[gd_scene load_steps=106 format=4 uid="uid://ba0hh5pd8m2bk"]
 
 [ext_resource type="Script" uid="uid://bsm7xp1yotyxe" path="res://scenes/main.gd" id="1_nc5fr"]
 [ext_resource type="Script" uid="uid://bposq7mw4gtma" path="res://player/scripts/Player.gd" id="1_rvslj"]
@@ -386,6 +386,9 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3fqo2"]
+size = Vector2(13, 20)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vcsgt"]
 texture = ExtResource("4_rarhs")
 texture_region_size = Vector2i(24, 24)
@@ -444,6 +447,9 @@ size = Vector2(10.7634, 14.922)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dyyw8"]
 size = Vector2(8, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nc5fr"]
+size = Vector2(16, 10)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nov6g"]
 animations = [{
@@ -531,11 +537,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nc5fr"]
-size = Vector2(16, 9)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3mhcn"]
 size = Vector2(8, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlgwl"]
+size = Vector2(16, 9)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_nc5fr")
@@ -559,7 +565,15 @@ script = ExtResource("3_0bbpv")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 position = Vector2(-0.385544, 1.37714)
 sprite_frames = SubResource("SpriteFrames_bjd11")
-animation = &"hurt"
+animation = &"fight1"
+frame = 1
+
+[node name="AttackArea" type="Area2D" parent="Player" groups=["player_sword"]]
+
+[node name="PlayerHurtBox" type="CollisionShape2D" parent="Player/AttackArea" groups=["player_sword"]]
+position = Vector2(-13.5, 3)
+shape = SubResource("RectangleShape2D_3fqo2")
+disabled = true
 
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2(600.834, 1083.47)
@@ -619,21 +633,26 @@ texture_progress = ExtResource("61_lfilp")
 position = Vector2(270, 147)
 script = ExtResource("73_nc5fr")
 
+[node name="hurtbox" type="Area2D" parent="nuck"]
+position = Vector2(-270, -147)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="nuck/hurtbox"]
+position = Vector2(270, 154)
+shape = SubResource("RectangleShape2D_nc5fr")
+
 [node name="nuckAnimated" type="AnimatedSprite2D" parent="nuck"]
 sprite_frames = SubResource("SpriteFrames_nov6g")
-animation = &"nuckAttack"
-frame = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="nuck"]
-position = Vector2(0, 7.5)
-shape = SubResource("RectangleShape2D_nc5fr")
+animation = &"nuckWalk"
 
 [node name="AttackArea" type="Area2D" parent="nuck"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="nuck/AttackArea"]
 position = Vector2(-7, 6)
 shape = SubResource("RectangleShape2D_3mhcn")
-disabled = true
+
+[node name="Collision" type="CollisionShape2D" parent="nuck"]
+position = Vector2(0, 7.5)
+shape = SubResource("RectangleShape2D_nlgwl")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
