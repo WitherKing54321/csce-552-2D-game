@@ -850,7 +850,7 @@ text = "Resume"
 
 [node name="Restart" type="Button" parent="CanvasLayer2/PauseMenu/VBoxContainer"]
 layout_mode = 2
-text = "Restart"
+text = "Main Menu"
 
 [node name="Quit" type="Button" parent="CanvasLayer2/PauseMenu/VBoxContainer"]
 layout_mode = 2

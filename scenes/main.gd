@@ -5,6 +5,7 @@ extends Node
 @onready var resume_btn: Button = pause_menu.get_node("VBoxContainer/Resume")
 @onready var restart_btn: Button = pause_menu.get_node("VBoxContainer/Restart")
 @onready var quit_btn: Button = pause_menu.get_node("VBoxContainer/Quit")
+const MAIN_MENU_SCENE := "res://scenes/MainMenu.tscn"
 
 var is_paused := false
 
@@ -33,15 +34,14 @@ func _on_resume_pressed() -> void:
 	pause_menu.hide()
 
 func _on_restart_pressed() -> void:
+	print("Go to MAIN MENU")
 	get_tree().paused = false
 	is_paused = false
-	get_tree().reload_current_scene()
-
+	pause_menu.hide()
+	var err := get_tree().change_scene_to_file(MAIN_MENU_SCENE)
+	if err != OK:
+		push_error("Failed to load main menu: " + MAIN_MENU_SCENE + " (code " + str(err) + ")")
+	
 func _on_quit_pressed() -> void:
-	# Pick ONE behavior:
-	# A) return to a main menu scene:
-	get_tree().paused = false
-	is_paused = false
-	get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")
-	# B) OR quit the game entirely (for desktop builds):
-	# get_tree().quit()
+	print("QUIT")            # for sanity in the Output panel
+	get_tree().quit(0)       # closes the running game/editor play window
