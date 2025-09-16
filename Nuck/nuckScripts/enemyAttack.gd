@@ -2,7 +2,7 @@ extends EnemyState
 class_name EnemyAttackState
 
 @export var attack_duration := 1.4
-@export var damage := 0
+@export var damage := 25
 @export var hit_start := 0.5  # seconds when the swing begins
 @export var hit_end := 0.9    # seconds when the swing ends
 

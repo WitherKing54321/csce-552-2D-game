@@ -7,7 +7,7 @@ var attack_timer := 0.0
 func enter(player):
 	var attack_area = player.get_node("AttackArea")#get attack collision shape
 	player.get_node("AttackArea/PlayerHurtBox").disabled = false # set diabled by default
-	attack_timer = 0.4  # duration of the fight animation
+	attack_timer = 0.3  # duration of the fight animation
 	player.anim.play("fight1")  # use only one animation
 	#player.velocity.x = 0  # lock movement during attacks 
 
@@ -27,7 +27,7 @@ func physics_update(player, delta):
 		player.get_node("AttackArea/PlayerHurtBox").disabled = false
 		if Input.is_action_just_pressed("fight"):
 			print("TESSSSTx")
-			attack_timer = 0.4
+			attack_timer = 0.3
 			player.anim.play("fight1")
 		else:
 			player.get_node("AttackArea/PlayerHurtBox").disabled = true

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://odhnvdkomu14"
-path="res://.godot/imported/butler.png-bda27c00078b6918d3eede60910269d8.ctex"
+uid="uid://dloqi01aohenh"
+path="res://.godot/imported/Area01floorTileMap.png-8f24d09a867013858b6513071d115582.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://butler.png"
-dest_files=["res://.godot/imported/butler.png-bda27c00078b6918d3eede60910269d8.ctex"]
+source_file="res://mapPeices/Area01floorTileMap.png"
+dest_files=["res://.godot/imported/Area01floorTileMap.png-8f24d09a867013858b6513071d115582.ctex"]
 
 [params]
 
