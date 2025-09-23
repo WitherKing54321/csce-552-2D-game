@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=4 uid="uid://ba0hh5pd8m2bk"]
+[gd_scene load_steps=112 format=4 uid="uid://ba0hh5pd8m2bk"]
 
 [ext_resource type="Script" uid="uid://bsm7xp1yotyxe" path="res://scenes/main.gd" id="1_nc5fr"]
 [ext_resource type="Script" uid="uid://bposq7mw4gtma" path="res://player/scripts/Player.gd" id="1_rvslj"]
@@ -73,6 +73,7 @@
 [ext_resource type="Texture2D" uid="uid://dloqi01aohenh" path="res://mapPeices/Area01floorTileMap.png" id="68_3mhcn"]
 [ext_resource type="Texture2D" uid="uid://bxetrjyjuv74a" path="res://mapPeices/Area01Decorations.png" id="69_3fqo2"]
 [ext_resource type="Texture2D" uid="uid://odhnvdkomu14" path="res://butler/butler.png" id="69_nc5fr"]
+[ext_resource type="Script" uid="uid://d15qryorq88me" path="res://butler/butler.gd" id="70_csdio"]
 [ext_resource type="Texture2D" uid="uid://b0wtb68pqplpw" path="res://GUISprites/healthover.png" id="71_fcv70"]
 [ext_resource type="Script" uid="uid://bh14tgbo81v17" path="res://Nuck/nuckScripts/enemy.gd" id="73_nc5fr"]
 [ext_resource type="Texture2D" uid="uid://byk8w530q7g5g" path="res://Nuck/nuckAnimations/nuckAttack/NucklaveeAttacks1.png" id="74_3fqo2"]
@@ -95,6 +96,7 @@
 [ext_resource type="Texture2D" uid="uid://fmuj68vtclvh" path="res://Nuck/nuckAnimations/nuckWalk/nuckWalk4.png" id="91_4mw0a"]
 [ext_resource type="Texture2D" uid="uid://cuyaxirx6tm11" path="res://Nuck/nuckAnimations/nuckWalk/nuckWalk6.png" id="92_a54x0"]
 [ext_resource type="Texture2D" uid="uid://c6o55watj8vp7" path="res://Nuck/nuckAnimations/nuckWalk/nuckWalk7.png" id="93_weayx"]
+[ext_resource type="Script" uid="uid://e3msjhydnork" path="res://scenes/dialog_panel.gd" id="96_nlgwl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
 size = Vector2(15.8658, 21.6088)
@@ -597,6 +599,9 @@ sources/1 = SubResource("TileSetAtlasSource_nlgwl")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1nqs0"]
 size = Vector2(10.7634, 14.922)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_3fqo2"]
+radius = 45.0444
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dyyw8"]
 size = Vector2(8, 24)
 
@@ -742,6 +747,8 @@ tile_set = SubResource("TileSet_csdio")
 [node name="Butler" type="StaticBody2D" parent="."]
 position = Vector2(-346, 164)
 collision_mask = 2
+script = ExtResource("70_csdio")
+dialog_text_path = NodePath("../DialogUI/DialogPanel/Text")
 
 [node name="Sprite2D" type="Sprite2D" parent="Butler"]
 position = Vector2(0.999996, -5)
@@ -750,6 +757,11 @@ texture = ExtResource("69_nc5fr")
 [node name="butlerHitbox" type="CollisionShape2D" parent="Butler"]
 position = Vector2(1.4764, -0.667999)
 shape = SubResource("RectangleShape2D_1nqs0")
+
+[node name="TalkZone" type="Area2D" parent="Butler"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Butler/TalkZone"]
+shape = SubResource("CircleShape2D_3fqo2")
 
 [node name="Dummy" type="StaticBody2D" parent="."]
 position = Vector2(763, 542)
@@ -855,3 +867,39 @@ text = "Main Menu"
 [node name="Quit" type="Button" parent="CanvasLayer2/PauseMenu/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
+
+[node name="DialogUI" type="CanvasLayer" parent="."]
+layer = 30
+
+[node name="DialogPanel" type="Panel" parent="DialogUI"]
+top_level = true
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -430.0
+offset_top = -7.0
+offset_right = -465.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+script = ExtResource("96_nlgwl")
+
+[node name="Text" type="RichTextLabel" parent="DialogUI/DialogPanel"]
+visible = false
+top_level = true
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 8
+text = "Start digging in your butt twin!"
+autowrap_mode = 2
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="Butler/TalkZone" to="." method="_on_talk_zone_body_entered"]
+[connection signal="body_exited" from="Butler/TalkZone" to="." method="_on_talk_zone_body_exited"]

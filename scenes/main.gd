@@ -45,3 +45,15 @@ func _on_restart_pressed() -> void:
 func _on_quit_pressed() -> void:
 	print("QUIT")            # for sanity in the Output panel
 	get_tree().quit(0)       # closes the running game/editor play window
+
+
+func _on_talk_zone_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
+
+
+func _on_talk_zone_area_entered(area: Area2D) -> void:
+	pass # Replace with function body.
+
+
+func _on_talk_zone_body_exited(body: Node2D) -> void:
+	pass # Replace with function body.
