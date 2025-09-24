@@ -1,7 +1,7 @@
 extends PlayerState
 class_name DeathState
 
-const DEATH_SFX: AudioStream = preload("res://Sounds/Jump.wav")
+const DEATH_SFX: AudioStream = preload("res://Sounds/PlayerVanquish.wav")
 var _death_player: AudioStreamPlayer
 var animation_finished := false
 
