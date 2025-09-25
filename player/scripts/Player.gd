@@ -22,11 +22,15 @@ func hurt():
 	change_state(HurtState.new())
 
 @onready var anim = $AnimatedSprite2D
+#@onready var spike_map: TileMapLayer = get_node("/root/Main/Ground/TileMapLayer")
+
 
 func update_health_bar():
 	var bar = get_node("/root/Main/CanvasLayer/Control/TextureProgressBar")
 	bar.max_value = max_health
 	bar.value = health
+	
+
 
 func take_damage(amount):
 	health -= amount
@@ -55,6 +59,12 @@ func _physics_process(delta):
 	if current_state:
 		current_state.physics_update(self, delta)
 	move_and_slide()
+	
+	#var tile_pos = spike_map.local_to_map(global_position)
+	#var tile_data = spike_map.get_cell_tile_data(tile_pos)
+	#if tile_data and tile_data.has_custom_data("hazard"):
+		#change_state(HurtState.new())
+		
 	var input_dir = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	if input_dir != 0 and deathActive < 1:
 		facing_dir = input_dir
