@@ -4,7 +4,7 @@ class_name FightState
 var facing_dir := 1
 var attack_timer := 0.0
 
-var ATTACK_SOUND: AudioStream = preload("res://Sounds/Jump.wav")
+var ATTACK_SOUND: AudioStream = preload("res://Sounds/8-bit-Jump.wav")
 var attack_sfx: AudioStreamPlayer
 
 func enter(player):
