@@ -18,7 +18,6 @@ func enter(Enemy):
 	Enemy.velocity.x = 10 * Enemy.dir.x
 	Enemy.attack = true
 	timer = 0.0
-	#has_hit_player = false
 	Enemy.anim.play("nuckAttack")
 	
 
