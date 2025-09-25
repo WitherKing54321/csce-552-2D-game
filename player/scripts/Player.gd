@@ -9,7 +9,6 @@ const GRAVITY := 1500.0
 var current_state: PlayerState
 var has_double_jumped := false
 var facing_dir := -1  # 1 = right, -1 = leftd
-# Health variables
 var max_health := 100
 var health := 100
 var deathActive := 0
@@ -22,15 +21,11 @@ func hurt():
 	change_state(HurtState.new())
 
 @onready var anim = $AnimatedSprite2D
-#@onready var spike_map: TileMapLayer = get_node("/root/Main/Ground/TileMapLayer")
-
 
 func update_health_bar():
 	var bar = get_node("/root/Main/CanvasLayer/Control/TextureProgressBar")
 	bar.max_value = max_health
 	bar.value = health
-	
-
 
 func take_damage(amount):
 	health -= amount
@@ -59,13 +54,13 @@ func _physics_process(delta):
 	if current_state:
 		current_state.physics_update(self, delta)
 	move_and_slide()
-	
-	#var tile_pos = spike_map.local_to_map(global_position)
-	#var tile_data = spike_map.get_cell_tile_data(tile_pos)
-	#if tile_data and tile_data.has_custom_data("hazard"):
-		#change_state(HurtState.new())
-		
+
 	var input_dir = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	if input_dir != 0 and deathActive < 1:
 		facing_dir = input_dir
 		$AnimatedSprite2D.flip_h = facing_dir > 0
+
+func _on_spike_detection_body_entered(body: Node2D) -> void:
+	if body.is_in_group("hazards"):
+		print("OUCH…spikeys")
+		change_state(DeathState.new())
