@@ -13,6 +13,7 @@ var max_health := 100
 var health := 100
 var deathActive := 0
 
+
 func die():
 	deathActive += 1
 	change_state(DeathState.new())
