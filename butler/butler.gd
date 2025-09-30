@@ -7,8 +7,14 @@ extends Node2D
 	"When you finish, the box will hide."
 ]
 
+@onready var anim: AnimatedSprite2D = $ButlerAnimatedSprite2D
+@export var dialog_text_path: NodePath
+@onready var dialog_text: RichTextLabel = get_node_or_null(dialog_text_path)
+
+
 # Optional: set this on the Butler (or leave empty if the TextureRect already has a texture)
 @export var portrait_texture: Texture2D
+
 
 @onready var zone: Area2D = $TalkZone
 
@@ -21,8 +27,16 @@ var _in_range := false
 var _line_idx := -1   # -1 = not showing
 
 func _ready() -> void:
+
+	$ButlerAnimatedSprite2D.flip_h = true
+	anim.play("idleAnimaiton")
+	if dialog_text:
+		dialog_text.visible = false  # start hidden
+	if not zone.body_entered.is_connected(_on_zone_body_entered):
+
 	# Connect once
 	if zone and not zone.body_entered.is_connected(_on_zone_body_entered):
+
 		zone.body_entered.connect(_on_zone_body_entered)
 	if zone and not zone.body_exited.is_connected(_on_zone_body_exited):
 		zone.body_exited.connect(_on_zone_body_exited)
