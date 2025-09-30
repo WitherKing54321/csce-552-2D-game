@@ -98,7 +98,6 @@
 [ext_resource type="Texture2D" uid="uid://fmuj68vtclvh" path="res://Nuck/nuckAnimations/nuckWalk/nuckWalk4.png" id="91_4mw0a"]
 [ext_resource type="Texture2D" uid="uid://cuyaxirx6tm11" path="res://Nuck/nuckAnimations/nuckWalk/nuckWalk6.png" id="92_a54x0"]
 [ext_resource type="Texture2D" uid="uid://c6o55watj8vp7" path="res://Nuck/nuckAnimations/nuckWalk/nuckWalk7.png" id="93_weayx"]
-[ext_resource type="Script" uid="uid://e3msjhydnork" path="res://scenes/dialog_panel.gd" id="96_nlgwl"]
 [ext_resource type="PackedScene" uid="uid://dgbtqt8odqpx7" path="res://Hazards/spike.tscn" id="98_p6l88"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
@@ -787,6 +786,19 @@ size = Vector2(8, 14)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlgwl"]
 size = Vector2(16, 9)
 
+[sub_resource type="GDScript" id="GDScript_57f5r"]
+script/source = "# dialog_panel.gd
+extends Panel
+@onready var text: RichTextLabel = $Text  # or Label if that's what you used
+
+func show_lines(lines: Array[String]) -> void:
+	visible = true
+	text.text = \"\\n\".join(lines)  # shows text
+
+func hide_box() -> void:
+	visible = false
+"
+
 [node name="Main" type="Node2D"]
 script = ExtResource("1_nc5fr")
 pause_menu_path = NodePath("CanvasLayer2/PauseMenu")
@@ -846,7 +858,6 @@ tile_set = SubResource("TileSet_ps7y1")
 position = Vector2(-346, 164)
 collision_mask = 2
 script = ExtResource("70_csdio")
-dialog_text_path = NodePath("../DialogUI/DialogPanel/Text")
 
 [node name="Sprite2D" type="Sprite2D" parent="Butler"]
 position = Vector2(0.999996, -5)
@@ -970,34 +981,41 @@ text = "Quit"
 layer = 30
 
 [node name="DialogPanel" type="Panel" parent="DialogUI"]
+visible = false
+modulate = Color(0, 0, 0, 1)
 top_level = true
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -430.0
-offset_top = -7.0
-offset_right = -465.0
-offset_bottom = 20.0
+offset_left = 76.0
+offset_top = -18.0
+offset_right = -59.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
-script = ExtResource("96_nlgwl")
+script = SubResource("GDScript_57f5r")
+
+[node name="TextureRect" type="TextureRect" parent="DialogUI/DialogPanel"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+offset_left = -1.0
+offset_top = -6.0
+offset_right = 23.0
+offset_bottom = 18.0
+texture = ExtResource("69_nc5fr")
 
 [node name="Text" type="RichTextLabel" parent="DialogUI/DialogPanel"]
-visible = false
 top_level = true
-custom_minimum_size = Vector2(140, 0)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+custom_minimum_size = Vector2(140, 20)
+layout_mode = 2
+offset_left = 102.0
+offset_top = 165.0
+offset_right = 259.0
+offset_bottom = 185.0
 theme_override_font_sizes/normal_font_size = 8
 text = "Start digging in your butt twin!"
 autowrap_mode = 2
-horizontal_alignment = 1
 
 [node name="Area2D" type="Area2D" parent="."]
 
