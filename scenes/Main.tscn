@@ -1,4 +1,4 @@
-[gd_scene load_steps=149 format=4 uid="uid://ba0hh5pd8m2bk"]
+[gd_scene load_steps=119 format=4 uid="uid://ba0hh5pd8m2bk"]
 
 [ext_resource type="Script" uid="uid://bsm7xp1yotyxe" path="res://scenes/main.gd" id="1_nc5fr"]
 [ext_resource type="Script" uid="uid://bposq7mw4gtma" path="res://player/scripts/Player.gd" id="1_rvslj"]
@@ -73,28 +73,19 @@
 [ext_resource type="Texture2D" uid="uid://dloqi01aohenh" path="res://mapPeices/Area01floorTileMap.png" id="68_3mhcn"]
 [ext_resource type="Script" uid="uid://dk1iaprig6jah" path="res://player/scripts/spike_detection.gd" id="68_84vju"]
 [ext_resource type="Texture2D" uid="uid://bxetrjyjuv74a" path="res://mapPeices/Area01Decorations.png" id="69_3fqo2"]
+[ext_resource type="Texture2D" uid="uid://odhnvdkomu14" path="res://butler/butler.png" id="69_nc5fr"]
 [ext_resource type="Texture2D" uid="uid://bypkdqqtp1cbg" path="res://mapPeices/hazards.png" id="70_57f5r"]
 [ext_resource type="Script" uid="uid://d15qryorq88me" path="res://butler/butler.gd" id="70_csdio"]
 [ext_resource type="Texture2D" uid="uid://b0wtb68pqplpw" path="res://GUISprites/healthover.png" id="71_fcv70"]
 [ext_resource type="Script" uid="uid://bh14tgbo81v17" path="res://Nuck/nuckScripts/enemy.gd" id="73_nc5fr"]
-[ext_resource type="Texture2D" uid="uid://hgw5t8os7ptb" path="res://butler/ButlerSprite-0001-export1.png" id="73_rf4q7"]
 [ext_resource type="Texture2D" uid="uid://byk8w530q7g5g" path="res://Nuck/nuckAnimations/nuckAttack/NucklaveeAttacks1.png" id="74_3fqo2"]
-[ext_resource type="Texture2D" uid="uid://cibaaoccxtr2r" path="res://butler/ButlerSprite-0001-export2.png" id="74_76koy"]
-[ext_resource type="Texture2D" uid="uid://dqd52ngtgqpi1" path="res://butler/ButlerSprite-0001-export3.png" id="75_ktb27"]
 [ext_resource type="Texture2D" uid="uid://bjhedfwmmd2nn" path="res://Nuck/nuckAnimations/nuckAttack/NucklaveeAttacks2.png" id="75_nlgwl"]
 [ext_resource type="Texture2D" uid="uid://be0veqtaqg2d2" path="res://Nuck/nuckAnimations/nuckAttack/NucklaveeAttacks3.png" id="76_csdio"]
-[ext_resource type="Texture2D" uid="uid://dfjjl47r3hc4h" path="res://butler/ButlerSprite-0001-export4.png" id="76_uil6m"]
 [ext_resource type="Texture2D" uid="uid://b8hw40w0du3g8" path="res://Nuck/nuckAnimations/nuckAttack/NucklaveeAttacks4.png" id="77_p6l88"]
-[ext_resource type="Texture2D" uid="uid://8agpdeubkf3j" path="res://butler/ButlerSprite-0001-export5.png" id="77_so1ur"]
-[ext_resource type="Texture2D" uid="uid://boixdvk3cd8vu" path="res://butler/ButlerSprite-0001-export6.png" id="78_4jthf"]
 [ext_resource type="Texture2D" uid="uid://cnm4lkapfcu7x" path="res://Nuck/nuckAnimations/nuckAttack/NucklaveeAttacks5.png" id="78_57f5r"]
-[ext_resource type="Texture2D" uid="uid://daee7ndir1stk" path="res://butler/ButlerSprite-0001-export7.png" id="79_2ntqj"]
 [ext_resource type="Texture2D" uid="uid://ck2du4p8iyegf" path="res://Nuck/nuckAnimations/nuckAttack/NucklaveeAttacks6.png" id="79_84vju"]
-[ext_resource type="Texture2D" uid="uid://chjhyxeeokloi" path="res://butler/ButlerSprite-0001-export8.png" id="80_0nt4r"]
 [ext_resource type="Texture2D" uid="uid://c1gelhkv64033" path="res://Nuck/nuckAnimations/nuckAttack/NucklaveeAttacks7.png" id="80_ps7y1"]
 [ext_resource type="Texture2D" uid="uid://beu27xt7ensar" path="res://Nuck/nuckAnimations/nuckAttack/NucklaveeAttacks8.png" id="81_4c8xy"]
-[ext_resource type="Texture2D" uid="uid://be7kp4esai6t3" path="res://butler/ButlerSprite-0001-export9.png" id="81_xqjv3"]
-[ext_resource type="Texture2D" uid="uid://bohwct8gx6utm" path="res://butler/ButlerSprite-0001-export10.png" id="82_e6xh0"]
 [ext_resource type="Texture2D" uid="uid://c1fiohsmgr8tq" path="res://Nuck/nuckAnimations/nuckDeath/NuckDeath1.png" id="82_jhuvt"]
 [ext_resource type="Texture2D" uid="uid://0fkli3d5goxw" path="res://Nuck/nuckAnimations/nuckDeath/NuckDeath2.png" id="83_smcir"]
 [ext_resource type="Texture2D" uid="uid://bu0j5w60afwco" path="res://Nuck/nuckAnimations/nuckDeath/NuckDeath3.png" id="84_2eo8w"]
@@ -108,22 +99,6 @@
 [ext_resource type="Texture2D" uid="uid://cuyaxirx6tm11" path="res://Nuck/nuckAnimations/nuckWalk/nuckWalk6.png" id="92_a54x0"]
 [ext_resource type="Texture2D" uid="uid://c6o55watj8vp7" path="res://Nuck/nuckAnimations/nuckWalk/nuckWalk7.png" id="93_weayx"]
 [ext_resource type="PackedScene" uid="uid://dgbtqt8odqpx7" path="res://Hazards/spike.tscn" id="98_p6l88"]
-[ext_resource type="Script" uid="uid://b7suhww4lqfel" path="res://Enemy2/Enemy2Scripts/enemy_2.gd" id="101_13nov"]
-[ext_resource type="Texture2D" uid="uid://x1rif0yim0nd" path="res://Enemy2/Enemy2Animations/Enemy02.png" id="101_t7hiy"]
-[ext_resource type="Texture2D" uid="uid://b8pme31ge37u7" path="res://Enemy2/Enemy2Animations/Enemy03.png" id="102_13nov"]
-[ext_resource type="Texture2D" uid="uid://b1t7vnwi7n1a0" path="res://Enemy2/Enemy2Animations/enemy2Attack/Enemy02attack1.png" id="102_nov6g"]
-[ext_resource type="Texture2D" uid="uid://bm6x6vekd4ya6" path="res://Enemy2/Enemy2Animations/Enemy02hurt.png" id="102_yg7m7"]
-[ext_resource type="Texture2D" uid="uid://bdao0txgmeqf6" path="res://Enemy2/Enemy2Animations/enemy2Attack/Enemy02attack2.png" id="103_708gh"]
-[ext_resource type="Texture2D" uid="uid://cwyyltg6irg4r" path="res://Enemy2/Enemy2Animations/Enemy04.png" id="103_yg7m7"]
-[ext_resource type="Texture2D" uid="uid://3k3d3b7v8o6m" path="res://Enemy2/Enemy2Animations/Enemy05.png" id="104_7ovee"]
-[ext_resource type="Texture2D" uid="uid://cci77hqu7jyih" path="res://Enemy2/Enemy2Animations/enemy2Attack/Enemy02attack3.png" id="104_gnlq8"]
-[ext_resource type="Texture2D" uid="uid://cmnv8llbnmptm" path="res://Enemy2/Enemy2Animations/Enemy06.png" id="105_7figm"]
-[ext_resource type="Texture2D" uid="uid://u0ee0g0a1cup" path="res://Enemy2/Enemy2Animations/enemy2Attack/Enemy02attack4.png" id="105_qa0xl"]
-[ext_resource type="Texture2D" uid="uid://c84cqdq3blauo" path="res://Enemy2/Enemy2Animations/enemy2Attack/Enemy02attack5.png" id="106_lv3yw"]
-[ext_resource type="Texture2D" uid="uid://bqqoonsx64h1g" path="res://Enemy2/Enemy2Animations/Enemy07.png" id="106_r0h7t"]
-[ext_resource type="Texture2D" uid="uid://cult184ohbbdh" path="res://Enemy2/Enemy2Animations/enemy2Attack/Enemy02attack6.png" id="107_5q1ge"]
-[ext_resource type="Texture2D" uid="uid://dw2bu27kcs0in" path="res://Enemy2/Enemy2Animations/enemy2Attack/Enemy02attack7.png" id="108_nch24"]
-[ext_resource type="Texture2D" uid="uid://dcav2ey5xqqup" path="res://Enemy2/Enemy2Animations/enemy2Attack/Enemy02attack8.png" id="109_h7ea0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
 size = Vector2(11, 17.75)
@@ -713,44 +688,6 @@ size = Vector2(10.7634, 14.922)
 [sub_resource type="CircleShape2D" id="CircleShape2D_3fqo2"]
 radius = 45.0444
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_6bk4a"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("73_rf4q7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("74_76koy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("75_ktb27")
-}, {
-"duration": 1.0,
-"texture": ExtResource("76_uil6m")
-}, {
-"duration": 1.0,
-"texture": ExtResource("77_so1ur")
-}, {
-"duration": 1.0,
-"texture": ExtResource("78_4jthf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("79_2ntqj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("80_0nt4r")
-}, {
-"duration": 1.0,
-"texture": ExtResource("81_xqjv3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("82_e6xh0")
-}],
-"loop": true,
-"name": &"idleAnimaiton",
-"speed": 10.0
-}]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dyyw8"]
 size = Vector2(8, 24)
 
@@ -849,84 +786,6 @@ size = Vector2(8, 14)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlgwl"]
 size = Vector2(16, 9)
 
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_4mw0a"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("102_nov6g")
-}, {
-"duration": 1.0,
-"texture": ExtResource("103_708gh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("104_gnlq8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("105_qa0xl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("106_lv3yw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("107_5q1ge")
-}, {
-"duration": 1.0,
-"texture": ExtResource("108_nch24")
-}, {
-"duration": 1.0,
-"texture": ExtResource("109_h7ea0")
-}],
-"loop": true,
-"name": &"enemy2Attack",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"enemy2Death",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.6,
-"texture": ExtResource("102_yg7m7")
-}],
-"loop": false,
-"name": &"enemy2Hurt",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("101_t7hiy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("102_13nov")
-}, {
-"duration": 1.0,
-"texture": ExtResource("103_yg7m7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("104_7ovee")
-}, {
-"duration": 1.0,
-"texture": ExtResource("105_7figm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("106_r0h7t")
-}],
-"loop": true,
-"name": &"enemy2Walk",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nov6g"]
-size = Vector2(11, 42)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gnlq8"]
-size = Vector2(42, 11)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_708gh"]
-size = Vector2(10, 41.5)
-
 [sub_resource type="GDScript" id="GDScript_57f5r"]
 script/source = "# dialog_panel.gd
 extends Panel
@@ -946,7 +805,7 @@ pause_menu_path = NodePath("CanvasLayer2/PauseMenu")
 
 [node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
 top_level = true
-position = Vector2(-254, 137)
+position = Vector2(1267, 223)
 script = ExtResource("1_rvslj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
@@ -1000,6 +859,10 @@ position = Vector2(-346, 164)
 collision_mask = 2
 script = ExtResource("70_csdio")
 
+[node name="Sprite2D" type="Sprite2D" parent="Butler"]
+position = Vector2(0.999996, -5)
+texture = ExtResource("69_nc5fr")
+
 [node name="butlerHitbox" type="CollisionShape2D" parent="Butler"]
 position = Vector2(1.4764, -0.667999)
 shape = SubResource("RectangleShape2D_1nqs0")
@@ -1007,14 +870,7 @@ shape = SubResource("RectangleShape2D_1nqs0")
 [node name="TalkZone" type="Area2D" parent="Butler"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Butler/TalkZone"]
-position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_3fqo2")
-
-[node name="ButlerAnimatedSprite2D" type="AnimatedSprite2D" parent="Butler"]
-position = Vector2(1, -5)
-sprite_frames = SubResource("SpriteFrames_6bk4a")
-animation = &"idleAnimaiton"
-frame_progress = 0.883784
 
 [node name="Dummy" type="StaticBody2D" parent="."]
 position = Vector2(763, 542)
@@ -1064,7 +920,6 @@ shape = SubResource("RectangleShape2D_nc5fr")
 [node name="nuckAnimated" type="AnimatedSprite2D" parent="nuck"]
 sprite_frames = SubResource("SpriteFrames_nov6g")
 animation = &"nuckWalk"
-frame = 2
 
 [node name="AttackArea" type="Area2D" parent="nuck"]
 
@@ -1165,38 +1020,10 @@ autowrap_mode = 2
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="Hazards" type="Node2D" parent="."]
-position = Vector2(-248, 64)
+position = Vector2(-172, 159)
 
 [node name="Spike" parent="Hazards" instance=ExtResource("98_p6l88")]
-
-[node name="Enemy2" type="CharacterBody2D" parent="."]
-position = Vector2(-29, 135)
-script = ExtResource("101_13nov")
-
-[node name="Enemy2AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy2"]
-position = Vector2(-5, 0)
-sprite_frames = SubResource("SpriteFrames_4mw0a")
-animation = &"enemy2Attack"
-frame = 2
-
-[node name="hurtbox2" type="Area2D" parent="Enemy2"]
-position = Vector2(29, -135)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy2/hurtbox2"]
-position = Vector2(-31.5, 138)
-shape = SubResource("RectangleShape2D_nov6g")
-
-[node name="AttackArea" type="Area2D" parent="Enemy2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy2/AttackArea"]
-position = Vector2(-19, 9.5)
-shape = SubResource("RectangleShape2D_gnlq8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy2"]
-position = Vector2(-2, 3.25)
-shape = SubResource("RectangleShape2D_708gh")
 
 [connection signal="body_entered" from="Player/spike_detection" to="Player" method="_on_spike_detection_body_entered"]
 [connection signal="body_entered" from="Butler/TalkZone" to="." method="_on_talk_zone_body_entered"]
 [connection signal="body_exited" from="Butler/TalkZone" to="." method="_on_talk_zone_body_exited"]
-[connection signal="body_entered" from="Enemy2/hurtbox2" to="Enemy2" method="_on_hurtbox_2_body_entered"]
