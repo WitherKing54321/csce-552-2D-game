@@ -2,7 +2,7 @@ extends EnemyState2
 class_name EnemyAttackState2
 
 var attack_duration := 1.4
-var damage := 0
+var damage := 1
 var hit_start := 0.7  # seconds when the swing begins
 var hit_end := 0.9    # seconds when the swing ends
 
