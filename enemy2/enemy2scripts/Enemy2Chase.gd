@@ -6,7 +6,7 @@ var STEP_STREAM: AudioStream = preload("res://Sounds/NuckRun.wav")
 var step_sfx: AudioStreamPlayer2D
 
 func enter(Enemy2):
-	Enemy2.anim.play("enemy2Walk")
+	Enemy2.anim.play("enemy2Chase")
 	print("Entered Chase State")
 
 	# Create the audio player once and reuse it

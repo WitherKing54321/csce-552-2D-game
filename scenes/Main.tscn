@@ -118,12 +118,12 @@
 [ext_resource type="Texture2D" uid="uid://dc6c6tb1fcjl4" path="res://enemy2/enemyAnimations/enemyattack/Enemy02attack5.png" id="105_qa0xl"]
 [ext_resource type="Texture2D" uid="uid://bqklgo6pmjdji" path="res://enemy2/enemyAnimations/enemyattack/Enemy02attack6.png" id="106_lv3yw"]
 [ext_resource type="Texture2D" uid="uid://c76l2lff84t82" path="res://enemy2/enemyAnimations/enemyattack/Enemy02attack7.png" id="107_5q1ge"]
-[ext_resource type="Texture2D" uid="uid://bm4uyfve4kgac" path="res://enemy2/enemyAnimations/enemywalk/Enemy02.png" id="110_h7ea0"]
-[ext_resource type="Texture2D" uid="uid://cu6qfy8mg1lxm" path="res://enemy2/enemyAnimations/enemywalk/Enemy03.png" id="111_p2wxp"]
-[ext_resource type="Texture2D" uid="uid://cdpqwh627t60g" path="res://enemy2/enemyAnimations/enemywalk/Enemy04.png" id="112_rf4q7"]
-[ext_resource type="Texture2D" uid="uid://cd8dslddexq5l" path="res://enemy2/enemyAnimations/enemywalk/Enemy05.png" id="113_76koy"]
-[ext_resource type="Texture2D" uid="uid://b5nbsfhb6eo6k" path="res://enemy2/enemyAnimations/enemywalk/Enemy06.png" id="114_ktb27"]
-[ext_resource type="Texture2D" uid="uid://b0xd4hyvgmkn8" path="res://enemy2/enemyAnimations/enemywalk/Enemy07.png" id="115_uil6m"]
+[ext_resource type="Texture2D" uid="uid://depi3gwmkpyq1" path="res://enemy2/enemyAnimations/enemywalk/Enemy02.png" id="110_h7ea0"]
+[ext_resource type="Texture2D" uid="uid://cybieoq3qqxws" path="res://enemy2/enemyAnimations/enemywalk/Enemy03.png" id="111_p2wxp"]
+[ext_resource type="Texture2D" uid="uid://ckjonm6xfosmx" path="res://enemy2/enemyAnimations/enemywalk/Enemy04.png" id="112_rf4q7"]
+[ext_resource type="Texture2D" uid="uid://rgxx4u2xsjps" path="res://enemy2/enemyAnimations/enemywalk/Enemy05.png" id="113_76koy"]
+[ext_resource type="Texture2D" uid="uid://b1s6gcdtuserf" path="res://enemy2/enemyAnimations/enemywalk/Enemy06.png" id="114_ktb27"]
+[ext_resource type="Texture2D" uid="uid://x3wsmj63uknt" path="res://enemy2/enemyAnimations/enemywalk/Enemy07.png" id="115_uil6m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
 size = Vector2(11, 17.75)
@@ -895,6 +895,29 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("110_h7ea0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111_p2wxp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_rf4q7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_76koy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_ktb27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115_uil6m")
+}],
+"loop": true,
+"name": &"enemy2Chase",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("101_ps7y1")
 }],
 "loop": false,
@@ -922,7 +945,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"enemy2Walk",
-"speed": 10.0
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_smcir"]
@@ -1005,7 +1028,7 @@ shape = SubResource("CircleShape2D_3fqo2")
 position = Vector2(2, -5)
 sprite_frames = SubResource("SpriteFrames_6bk4a")
 animation = &"idle"
-frame_progress = 0.531711
+frame_progress = 0.0257651
 
 [node name="Dummy" type="StaticBody2D" parent="."]
 position = Vector2(763, 542)
@@ -1169,13 +1192,15 @@ shape = SubResource("RectangleShape2D_4c8xy")
 
 [node name="Enemy2AnimatedSprite2D" type="AnimatedSprite2D" parent="enemy2"]
 sprite_frames = SubResource("SpriteFrames_jhuvt")
-animation = &"enemy2Attack"
+animation = &"enemy2Chase"
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemy2"]
-position = Vector2(3, 6)
+position = Vector2(3, 4)
 shape = SubResource("RectangleShape2D_smcir")
 
 [node name="hurtbox2" type="Area2D" parent="enemy2"]
+visible = false
 
 [node name="collision" type="CollisionShape2D" parent="enemy2/hurtbox2"]
 position = Vector2(4, 6)
