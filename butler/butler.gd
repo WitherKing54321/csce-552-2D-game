@@ -19,8 +19,13 @@ extends Node2D
 
 var _in_range := false
 var _line_idx := -1   # -1 = not showing
+var anim: AnimatedSprite2D
+
 
 func _ready() -> void:
+	anim = $AnimatedSprite2D
+	$AnimatedSprite2D.flip_h = true
+	anim.play("idle")
 	# Connect once
 	if zone and not zone.body_entered.is_connected(_on_zone_body_entered):
 		zone.body_entered.connect(_on_zone_body_entered)
