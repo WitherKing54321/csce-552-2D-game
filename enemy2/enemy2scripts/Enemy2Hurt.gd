@@ -1,8 +1,8 @@
 extends EnemyState2
 class_name EnemyHurtState2
 
-const KNOCKBACK_X := 20
-const KNOCKBACK_Y := -70
+#const KNOCKBACK_X := 20
+#const KNOCKBACK_Y := -70
 var damage_taken: int = 0
 
 # --- AUDIO: preload hurt sound ---
@@ -39,11 +39,6 @@ func enter(Enemy2):
 	hurt_sfx.pitch_scale = randf_range(0.95, 1.05)
 	hurt_sfx.volume_db = hurt_volume_db   # apply inspector value
 	hurt_sfx.play()
-
-	# Knockback direction: opposite of facing
-	var direction = -1 if Enemy2.anim.flip_h else 1
-	Enemy2.velocity.x = KNOCKBACK_X * direction
-	Enemy2.velocity.y = KNOCKBACK_Y
 
 func physics_update(Enemy2, delta):
 	Enemy2.move_and_slide()

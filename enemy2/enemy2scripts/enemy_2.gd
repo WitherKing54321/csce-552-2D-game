@@ -1,5 +1,6 @@
 extends CharacterBody2D
 class_name Enemy2
+
 var speed := 50
 var attack_range := 20
 var chase_range := 60
@@ -12,10 +13,11 @@ var attack = false
 var directionFacingRight = true
 var dir = 0
 var invincible_timer = 0.0
+var death = false   # <-- keep as a property, not shadowed
 
 func _ready():
 	player = get_tree().get_first_node_in_group("player")
-	anim = $Enemy2AnimatedSprite2D  # <-- use AnimatedSprite2D
+	anim = $Enemy2AnimatedSprite2D
 	change_state(EnemyIdleState2.new())
 	
 	var hurtbox2 = get_node("hurtbox2")
@@ -30,25 +32,34 @@ func _on_hurtbox_2_body_entered(area: Node):
 func take_damage(amount: int):
 	print("Bob takes damage")
 	health -= amount
-	invincible_timer = 0.3  # 1 second of invincibility
-	var hurt_state = EnemyHurtState2.new()
-	hurt_state.damage_taken = amount
-	change_state(hurt_state)
-	if health <= 0:
+	invincible_timer = 0.3  # 0.3s of invincibility
+	flash_white()  # new function
+	if health <= 0 and not death:
+		death = true   # <-- fixed (no "var")
 		change_state(EnemyDeathState2.new())
 
 func _physics_process(delta):
 	invincible_timer -= delta  # Countdown invincibility timer
+
 	if state:
 		state.physics_update(self, delta)
+
 	velocity.y += gravity * delta
 	move_and_slide()
-	# Update facing direction based on X velocity
-	if velocity.x < 0:
-		directionFacingRight = true
-	elif velocity.x > 0:
-		directionFacingRight = false
-	$Enemy2AnimatedSprite2D.flip_h = not directionFacingRight
+
+	# Update facing direction if not in death state
+	if not death:
+		if velocity.x < 0:
+			directionFacingRight = true
+		elif velocity.x > 0:
+			directionFacingRight = false
+		$Enemy2AnimatedSprite2D.flip_h = not directionFacingRight
+
+func flash_white():
+	anim.modulate = Color(2, 2, 2, 1)  # red tint
+	await get_tree().create_timer(0.1).timeout  # wait 0.1s
+	anim.modulate = Color(1, 1, 1)  # back to normal
+
 
 func change_state(new_state: EnemyState2):
 	if state:
