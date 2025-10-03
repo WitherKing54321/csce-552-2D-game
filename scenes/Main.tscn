@@ -1,8 +1,4 @@
-
-
-[gd_scene load_steps=120 format=4 uid="uid://ba0hh5pd8m2bk"]
-
-
+[gd_scene load_steps=216 format=4 uid="uid://ba0hh5pd8m2bk"]
 
 [ext_resource type="Script" uid="uid://bsm7xp1yotyxe" path="res://scenes/main.gd" id="1_nc5fr"]
 [ext_resource type="Script" uid="uid://bposq7mw4gtma" path="res://player/scripts/Player.gd" id="1_rvslj"]
@@ -161,6 +157,38 @@
 [ext_resource type="Texture2D" uid="uid://db8gxqn0jllyj" path="res://enemy2/enemyAnimations/enemy2death/Enenmy2Death15.png" id="154_0ri4p"]
 [ext_resource type="Texture2D" uid="uid://cof1m0x62daij" path="res://enemy2/enemyAnimations/enemy2death/Enenmy2Death16.png" id="155_hjpbf"]
 [ext_resource type="Texture2D" uid="uid://b70m16ai2gyvu" path="res://enemy2/enemyAnimations/enemy2death/Enenmy2Death17.png" id="156_lgim7"]
+[ext_resource type="Script" uid="uid://bo2j40ne0bgus" path="res://Checkpoint/checkpoint.gd" id="158_n76w7"]
+[ext_resource type="Texture2D" uid="uid://cr5ufli8psia3" path="res://Checkpoint/CheckpointActivate/checkpointActivate1.png" id="159_kojk8"]
+[ext_resource type="Texture2D" uid="uid://cwe05r38ftfaq" path="res://Checkpoint/CheckpointActivate/checkpointActivate2.png" id="160_b30n0"]
+[ext_resource type="Texture2D" uid="uid://bpxc0bs6lhp1i" path="res://Checkpoint/CheckpointActivate/checkpointActivate3.png" id="161_x7agi"]
+[ext_resource type="Texture2D" uid="uid://h7k4gvxjvcng" path="res://Checkpoint/CheckpointActivate/checkpointActivate4.png" id="162_3yr8e"]
+[ext_resource type="Texture2D" uid="uid://t03q4158kf13" path="res://Checkpoint/CheckpointActivate/checkpointActivate5.png" id="163_wuutt"]
+[ext_resource type="Texture2D" uid="uid://bsv5361x3nf7v" path="res://Checkpoint/CheckpointActivate/checkpointActivate6.png" id="164_c70pd"]
+[ext_resource type="Texture2D" uid="uid://cyka57d7qq5gi" path="res://Checkpoint/CheckpointActivate/checkpointActivate7.png" id="165_fnvly"]
+[ext_resource type="Texture2D" uid="uid://drk8we3xnoxr3" path="res://Checkpoint/CheckpointActivate/checkpointActivate8.png" id="166_otxiq"]
+[ext_resource type="Texture2D" uid="uid://b8ltce61d1776" path="res://Checkpoint/CheckpointActivate/checkpointActivate9.png" id="167_yg6vm"]
+[ext_resource type="Texture2D" uid="uid://fuld3pi4u0i0" path="res://Checkpoint/CheckpointActivate/checkpointActivate10.png" id="168_oy13s"]
+[ext_resource type="Texture2D" uid="uid://dns4j4au2esuk" path="res://Checkpoint/CheckpointActivate/checkpointActivate11.png" id="169_867n4"]
+[ext_resource type="Texture2D" uid="uid://bytqbel4mtu3e" path="res://Checkpoint/CheckpointActivate/checkpointActivate12.png" id="170_q80su"]
+[ext_resource type="Texture2D" uid="uid://cvey467jkrh3d" path="res://Checkpoint/CheckpointActivate/checkpointActivate13.png" id="171_rb30t"]
+[ext_resource type="Texture2D" uid="uid://dvwi3ci8urljj" path="res://Checkpoint/CheckpointActivate/checkpointActivate14.png" id="172_wc7uh"]
+[ext_resource type="Texture2D" uid="uid://cfsfbpj4sb0f3" path="res://Checkpoint/CheckpointActivateIdle/checkpointActiveIdle1.png" id="173_gqoyk"]
+[ext_resource type="Texture2D" uid="uid://3u1x5aqgu8kw" path="res://Checkpoint/CheckpointActivateIdle/checkpointActiveIdle2.png" id="174_nrki7"]
+[ext_resource type="Texture2D" uid="uid://c7cf64ie1oitq" path="res://Checkpoint/CheckpointActivateIdle/checkpointActiveIdle3.png" id="175_aokfh"]
+[ext_resource type="Texture2D" uid="uid://cb4coi4scehpc" path="res://Checkpoint/CheckpointActivateIdle/checkpointActiveIdle4.png" id="176_mquws"]
+[ext_resource type="Texture2D" uid="uid://yj0e70r5ywph" path="res://Checkpoint/CheckpointActivateIdle/checkpointActiveIdle5.png" id="177_k1cwd"]
+[ext_resource type="Texture2D" uid="uid://bma6pvabt7xsp" path="res://Checkpoint/CheckpointActivateIdle/checkpointActiveIdle6.png" id="178_728h2"]
+[ext_resource type="Texture2D" uid="uid://dqesy3ty0yojd" path="res://Checkpoint/CheckpointIdle/checkpointIdle1.png" id="179_i4kgx"]
+[ext_resource type="Texture2D" uid="uid://dc421asgobop3" path="res://Checkpoint/CheckpointIdle/checkpointIdle2.png" id="180_mkinn"]
+[ext_resource type="Texture2D" uid="uid://8dn4i3gcu7m" path="res://Checkpoint/CheckpointIdle/checkpointIdle3.png" id="181_32ymt"]
+[ext_resource type="Texture2D" uid="uid://dcqffga1i6aiy" path="res://Checkpoint/CheckpointIdle/checkpointIdle4.png" id="182_0jjja"]
+[ext_resource type="Texture2D" uid="uid://5gskucpyx322" path="res://Checkpoint/CheckpointIdle/checkpointIdle5.png" id="183_3hmli"]
+[ext_resource type="Texture2D" uid="uid://cf2m3brh472so" path="res://Checkpoint/CheckpointIdle/checkpointIdle6.png" id="184_cai0v"]
+[ext_resource type="Texture2D" uid="uid://diifb1p12apt4" path="res://Checkpoint/CheckpointIdle/checkpointIdle7.png" id="185_mhb71"]
+[ext_resource type="Texture2D" uid="uid://ijld2hbg7kab" path="res://Checkpoint/CheckpointIdle/checkpointIdle8.png" id="186_5gywo"]
+[ext_resource type="Texture2D" uid="uid://cauwnqd7xpttg" path="res://Checkpoint/CheckpointIdle/checkpointIdle9.png" id="187_0nwg6"]
+[ext_resource type="Texture2D" uid="uid://dcdgqlsbfutr4" path="res://Checkpoint/CheckpointIdle/checkpointIdle10.png" id="188_dabxb"]
+[ext_resource type="Texture2D" uid="uid://dracai72253a4" path="res://Checkpoint/CheckpointIdle/checkpointIdle11.png" id="189_0fbks"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
 size = Vector2(11, 17.75)
@@ -1096,6 +1124,120 @@ size = Vector2(11, 38)
 radius = 9.0
 height = 36.0
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_xt2jj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("159_kojk8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("160_b30n0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("161_x7agi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("162_3yr8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("163_wuutt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("164_c70pd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("165_fnvly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("166_otxiq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("167_yg6vm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("168_oy13s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("169_867n4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("170_q80su")
+}, {
+"duration": 1.0,
+"texture": ExtResource("171_rb30t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("172_wc7uh")
+}],
+"loop": false,
+"name": &"Activate",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("173_gqoyk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("174_nrki7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("175_aokfh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("176_mquws")
+}, {
+"duration": 1.0,
+"texture": ExtResource("177_k1cwd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("178_728h2")
+}],
+"loop": true,
+"name": &"ActivateIdle",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("179_i4kgx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("180_mkinn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("181_32ymt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("182_0jjja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("183_3hmli")
+}, {
+"duration": 1.0,
+"texture": ExtResource("184_cai0v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("185_mhb71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("186_5gywo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("187_0nwg6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("188_dabxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("189_0fbks")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_djm7y"]
+size = Vector2(74, 42)
+
 [node name="Main" type="Node2D"]
 script = ExtResource("1_nc5fr")
 pause_menu_path = NodePath("CanvasLayer2/PauseMenu")
@@ -1279,6 +1421,7 @@ text = "Quit"
 [node name="GameOverLayer" type="CanvasLayer" parent="."]
 process_mode = 3
 layer = 100
+visible = false
 script = ExtResource("99_84vju")
 
 [node name="Control" type="Control" parent="GameOverLayer"]
@@ -1402,6 +1545,26 @@ shape = SubResource("RectangleShape2D_smcir")
 [node name="collision" type="CollisionShape2D" parent="enemy2/hurtbox2"]
 position = Vector2(5, 5)
 shape = SubResource("CapsuleShape2D_2eo8w")
+
+[node name="Checkpoint" type="Area2D" parent="."]
+position = Vector2(193, 159)
+script = ExtResource("158_n76w7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Checkpoint"]
+sprite_frames = SubResource("SpriteFrames_xt2jj")
+animation = &"Activate"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint"]
+position = Vector2(-1, -9)
+shape = SubResource("RectangleShape2D_djm7y")
+
+[node name="InteractionPrompt" type="Label" parent="Checkpoint"]
+offset_left = -43.0
+offset_top = -23.0
+offset_right = 46.0
+offset_bottom = -11.0
+theme_override_font_sizes/font_size = 8
+text = "Press Enter To Activate"
 
 [connection signal="body_entered" from="Player/spike_detection" to="Player" method="_on_spike_detection_body_entered"]
 [connection signal="body_entered" from="Butler/TalkZone" to="." method="_on_talk_zone_body_entered"]
