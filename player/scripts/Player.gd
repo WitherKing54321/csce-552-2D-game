@@ -1,26 +1,41 @@
 extends CharacterBody2D
 
-# Movement constants
+# ------------------ Movement constants ------------------
 const SPEED := 150.0
 const JUMP_VELOCITY := -300.0
 const DOUBLE_JUMP_VELOCITY := -400.0
 const GRAVITY := 1500.0
 
-# State & combat
+# ------------------ State & combat ------------------
 var current_state: PlayerState
 var has_double_jumped := false
 var facing_dir := -1
 var max_health := 100
 var health := 100
 
-# Death tracking
+# ------------------ Death tracking ------------------
 var deathActive := 0
 var _dead := false   # prevents double trigger
 
-@onready var anim = $AnimatedSprite2D
+@onready var anim: AnimatedSprite2D = $AnimatedSprite2D
+
+# ======================================================
+# ===============  CHECKPOINT SUPPORT  =================
+# Called by the Game autoload after a scene reload to cleanly
+# restore the player’s state at the checkpoint.
+func reset_for_respawn() -> void:
+	_dead = false
+	deathActive = 0
+	has_double_jumped = false
+	health = max_health
+	update_health_bar()
+	change_state(IdleState.new())
+	velocity = Vector2.ZERO
+	# Optional: play a spawn/idle animation
+	# anim.play("idle")
+# ======================================================
 
 # ------------------ Health / UI ------------------
-
 func update_health_bar():
 	var bar = get_node("/root/Main/CanvasLayer/Control/TextureProgressBar")
 	bar.max_value = max_health
@@ -35,7 +50,6 @@ func take_damage(amount):
 	update_health_bar()
 
 # ------------------ Death flow ------------------
-
 func die():
 	if _dead:
 		return
@@ -49,12 +63,9 @@ func die():
 	# small frame to ensure the state/anim starts
 	await get_tree().process_frame
 
-	# >>> wait 3 seconds BEFORE pausing or showing the menu <<<
+	# wait a bit, then show the Game Over
 	await get_tree().create_timer(2.0, false).timeout
-
-	# now show the Game Over (this will pause inside the layer)
 	_show_game_over()
-
 
 func _show_game_over() -> void:
 	var go = _find_game_over_layer()
@@ -65,18 +76,17 @@ func _show_game_over() -> void:
 		push_warning("[Player] GameOverLayer not found. Check name/path.")
 
 func _find_game_over_layer() -> Node:
-	# 1) Try Unique Name lookup
+	# 1) Unique Name lookup
 	var n := get_tree().current_scene.get_node_or_null("%GameOverLayer")
 	if n: return n
-	# 2) Try absolute path (your root is 'Main' and GO sits directly under it)
+	# 2) Absolute path (root is 'Main')
 	n = get_tree().root.get_node_or_null("Main/GameOverLayer")
 	if n: return n
-	# 3) Try a relative sibling path just in case
+	# 3) Relative fallback
 	n = get_tree().current_scene.get_node_or_null("GameOverLayer")
 	return n
 
 # ------------------ States ------------------
-
 func hurt():
 	change_state(HurtState.new())
 
@@ -87,8 +97,10 @@ func change_state(new_state: PlayerState):
 	current_state.enter(self)
 
 # ------------------ Godot callbacks ------------------
-
 func _ready():
+	# Ensure we're in the 'player' group so the autoload can find us.
+	if not is_in_group("player"):
+		add_to_group("player")
 	change_state(IdleState.new())
 	update_health_bar()
 
@@ -108,7 +120,6 @@ func _physics_process(delta):
 		$AnimatedSprite2D.flip_h = facing_dir > 0
 
 # ------------------ Collisions ------------------
-
 func _on_spike_detection_body_entered(body: Node2D) -> void:
 	if body.is_in_group("hazards"):
 		print("OUCH…spikeys")

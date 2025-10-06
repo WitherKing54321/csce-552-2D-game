@@ -68,11 +68,9 @@ func _on_retry() -> void:
 
 func _on_start_over() -> void:
 	_hide_and_unpause()
-	if Engine.has_singleton("Game"):
-		Game.reload_current_scene()
-	else:
-		var g := get_node_or_null("/root/Game")
-		if g: g.call("reload_current_scene")
+	Game.clear_checkpoint()          # ← forget checkpoint
+	get_tree().reload_current_scene() # ← reload level fresh (enemies reset, player at default spawn)
+
 
 func _on_main_menu() -> void:
 	print("[GameOverLayer] Returning to Main Menu…")

@@ -1,39 +1,75 @@
-# res://autoload/Game.gd
 extends Node
 
-var last_checkpoint_scene_path: String
-var last_checkpoint_transform: Transform2D
-var has_checkpoint := false
+# ---- Checkpoint data ----
+var has_checkpoint: bool = false
+var checkpoint_scene_path: String = ""
+var checkpoint_position: Vector2 = Vector2.ZERO
 
-func set_checkpoint(node: Node2D) -> void:
-	if get_tree().current_scene:
-		last_checkpoint_scene_path = get_tree().current_scene.scene_file_path
+# ---- Resume gating (only warp when this is true) ----
+var resume_from_checkpoint: bool = false
+
+# Save a checkpoint (call from Checkpoint.gd on activate)
+func set_checkpoint(scene_path: String, position: Vector2) -> void:
+	checkpoint_scene_path = scene_path
+	checkpoint_position = position
 	has_checkpoint = true
-	last_checkpoint_transform = node.global_transform
+	print("[Game] Checkpoint saved at ", checkpoint_position, " in ", scene_path)
 
-func reload_current_scene() -> void:
-	var path := get_tree().current_scene.scene_file_path
-	_unpause()
-	get_tree().change_scene_to_file(path)
+# Clear any saved checkpoint and disable resume
+func clear_checkpoint() -> void:
+	has_checkpoint = false
+	checkpoint_scene_path = ""
+	checkpoint_position = Vector2.ZERO
+	resume_from_checkpoint = false
+	print("[Game] Checkpoint cleared")
 
-func respawn_at_checkpoint() -> void:
+# Reload current level; if a checkpoint exists, mark that we should warp after reload
+func respawn() -> void:
+	if has_checkpoint:
+		resume_from_checkpoint = true
+	get_tree().reload_current_scene()
+
+# Optional: jump to the checkpoint scene and resume from there
+func continue_from_checkpoint() -> void:
 	if not has_checkpoint:
-		reload_current_scene()
+		print("[Game] No checkpoint to continue from")
 		return
-	_unpause()
-	get_tree().change_scene_to_file(last_checkpoint_scene_path)
-	await get_tree().process_frame
-	var player := get_tree().current_scene.get_node_or_null("%Player")
-	if player and player is Node2D:
-		player.global_transform = last_checkpoint_transform
+	resume_from_checkpoint = true
+	var curr := get_tree().current_scene
+	if curr and curr.scene_file_path == checkpoint_scene_path:
+		get_tree().reload_current_scene()
+	else:
+		get_tree().change_scene_to_file(checkpoint_scene_path)
 
-func go_to_title(title_scene_path: String) -> void:
-	_unpause()
-	get_tree().change_scene_to_file(title_scene_path)
+# Call this from your level root's _ready(): Game.on_scene_ready(self)
+func on_scene_ready(root: Node) -> void:
+	if not has_checkpoint or not resume_from_checkpoint:
+		return
+	if root.scene_file_path != checkpoint_scene_path:
+		# We landed in a different scene than where the checkpoint was saved—don't warp.
+		resume_from_checkpoint = false
+		return
 
-func _pause() -> void:
-	get_tree().paused = true
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	var players := get_tree().get_nodes_in_group("player")
+	if players.is_empty():
+		print("[Game] No node in 'player' group to move to checkpoint.")
+		resume_from_checkpoint = false
+		return
 
-func _unpause() -> void:
-	get_tree().paused = false
+	var p := players[0]
+	if p is Node2D:
+		(p as Node2D).global_position = checkpoint_position
+		if p.has_method("reset_for_respawn"):
+			p.reset_for_respawn()
+		print("[Game] Player moved to checkpoint: ", checkpoint_position)
+	else:
+		print("[Game] Player is not a Node2D; cannot set position.")
+
+	# Consume the resume so a fresh Start won’t warp
+	resume_from_checkpoint = false
+
+# --- Pause helpers & compatibility shims (for older UI code) ---
+func _pause() -> void: get_tree().paused = true
+func _unpause() -> void: get_tree().paused = false
+func respawn_at_checkpoint() -> void: respawn()
+func reload_current_scene() -> void: get_tree().reload_current_scene()
