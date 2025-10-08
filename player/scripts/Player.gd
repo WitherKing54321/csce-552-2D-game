@@ -37,7 +37,7 @@ func reset_for_respawn() -> void:
 
 # ------------------ Health / UI ------------------
 func update_health_bar():
-	var bar = get_node("/root/Main/CanvasLayer/Control/TextureProgressBar")
+	var bar = get_node("/root/Main//UIGroup/HealthUI/Control/TextureProgressBar")
 	bar.max_value = max_health
 	bar.value = health
 
@@ -80,7 +80,7 @@ func _find_game_over_layer() -> Node:
 	var n := get_tree().current_scene.get_node_or_null("%GameOverLayer")
 	if n: return n
 	# 2) Absolute path (root is 'Main')
-	n = get_tree().root.get_node_or_null("Main/GameOverLayer")
+	n = get_tree().root.get_node_or_null("Main/UIGroup/MenuUIGroup/GameOverLayer")
 	if n: return n
 	# 3) Relative fallback
 	n = get_tree().current_scene.get_node_or_null("GameOverLayer")

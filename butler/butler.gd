@@ -15,9 +15,9 @@ extends Node2D
 @onready var zone: Area2D = $TalkZone
 
 # ABSOLUTE paths — change names if your scene differs
-@onready var dialog_panel: CanvasItem   = $"/root/Main/DialogUI/DialogPanel"
-@onready var dialog_text: RichTextLabel = $"/root/Main/DialogUI/DialogPanel/Text"
-@onready var dialog_face: TextureRect   = $"/root/Main/DialogUI/DialogPanel/TextureRect"
+@onready var dialog_panel: CanvasItem   = $"/root/Main/UIGroup/DialogUI/DialogPanel"
+@onready var dialog_text: RichTextLabel = $"/root/Main/UIGroup/DialogUI/DialogPanel/Text"
+@onready var dialog_face: TextureRect   = $"/root/Main/UIGroup/DialogUI/DialogPanel/TextureRect"
 
 var _in_range := false
 var _line_idx := -1   # -1 = not showing
