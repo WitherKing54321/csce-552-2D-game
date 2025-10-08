@@ -2,8 +2,8 @@ extends CharacterBody2D
 class_name Enemy3
 
 var speed := 70
-var attack_range := 40
-var chase_range := 70
+var attack_range := 70
+var chase_range := 100
 var gravity := 800
 var health = 100
 var player: Node = null
