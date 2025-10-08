@@ -1731,7 +1731,7 @@ shape = SubResource("RectangleShape2D_4c8xy")
 [node name="Enemy2AnimatedSprite2D" type="AnimatedSprite2D" parent="enemy2"]
 position = Vector2(8, -1)
 sprite_frames = SubResource("SpriteFrames_jhuvt")
-animation = &"enemy2Death"
+animation = &"enemy2Walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemy2"]
 position = Vector2(5.5, 4)

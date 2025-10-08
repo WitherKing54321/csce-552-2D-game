@@ -15,6 +15,9 @@ var dir = 0
 var invincible_timer = 0.0
 var death = false   # <-- keep as a property, not shadowed
 
+var HURT2_STREAM: AudioStream = preload("res://Sounds/ZweihanderHurt.wav")
+var hurt2_sfx: AudioStreamPlayer2D
+
 func _ready():
 	player = get_tree().get_first_node_in_group("player")
 	anim = $Enemy2AnimatedSprite2D
@@ -37,6 +40,13 @@ func take_damage(amount: int):
 	if health <= 0 and not death:
 		death = true   # <-- fixed (no "var")
 		change_state(EnemyDeathState2.new())
+	if hurt2_sfx == null:
+		hurt2_sfx = AudioStreamPlayer2D.new()
+		hurt2_sfx.stream = HURT2_STREAM
+		add_child(hurt2_sfx)
+	hurt2_sfx.pitch_scale = randf_range(0.95, 1.05)
+	hurt2_sfx.volume_db = 0.0   # apply inspector value
+	hurt2_sfx.play()
 
 func _physics_process(delta):
 	invincible_timer -= delta  # Countdown invincibility timer

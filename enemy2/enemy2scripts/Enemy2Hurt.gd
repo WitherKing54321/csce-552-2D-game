@@ -6,8 +6,8 @@ class_name EnemyHurtState2
 var damage_taken: int = 0
 
 # --- AUDIO: preload hurt sound ---
-var HURT_STREAM: AudioStream = preload("res://Sounds/NuckHurt.wav")
-var hurt_sfx: AudioStreamPlayer2D
+var HURT2_STREAM: AudioStream = preload("res://Sounds/ZweihanderHurt.wav")
+var hurt2_sfx: AudioStreamPlayer2D
 
 # --- exported volume (editable in Inspector) ---
 @export var hurt_volume_db: float = +5.0   # 0 = normal, negative = quieter, positive = louder
@@ -32,13 +32,13 @@ func enter(Enemy2):
 	Enemy2.anim.play("enemy2Hurt")
 
 	# Play hurt sound
-	if hurt_sfx == null:
-		hurt_sfx = AudioStreamPlayer2D.new()
-		hurt_sfx.stream = HURT_STREAM
-		Enemy2.add_child(hurt_sfx)
-	hurt_sfx.pitch_scale = randf_range(0.95, 1.05)
-	hurt_sfx.volume_db = hurt_volume_db   # apply inspector value
-	hurt_sfx.play()
+	if hurt2_sfx == null:
+		hurt2_sfx = AudioStreamPlayer2D.new()
+		hurt2_sfx.stream = HURT2_STREAM
+		Enemy2.add_child(hurt2_sfx)
+	hurt2_sfx.pitch_scale = randf_range(0.95, 1.05)
+	hurt2_sfx.volume_db = hurt_volume_db   # apply inspector value
+	hurt2_sfx.play()
 
 func physics_update(Enemy2, delta):
 	Enemy2.move_and_slide()

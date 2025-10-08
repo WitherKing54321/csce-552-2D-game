@@ -5,8 +5,8 @@ var timer = 2.0
 var knockback_timer = 0.3   # time in seconds to let knockback happen
 const KNOCKBACK_X := 50   # bigger for visible effect (adjust as needed)
 const KNOCKBACK_Y := -60
-var DEATH_STREAM: AudioStream = preload("res://Sounds/NuckDeath.wav")
-var death_sfx: AudioStreamPlayer2D
+var DEATH2_STREAM: AudioStream = preload("res://Sounds/ZweihanderDeath.wav")
+var death2_sfx: AudioStreamPlayer2D
 
 func enter(Enemy2):
 	var direction = -1 if Enemy2.anim.flip_h else 1
@@ -21,11 +21,11 @@ func enter(Enemy2):
 
 	Enemy2.anim.play("enemy2Death")
 
-	if death_sfx == null:
-		death_sfx = AudioStreamPlayer2D.new()
-		death_sfx.stream = DEATH_STREAM
-		Enemy2.add_child(death_sfx)
-	death_sfx.play()
+	if death2_sfx == null:
+		death2_sfx = AudioStreamPlayer2D.new()
+		death2_sfx.stream = DEATH2_STREAM
+		Enemy2.add_child(death2_sfx)
+	death2_sfx.play()
 
 
 func physics_update(Enemy2, delta):

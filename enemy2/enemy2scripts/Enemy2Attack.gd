@@ -7,9 +7,8 @@ var hit_start := 1.2  # seconds when the swing begins
 var hit_end := 1.4    # seconds when the swing ends
 
 # --- AUDIO ---
-var ATTACK_STREAM: AudioStream = preload("res://Sounds/NuckAttack.wav")
-var attack_sfx: AudioStreamPlayer2D
-var attack_volume_db: float = +1.0   # tweak in Inspector
+var ATTACK2_STREAM: AudioStream = preload("res://Sounds/ZweihanderAttack.wav")
+var attack2_sfx: AudioStreamPlayer2D
 
 var timer := 0.0
 var has_hit_player := false
@@ -27,13 +26,13 @@ func enter(Enemy2):
 	Enemy2.anim.play("enemy2Attack")
 
 	# --- Play attack sound once ---
-	if attack_sfx == null:
-		attack_sfx = AudioStreamPlayer2D.new()
-		attack_sfx.stream = ATTACK_STREAM
-		Enemy2.add_child(attack_sfx)
-	attack_sfx.volume_db = attack_volume_db
-	attack_sfx.pitch_scale = randf_range(0.95, 1.05)  # small variation
-	attack_sfx.play()
+	if attack2_sfx == null:
+		attack2_sfx = AudioStreamPlayer2D.new()
+		attack2_sfx.stream = ATTACK2_STREAM
+		Enemy2.add_child(attack2_sfx)
+	attack2_sfx.volume_db = 0.0
+	attack2_sfx.pitch_scale = randf_range(0.95, 1.05)  # small variation
+	attack2_sfx.play()
 
 func physics_update(Enemy2, delta):
 	Enemy2.dir = (Enemy2.player.position - Enemy2.position).normalized()
