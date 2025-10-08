@@ -4,8 +4,10 @@ class_name FightState
 var facing_dir := 1
 var attack_timer := 0.0
 
-var ATTACK_SOUND: AudioStream = preload("res://Sounds/8-bit-Jump.wav")
+var ATTACK_SOUND: AudioStream = preload("res://Sounds/PlayerAttack.wav")
 var attack_sfx: AudioStreamPlayer
+
+@export var attack_volume_db: float = -12.0  # 0 normal, negative quieter, positive louder
 
 func enter(player):
 	# make sure we have an AudioStreamPlayer set up
@@ -14,18 +16,20 @@ func enter(player):
 		attack_sfx.stream = ATTACK_SOUND
 		player.add_child(attack_sfx)
 
-	var attack_area = player.get_node("AttackArea") # get attack collision shape
+	var attack_area = player.get_node("AttackArea")
 	player.get_node("AttackArea/PlayerHurtBox").disabled = false
 	attack_timer = 0.3
 	player.anim.play("fight1")
 
 	# play attack sound
+	attack_sfx.stop()
+	attack_sfx.volume_db = attack_volume_db
 	attack_sfx.play()
 
 func physics_update(player, delta):
 	if player.facing_dir < 0:
 		player.get_node("AttackArea").set_scale(Vector2(1, 1))
-	elif player.facing_dir > 0: 
+	elif player.facing_dir > 0:
 		player.get_node("AttackArea").set_scale(Vector2(-1, 1))
 	
 	var input_dir = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
@@ -41,6 +45,8 @@ func physics_update(player, delta):
 			player.anim.play("fight1")
 
 			# play attack sound again for chained attack
+			attack_sfx.stop()
+			attack_sfx.volume_db = attack_volume_db
 			attack_sfx.play()
 		else:
 			player.get_node("AttackArea/PlayerHurtBox").disabled = true
@@ -54,3 +60,9 @@ func _return_to_default(player):
 			player.change_state(IdleState.new())
 	else:
 		player.change_state(JumpState.new())
+
+# Optional helper to change volume at runtime (eg from an options menu)
+func set_attack_volume_db(db: float) -> void:
+	attack_volume_db = db
+	if attack_sfx:
+		attack_sfx.volume_db = db

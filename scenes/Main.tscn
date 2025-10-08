@@ -190,13 +190,13 @@
 [ext_resource type="Texture2D" uid="uid://dcdgqlsbfutr4" path="res://Checkpoint/CheckpointIdle/checkpointIdle10.png" id="188_dabxb"]
 [ext_resource type="Texture2D" uid="uid://dracai72253a4" path="res://Checkpoint/CheckpointIdle/checkpointIdle11.png" id="189_0fbks"]
 [ext_resource type="Script" uid="uid://hljkfdlbe3cq" path="res://enemy3/Enemy3Scripts/enemy_3.gd" id="190_5d040"]
-[ext_resource type="Texture2D" uid="uid://d4cbfylmu0thw" path="res://enemy3/enemy3Animations/attack/enemy3attack3.png" id="191_envfe"]
-[ext_resource type="Texture2D" uid="uid://di8nww72h4i2a" path="res://enemy3/enemy3Animations/attack/enemy3attack4.png" id="192_4sdmg"]
-[ext_resource type="Texture2D" uid="uid://bm1ojrcymxfwh" path="res://enemy3/enemy3Animations/attack/enemy3attack5.png" id="193_otest"]
-[ext_resource type="Texture2D" uid="uid://by45hh70gwshi" path="res://enemy3/enemy3Animations/attack/enemy3attack6.png" id="194_hyd5t"]
-[ext_resource type="Texture2D" uid="uid://7ivdle4dp7uo" path="res://enemy3/enemy3Animations/attack/enemy3attack7.png" id="195_nf24p"]
-[ext_resource type="Texture2D" uid="uid://ty8amkted2un" path="res://enemy3/enemy3Animations/attack/enemy3attack8.png" id="196_0vh1g"]
-[ext_resource type="Texture2D" uid="uid://cccnrn30f046k" path="res://enemy3/enemy3Animations/attack/enemy3attack9.png" id="197_edp2v"]
+[ext_resource type="Texture2D" uid="uid://d4cbfylmu0thw" path="res://enemy3/enemy3Animations/attack/enemy3Attack3.png" id="191_envfe"]
+[ext_resource type="Texture2D" uid="uid://di8nww72h4i2a" path="res://enemy3/enemy3Animations/attack/enemy3Attack4.png" id="192_4sdmg"]
+[ext_resource type="Texture2D" uid="uid://bm1ojrcymxfwh" path="res://enemy3/enemy3Animations/attack/enemy3Attack5.png" id="193_otest"]
+[ext_resource type="Texture2D" uid="uid://by45hh70gwshi" path="res://enemy3/enemy3Animations/attack/enemy3Attack6.png" id="194_hyd5t"]
+[ext_resource type="Texture2D" uid="uid://7ivdle4dp7uo" path="res://enemy3/enemy3Animations/attack/enemy3Attack7.png" id="195_nf24p"]
+[ext_resource type="Texture2D" uid="uid://ty8amkted2un" path="res://enemy3/enemy3Animations/attack/enemy3Attack8.png" id="196_0vh1g"]
+[ext_resource type="Texture2D" uid="uid://cccnrn30f046k" path="res://enemy3/enemy3Animations/attack/enemy3Attack9.png" id="197_edp2v"]
 [ext_resource type="Texture2D" uid="uid://cg7mspeiaru6v" path="res://enemy3/enemy3Animations/attack/enemy3attack10.png" id="198_1xo7d"]
 [ext_resource type="Texture2D" uid="uid://cfgm6qlxh8gta" path="res://enemy3/enemy3Animations/attack/enemy3attack11.png" id="199_5r0v3"]
 [ext_resource type="Texture2D" uid="uid://ce374l11fppbj" path="res://enemy3/enemy3Animations/chase/Enemy3Chase1.png" id="200_hyd5t"]
@@ -1792,7 +1792,7 @@ theme_override_font_sizes/font_size = 8
 text = "Press Enter To Activate"
 
 [node name="enemy3" type="CharacterBody2D" parent="."]
-position = Vector2(-38, 114)
+position = Vector2(542, 227)
 script = ExtResource("190_5d040")
 
 [node name="collision" type="CollisionShape2D" parent="enemy3"]
