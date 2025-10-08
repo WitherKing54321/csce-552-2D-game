@@ -1,7 +1,7 @@
 extends Camera2D
 
 @export var default_offset := Vector2.ZERO
-@export var down_offset := Vector2(0, 50)  # how far down camera moves
+@export var down_offset := Vector2(0, 100)  # how far down camera moves
 @export var speed := 5.0
 
 func _ready():

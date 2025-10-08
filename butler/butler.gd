@@ -3,8 +3,10 @@ extends Node2D
 # Lines of dialog (Space to advance)
 @export var lines: Array[String] = [
 	"Hello from the Butler!",
-	"Press Space to see the next line.",
-	"When you finish, the box will hide."
+	"Welcome to the Dungeon",
+	"Use WASD to move or the arrows keys",
+	"Press X to attack and Z to glide",
+	"Or '.' or / respectively"
 ]
 
 # Optional: set this on the Butler (or leave empty if the TextureRect already has a texture)
