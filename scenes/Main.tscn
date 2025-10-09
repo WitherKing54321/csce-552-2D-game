@@ -1484,6 +1484,7 @@ process_callback = 0
 script = ExtResource("3_0bbpv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+z_index = 1
 position = Vector2(-0.385544, 1.37714)
 sprite_frames = SubResource("SpriteFrames_bjd11")
 animation = &"idle"
@@ -1577,19 +1578,61 @@ shape = SubResource("RectangleShape2D_dyyw8")
 position = Vector2(-1, 1)
 texture = ExtResource("52_in2eo")
 
-[node name="Checkpoint" type="Area2D" parent="."]
-position = Vector2(193, 159)
+[node name="CheckpointGroup" type="Node" parent="."]
+
+[node name="Checkpoint1" type="Area2D" parent="CheckpointGroup"]
+position = Vector2(1058, 951)
 script = ExtResource("158_n76w7")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Checkpoint"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CheckpointGroup/Checkpoint1"]
 sprite_frames = SubResource("SpriteFrames_xt2jj")
 animation = &"Activate"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckpointGroup/Checkpoint1"]
 position = Vector2(-1, -9)
 shape = SubResource("RectangleShape2D_djm7y")
 
-[node name="InteractionPrompt" type="Label" parent="Checkpoint"]
+[node name="InteractionPrompt" type="Label" parent="CheckpointGroup/Checkpoint1"]
+offset_left = -43.0
+offset_top = -23.0
+offset_right = 46.0
+offset_bottom = -11.0
+theme_override_font_sizes/font_size = 8
+text = "Press Enter To Activate"
+
+[node name="Checkpoint2" type="Area2D" parent="CheckpointGroup"]
+position = Vector2(-1417, 999)
+script = ExtResource("158_n76w7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CheckpointGroup/Checkpoint2"]
+sprite_frames = SubResource("SpriteFrames_xt2jj")
+animation = &"Activate"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckpointGroup/Checkpoint2"]
+position = Vector2(-1, -9)
+shape = SubResource("RectangleShape2D_djm7y")
+
+[node name="InteractionPrompt" type="Label" parent="CheckpointGroup/Checkpoint2"]
+offset_left = -43.0
+offset_top = -23.0
+offset_right = 46.0
+offset_bottom = -11.0
+theme_override_font_sizes/font_size = 8
+text = "Press Enter To Activate"
+
+[node name="Checkpoint3" type="Area2D" parent="CheckpointGroup"]
+position = Vector2(193, 159)
+script = ExtResource("158_n76w7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CheckpointGroup/Checkpoint3"]
+sprite_frames = SubResource("SpriteFrames_xt2jj")
+animation = &"Activate"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckpointGroup/Checkpoint3"]
+position = Vector2(-1, -9)
+shape = SubResource("RectangleShape2D_djm7y")
+
+[node name="InteractionPrompt" type="Label" parent="CheckpointGroup/Checkpoint3"]
 offset_left = -43.0
 offset_top = -23.0
 offset_right = 46.0
@@ -1677,7 +1720,7 @@ position = Vector2(5, 5)
 shape = SubResource("CapsuleShape2D_2eo8w")
 
 [node name="Zwei4" type="CharacterBody2D" parent="Enemies/ZweiGroup"]
-position = Vector2(-1219, 1036)
+position = Vector2(-820, 974)
 script = ExtResource("100_84vju")
 
 [node name="AttackArea" type="Area2D" parent="Enemies/ZweiGroup/Zwei4"]
@@ -1782,7 +1825,7 @@ position = Vector2(-2, 2)
 shape = SubResource("RectangleShape2D_ln1sq")
 
 [node name="DashGuy4" type="CharacterBody2D" parent="Enemies/DashGroup"]
-position = Vector2(-1282, 1049)
+position = Vector2(-1057, 980)
 script = ExtResource("190_5d040")
 
 [node name="collision" type="CollisionShape2D" parent="Enemies/DashGroup/DashGuy4"]
