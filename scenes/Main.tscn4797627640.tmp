@@ -1,4 +1,4 @@
-[gd_scene load_steps=379 format=4 uid="uid://ba0hh5pd8m2bk"]
+[gd_scene load_steps=297 format=4 uid="uid://ba0hh5pd8m2bk"]
 
 [ext_resource type="Script" uid="uid://bsm7xp1yotyxe" path="res://scenes/main.gd" id="1_nc5fr"]
 [ext_resource type="Script" uid="uid://bposq7mw4gtma" path="res://player/scripts/Player.gd" id="1_rvslj"]
@@ -262,87 +262,6 @@
 [ext_resource type="Texture2D" uid="uid://clwkynl3kwir5" path="res://TheCrucible/crucibleAnimations/bossshot/Bossblast13.png" id="251_ln1sq"]
 [ext_resource type="Texture2D" uid="uid://6l2pgflg5m6b" path="res://TheCrucible/crucibleAnimations/bossshot/Bossblast14.png" id="252_1dhxd"]
 [ext_resource type="Texture2D" uid="uid://bninfu0r0pt5n" path="res://TheCrucible/crucibleAnimations/bossshot/Bossblast15.png" id="253_3vu54"]
-[ext_resource type="Texture2D" uid="uid://k7etfhpu1vpo" path="res://TheCrucible/crucibleAnimations/bossjump/bossjump1.png" id="254_q285r"]
-[ext_resource type="Texture2D" uid="uid://dcovv6pd76g5j" path="res://TheCrucible/crucibleAnimations/bossjump/bossjump2.png" id="255_6f7ce"]
-[ext_resource type="Texture2D" uid="uid://cvmmtx5nfbtjh" path="res://TheCrucible/crucibleAnimations/bossjump/bossjump3.png" id="256_ub7ot"]
-[ext_resource type="Texture2D" uid="uid://cnp4mqjfiu4nm" path="res://TheCrucible/crucibleAnimations/bossjump/bossjump4.png" id="257_a0obj"]
-[ext_resource type="Texture2D" uid="uid://b3veq1ks0mgmm" path="res://TheCrucible/crucibleAnimations/bossjump/bossjump5.png" id="258_4qy4n"]
-[ext_resource type="Texture2D" uid="uid://64hrip8nw7sg" path="res://TheCrucible/crucibleAnimations/bossjump/bossjump6.png" id="259_a65tq"]
-[ext_resource type="Texture2D" uid="uid://bpb4i7y3b7b11" path="res://TheCrucible/crucibleAnimations/bossjump/bossjump7.png" id="260_joxh1"]
-[ext_resource type="Texture2D" uid="uid://bp76by6fr8l1c" path="res://TheCrucible/crucibleAnimations/bossjump/bossjump8.png" id="261_2gnaf"]
-[ext_resource type="Texture2D" uid="uid://duprpjg2ebcg6" path="res://TheCrucible/crucibleAnimations/bossjump/bossjump9.png" id="262_ayea4"]
-[ext_resource type="Texture2D" uid="uid://b8o2omngj1oos" path="res://TheCrucible/crucibleAnimations/bossjump/bossjump10.png" id="263_7c02d"]
-[ext_resource type="Texture2D" uid="uid://b5p1idarm8alo" path="res://TheCrucible/crucibleAnimations/bossjump/bossjump11.png" id="264_xh7rl"]
-[ext_resource type="Texture2D" uid="uid://bh2bvmqn13e2g" path="res://TheCrucible/crucibleAnimations/bossjump/bossjump12.png" id="265_cp2ao"]
-[ext_resource type="Texture2D" uid="uid://c7shscoows0yi" path="res://TheCrucible/crucibleAnimations/bossjump/bossjump13.png" id="266_e0bat"]
-[ext_resource type="Texture2D" uid="uid://bo8hffj3dm765" path="res://TheCrucible/crucibleAnimations/bossjump/bossjump14.png" id="267_ph1im"]
-[ext_resource type="Texture2D" uid="uid://8bc6kse0d4hk" path="res://TheCrucible/crucibleAnimations/bossjump/bossjump15.png" id="268_7qgsf"]
-[ext_resource type="Texture2D" uid="uid://c6oil01t0rqf8" path="res://TheCrucible/crucibleAnimations/bossjump/bossjump16.png" id="269_dqcp5"]
-[ext_resource type="Texture2D" uid="uid://b05sjow3fk4bb" path="res://TheCrucible/crucibleAnimations/bossjump/bossjump17.png" id="270_0fxg1"]
-[ext_resource type="Texture2D" uid="uid://bsp2qikgpt2vd" path="res://TheCrucible/crucibleAnimations/bossjump/bossjump18.png" id="271_r0yxi"]
-[ext_resource type="Texture2D" uid="uid://c4flvaoqb2bov" path="res://TheCrucible/crucibleAnimations/bossjump/bossjump19.png" id="272_w5bfd"]
-[ext_resource type="Texture2D" uid="uid://dwjkwvf3vt37i" path="res://TheCrucible/crucibleAnimations/bossjump/bossjump20.png" id="273_jouxp"]
-[ext_resource type="Texture2D" uid="uid://dltw2xsrxbl7" path="res://TheCrucible/crucibleAnimations/bossjump/bossjump21.png" id="274_nt0jg"]
-[ext_resource type="Texture2D" uid="uid://csy6r3rrnjgsx" path="res://TheCrucible/crucibleAnimations/bossjump/bossjump22.png" id="275_j70sp"]
-[ext_resource type="Texture2D" uid="uid://blwkgtw8tcbd0" path="res://TheCrucible/crucibleAnimations/bossjump/bossjump23.png" id="276_h0t75"]
-[ext_resource type="Texture2D" uid="uid://dfsblpbjnw5go" path="res://TheCrucible/crucibleAnimations/bossjump/bossjump24.png" id="277_1v2hd"]
-[ext_resource type="Texture2D" uid="uid://dyt7a7kh5bif8" path="res://TheCrucible/crucibleAnimations/bossjump/bossjump25.png" id="278_avhks"]
-[ext_resource type="Texture2D" uid="uid://cf01iugmgkreb" path="res://TheCrucible/crucibleAnimations/bossjump/bossjump26.png" id="279_jn17p"]
-[ext_resource type="Texture2D" uid="uid://bgmt16xhu442e" path="res://TheCrucible/crucibleAnimations/bossjump/bossjump27.png" id="280_p6rc4"]
-[ext_resource type="Texture2D" uid="uid://c63swdtx4c6cp" path="res://TheCrucible/crucibleAnimations/bossjump/bossjump28.png" id="281_exbix"]
-[ext_resource type="Texture2D" uid="uid://dpvlm44wh7ryj" path="res://TheCrucible/crucibleAnimations/bossjump/bossjump29.png" id="282_rgee8"]
-[ext_resource type="Texture2D" uid="uid://cwqktfjdx81jg" path="res://TheCrucible/crucibleAnimations/bossjump/bossjump30.png" id="283_6xar0"]
-[ext_resource type="Texture2D" uid="uid://bdpjhtn8xxjeo" path="res://TheCrucible/crucibleAnimations/bossjump/bossjump31.png" id="284_ucd8w"]
-[ext_resource type="Texture2D" uid="uid://s6s6n6n61qw" path="res://TheCrucible/crucibleAnimations/bosscharge/bosscrouch1.png" id="285_6xar0"]
-[ext_resource type="Texture2D" uid="uid://cn3j3djd375v8" path="res://TheCrucible/crucibleAnimations/bosscharge/bosscrouch2.png" id="286_ucd8w"]
-[ext_resource type="Texture2D" uid="uid://droxd4q4fmm00" path="res://TheCrucible/crucibleAnimations/bosscharge/bosscrouch3.png" id="287_22r11"]
-[ext_resource type="Texture2D" uid="uid://cq5ta2i4ascwd" path="res://TheCrucible/crucibleAnimations/bosscharge/bosscrouch4.png" id="288_l6c1n"]
-[ext_resource type="Texture2D" uid="uid://bxeoykmknlayl" path="res://TheCrucible/crucibleAnimations/bosscharge/bosscrouch5.png" id="289_op3oq"]
-[ext_resource type="Texture2D" uid="uid://do8h2rtnlaywy" path="res://TheCrucible/crucibleAnimations/bosscharge/bosscrouch6.png" id="290_3cxck"]
-[ext_resource type="Texture2D" uid="uid://o0qcn8w4enbe" path="res://TheCrucible/crucibleAnimations/bosscharge/bosscrouch7.png" id="291_cil13"]
-[ext_resource type="Texture2D" uid="uid://dng4glffeismo" path="res://TheCrucible/crucibleAnimations/bosscharge/bosscrouch8.png" id="292_16ypl"]
-[ext_resource type="Texture2D" uid="uid://uho8uxfn1mye" path="res://TheCrucible/crucibleAnimations/bosscharge/bosscrouch9.png" id="293_6svcp"]
-[ext_resource type="Texture2D" uid="uid://buxm8n2tytajb" path="res://TheCrucible/crucibleAnimations/bosscharge/bosscrouch10.png" id="294_ic101"]
-[ext_resource type="Texture2D" uid="uid://cnpieh40b0oh3" path="res://TheCrucible/crucibleAnimations/bosscharge/bosscrouch11.png" id="295_o2eti"]
-[ext_resource type="Texture2D" uid="uid://bmbm8llffyq1h" path="res://TheCrucible/crucibleAnimations/bosscharge/bosscrouch12.png" id="296_iv16s"]
-[ext_resource type="Texture2D" uid="uid://btiybkfrl0l4v" path="res://TheCrucible/crucibleAnimations/bosscharge/bosscrouch13.png" id="297_b5ckt"]
-[ext_resource type="Texture2D" uid="uid://rbjk6cxw35u1" path="res://TheCrucible/crucibleAnimations/bosscharge/bosscrouch14.png" id="298_ntxau"]
-[ext_resource type="Texture2D" uid="uid://cm0u50e14im6l" path="res://TheCrucible/crucibleAnimations/bosscharge/bosscrouch15.png" id="299_yxxyu"]
-[ext_resource type="Texture2D" uid="uid://dtafeb8fordei" path="res://TheCrucible/crucibleAnimations/bosscharge/bosscrouch16.png" id="300_6yov0"]
-[ext_resource type="Texture2D" uid="uid://wyu0xcn07kaq" path="res://TheCrucible/crucibleAnimations/bosscharge/bosscrouch17.png" id="301_ee7dg"]
-[ext_resource type="Texture2D" uid="uid://32ucy8i3v342" path="res://TheCrucible/crucibleAnimations/bosscharge/bosscrouch18.png" id="302_7ne1j"]
-[ext_resource type="Texture2D" uid="uid://cjcgkgimxb23e" path="res://TheCrucible/crucibleAnimations/bosscharge/bosscrouch19.png" id="303_qjq1s"]
-[ext_resource type="Texture2D" uid="uid://d1ppqcnjr8pev" path="res://TheCrucible/crucibleAnimations/bosscharge/bosscrouch20.png" id="304_pct2n"]
-[ext_resource type="Texture2D" uid="uid://dsvaot3sjffrp" path="res://TheCrucible/crucibleAnimations/bosscharge/bosscrouch21.png" id="305_vt3tw"]
-[ext_resource type="Texture2D" uid="uid://bv8ef82v6u5ja" path="res://TheCrucible/crucibleAnimations/bosscharge/bosscrouch22.png" id="306_uqvca"]
-[ext_resource type="Texture2D" uid="uid://bq1jaal2lfwas" path="res://TheCrucible/crucibleAnimations/bosscharge/bosscrouch23.png" id="307_ysb60"]
-[ext_resource type="Texture2D" uid="uid://b3hir6aw7yutt" path="res://TheCrucible/crucibleAnimations/bosscharge/bosscrouch24.png" id="308_i11l1"]
-[ext_resource type="Texture2D" uid="uid://bfqetk4svfrtu" path="res://TheCrucible/crucibleAnimations/bosscharge/bosscrouch25.png" id="309_mlhma"]
-[ext_resource type="Texture2D" uid="uid://crvny3g84uyrt" path="res://TheCrucible/crucibleAnimations/bosscharge/bosscrouch26.png" id="310_wknnf"]
-[ext_resource type="Texture2D" uid="uid://cylk8bnxhw6x0" path="res://TheCrucible/crucibleAnimations/bosscharge/bosscrouch27.png" id="311_1sx34"]
-[ext_resource type="Texture2D" uid="uid://c1hsf3nrf5nsb" path="res://TheCrucible/crucibleAnimations/bosscharge/bosscrouch28.png" id="312_pqi1e"]
-[ext_resource type="Texture2D" uid="uid://7ykwe38t2pd5" path="res://TheCrucible/crucibleAnimations/bosscharge/bosscrouch29.png" id="313_rwbf5"]
-[ext_resource type="Texture2D" uid="uid://4tmbdbooqmhl" path="res://TheCrucible/crucibleAnimations/bossspears/bossspear1.png" id="314_uqvca"]
-[ext_resource type="Texture2D" uid="uid://biaq7j86ywfen" path="res://TheCrucible/crucibleAnimations/bossspears/bossspear2.png" id="315_ysb60"]
-[ext_resource type="Texture2D" uid="uid://siqffali4g5t" path="res://TheCrucible/crucibleAnimations/bossspears/bossspear3.png" id="316_i11l1"]
-[ext_resource type="Texture2D" uid="uid://qe4bwvavuogp" path="res://TheCrucible/crucibleAnimations/bossspears/bossspear4.png" id="317_mlhma"]
-[ext_resource type="Texture2D" uid="uid://n02bgvj7voo8" path="res://TheCrucible/crucibleAnimations/bossspears/bossspear5.png" id="318_wknnf"]
-[ext_resource type="Texture2D" uid="uid://dxj5gdbvss8wc" path="res://TheCrucible/crucibleAnimations/bossspears/bossspear6.png" id="319_1sx34"]
-[ext_resource type="Texture2D" uid="uid://cvff4nps8fpk5" path="res://TheCrucible/crucibleAnimations/bossspears/bossspear7.png" id="320_pqi1e"]
-[ext_resource type="Texture2D" uid="uid://cp0y1hre18ffd" path="res://TheCrucible/crucibleAnimations/bossspears/bossspear8.png" id="321_rwbf5"]
-[ext_resource type="Texture2D" uid="uid://bfhgtlny1rum1" path="res://TheCrucible/crucibleAnimations/bossspears/bossspear9.png" id="322_md6o2"]
-[ext_resource type="Texture2D" uid="uid://0klitlu31caj" path="res://TheCrucible/crucibleAnimations/bossspears/bossspear10.png" id="323_vbq3s"]
-[ext_resource type="Texture2D" uid="uid://dcfvu651qw4mk" path="res://TheCrucible/crucibleAnimations/bossspears/bossspear11.png" id="324_kjvmj"]
-[ext_resource type="Texture2D" uid="uid://coytmvu8u2vj8" path="res://TheCrucible/crucibleAnimations/bossspears/bossspear12.png" id="325_5bhn0"]
-[ext_resource type="Texture2D" uid="uid://dxpbp6p6hpxp2" path="res://TheCrucible/crucibleAnimations/bossspears/bossspear13.png" id="326_m7vd7"]
-[ext_resource type="Texture2D" uid="uid://cqhlo25swfy3j" path="res://TheCrucible/crucibleAnimations/bossspears/bossspear14.png" id="327_aquxf"]
-[ext_resource type="Texture2D" uid="uid://cnswrjuoub67n" path="res://TheCrucible/crucibleAnimations/bossspears/bossspear15.png" id="328_r4bfa"]
-[ext_resource type="Texture2D" uid="uid://cunuvpbobtyiu" path="res://TheCrucible/crucibleAnimations/bossspears/bossspear16.png" id="329_ps8sl"]
-[ext_resource type="Texture2D" uid="uid://ddb8aaooxrt70" path="res://TheCrucible/crucibleAnimations/bossspears/bossspear17.png" id="330_wx1y7"]
-[ext_resource type="Texture2D" uid="uid://bhpotv3dur4e6" path="res://TheCrucible/crucibleAnimations/bossspears/bossspear18.png" id="331_v8mcp"]
-[ext_resource type="Texture2D" uid="uid://kufjuhvpvev8" path="res://TheCrucible/crucibleAnimations/bossspears/bossspear19.png" id="332_mlikr"]
-[ext_resource type="Texture2D" uid="uid://cxamj8f1prpej" path="res://TheCrucible/crucibleAnimations/bossspears/bossspear20.png" id="333_2dpiu"]
-[ext_resource type="Texture2D" uid="uid://ppkthlrvk4bw" path="res://TheCrucible/crucibleAnimations/bossspears/bossspear21.png" id="334_imxna"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
 size = Vector2(11, 17.75)
@@ -1621,265 +1540,7 @@ animations = [{
 "texture": ExtResource("253_3vu54")
 }],
 "loop": false,
-"name": &"attack1",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("254_q285r")
-}, {
-"duration": 1.0,
-"texture": ExtResource("255_6f7ce")
-}, {
-"duration": 1.0,
-"texture": ExtResource("256_ub7ot")
-}, {
-"duration": 1.0,
-"texture": ExtResource("257_a0obj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("258_4qy4n")
-}, {
-"duration": 1.0,
-"texture": ExtResource("259_a65tq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("260_joxh1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("261_2gnaf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("262_ayea4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("263_7c02d")
-}, {
-"duration": 1.0,
-"texture": ExtResource("264_xh7rl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("265_cp2ao")
-}, {
-"duration": 1.0,
-"texture": ExtResource("266_e0bat")
-}, {
-"duration": 1.0,
-"texture": ExtResource("267_ph1im")
-}, {
-"duration": 1.0,
-"texture": ExtResource("268_7qgsf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("269_dqcp5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("270_0fxg1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("271_r0yxi")
-}, {
-"duration": 1.0,
-"texture": ExtResource("272_w5bfd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("273_jouxp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("274_nt0jg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("275_j70sp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("276_h0t75")
-}, {
-"duration": 1.0,
-"texture": ExtResource("277_1v2hd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("278_avhks")
-}, {
-"duration": 1.0,
-"texture": ExtResource("279_jn17p")
-}, {
-"duration": 1.0,
-"texture": ExtResource("280_p6rc4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("281_exbix")
-}, {
-"duration": 1.0,
-"texture": ExtResource("282_rgee8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("283_6xar0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("284_ucd8w")
-}],
-"loop": false,
-"name": &"attack2",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("285_6xar0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("286_ucd8w")
-}, {
-"duration": 1.0,
-"texture": ExtResource("287_22r11")
-}, {
-"duration": 1.0,
-"texture": ExtResource("288_l6c1n")
-}, {
-"duration": 1.0,
-"texture": ExtResource("289_op3oq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("290_3cxck")
-}, {
-"duration": 1.0,
-"texture": ExtResource("291_cil13")
-}, {
-"duration": 1.0,
-"texture": ExtResource("292_16ypl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("293_6svcp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("294_ic101")
-}, {
-"duration": 1.0,
-"texture": ExtResource("295_o2eti")
-}, {
-"duration": 1.0,
-"texture": ExtResource("296_iv16s")
-}, {
-"duration": 1.0,
-"texture": ExtResource("297_b5ckt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("298_ntxau")
-}, {
-"duration": 1.0,
-"texture": ExtResource("299_yxxyu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("300_6yov0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("301_ee7dg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("302_7ne1j")
-}, {
-"duration": 1.0,
-"texture": ExtResource("303_qjq1s")
-}, {
-"duration": 1.0,
-"texture": ExtResource("304_pct2n")
-}, {
-"duration": 1.0,
-"texture": ExtResource("305_vt3tw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("306_uqvca")
-}, {
-"duration": 1.0,
-"texture": ExtResource("307_ysb60")
-}, {
-"duration": 1.0,
-"texture": ExtResource("308_i11l1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("309_mlhma")
-}, {
-"duration": 1.0,
-"texture": ExtResource("310_wknnf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("311_1sx34")
-}, {
-"duration": 1.0,
-"texture": ExtResource("312_pqi1e")
-}, {
-"duration": 1.0,
-"texture": ExtResource("313_rwbf5")
-}],
-"loop": true,
-"name": &"attack3",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("314_uqvca")
-}, {
-"duration": 1.0,
-"texture": ExtResource("315_ysb60")
-}, {
-"duration": 1.0,
-"texture": ExtResource("316_i11l1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("317_mlhma")
-}, {
-"duration": 1.0,
-"texture": ExtResource("318_wknnf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("319_1sx34")
-}, {
-"duration": 1.0,
-"texture": ExtResource("320_pqi1e")
-}, {
-"duration": 1.0,
-"texture": ExtResource("321_rwbf5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("322_md6o2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("323_vbq3s")
-}, {
-"duration": 1.0,
-"texture": ExtResource("324_kjvmj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("325_5bhn0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("326_m7vd7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("327_aquxf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("328_r4bfa")
-}, {
-"duration": 1.0,
-"texture": ExtResource("329_ps8sl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("330_wx1y7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("331_v8mcp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("332_mlikr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("333_2dpiu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("334_imxna")
-}],
-"loop": false,
-"name": &"attack4",
+"name": &"bossblast",
 "speed": 10.0
 }, {
 "frames": [{
@@ -1921,16 +1582,13 @@ size = Vector2(20, 66)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dmggb"]
 size = Vector2(217, 5)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_22r11"]
-radius = 67.0
-
 [node name="Main" type="Node2D"]
 script = ExtResource("1_nc5fr")
 pause_menu_path = NodePath("UIGroup/MenuUIGroup/PauseMenuLayer/PauseMenu")
 
 [node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
 top_level = true
-position = Vector2(-905, 765)
+position = Vector2(-1345, 989)
 script = ExtResource("1_rvslj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
@@ -2484,53 +2142,30 @@ position = Vector2(5, 5)
 shape = SubResource("CapsuleShape2D_2eo8w")
 
 [node name="TheCrucible" type="CharacterBody2D" parent="."]
-position = Vector2(-2177, 932)
+position = Vector2(-1941, 967)
 script = ExtResource("238_4sdmg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TheCrucible"]
-light_mask = 2
 position = Vector2(4, 34)
 shape = SubResource("RectangleShape2D_otest")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TheCrucible"]
 position = Vector2(1, -55)
 sprite_frames = SubResource("SpriteFrames_8vg3j")
-animation = &"attack4"
-frame = 10
+animation = &"bossblast"
+frame = 9
 
 [node name="hurtbox" type="Area2D" parent="TheCrucible"]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TheCrucible/hurtbox"]
-light_mask = 1024
 position = Vector2(4, 11)
 shape = SubResource("RectangleShape2D_730sn")
 
 [node name="attackarea1" type="Area2D" parent="TheCrucible"]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TheCrucible/attackarea1"]
 position = Vector2(-140.5, 26.5)
 shape = SubResource("RectangleShape2D_dmggb")
-
-[node name="attackarea2" type="Area2D" parent="TheCrucible"]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TheCrucible/attackarea2"]
-shape = SubResource("CircleShape2D_22r11")
-
-[node name="attackarea3" type="Area2D" parent="TheCrucible"]
-visible = false
-position = Vector2(4, 34)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TheCrucible/attackarea3"]
-polygon = PackedVector2Array(1, 4, -30, -19, -30, -19, -55, -23, -56, -23, -55, 11, -32, 11, 252, 11, 251, 7)
-
-[node name="attackarea4" type="Area2D" parent="TheCrucible"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TheCrucible/attackarea4"]
-position = Vector2(1, 0)
-polygon = PackedVector2Array(68, -41, 214, 5, 206, 47, -219, 46, -242, 5, -89, -43, -57, 45, -40, 46, -40, -7, -33, -7, -32, 46, 34, 46)
 
 [connection signal="body_entered" from="Player/spike_detection" to="Player" method="_on_spike_detection_body_entered"]
 [connection signal="body_entered" from="Butler/TalkZone" to="." method="_on_talk_zone_body_entered"]
