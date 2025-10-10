@@ -535,203 +535,6 @@ size = Vector2(13, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_57f5r"]
 size = Vector2(12, 17)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4c8xy"]
-size = Vector2(17, 33)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_jhuvt"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("101_hl0eo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("102_nov6g")
-}, {
-"duration": 1.0,
-"texture": ExtResource("103_708gh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("104_gnlq8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("105_qa0xl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("106_lv3yw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("107_5q1ge")
-}, {
-"duration": 1.0,
-"texture": ExtResource("118_x2ac1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("119_numhm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("120_2ao5w")
-}, {
-"duration": 1.0,
-"texture": ExtResource("121_ev2em")
-}, {
-"duration": 1.0,
-"texture": ExtResource("122_c6fve")
-}, {
-"duration": 1.0,
-"texture": ExtResource("123_qm4a8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("124_ultn8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("125_53vpr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("126_nv1v0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("127_e0url")
-}, {
-"duration": 1.0,
-"texture": ExtResource("128_yxed4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("129_pmlxg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("130_c6fve")
-}, {
-"duration": 1.0,
-"texture": ExtResource("131_qm4a8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("132_ultn8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("133_53vpr")
-}],
-"loop": false,
-"name": &"enemy2Attack",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("110_h7ea0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("111_p2wxp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("112_rf4q7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("113_76koy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("114_ktb27")
-}, {
-"duration": 1.0,
-"texture": ExtResource("115_uil6m")
-}],
-"loop": true,
-"name": &"enemy2Chase",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("140_w0c4r")
-}, {
-"duration": 1.0,
-"texture": ExtResource("141_ste0v")
-}, {
-"duration": 1.0,
-"texture": ExtResource("142_doojd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("143_t80hs")
-}, {
-"duration": 1.0,
-"texture": ExtResource("144_d77s7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("145_kigls")
-}, {
-"duration": 1.0,
-"texture": ExtResource("146_dx8qs")
-}, {
-"duration": 1.0,
-"texture": ExtResource("147_vbttc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("148_723yh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("149_cr6mk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("150_l4k6j")
-}, {
-"duration": 1.0,
-"texture": ExtResource("151_fldd5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("152_muqxe")
-}, {
-"duration": 1.0,
-"texture": ExtResource("153_cuva4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("154_0ri4p")
-}, {
-"duration": 1.0,
-"texture": ExtResource("155_hjpbf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("156_lgim7")
-}],
-"loop": false,
-"name": &"enemy2Death",
-"speed": 8.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("101_ps7y1")
-}],
-"loop": false,
-"name": &"enemy2Hurt",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("110_h7ea0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("111_p2wxp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("112_rf4q7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("113_76koy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("114_ktb27")
-}, {
-"duration": 1.0,
-"texture": ExtResource("115_uil6m")
-}],
-"loop": true,
-"name": &"enemy2Walk",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_smcir"]
-size = Vector2(11, 38)
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2eo8w"]
-radius = 9.0
-height = 36.0
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vcsgt"]
 texture = ExtResource("68_3mhcn")
 texture_region_size = Vector2i(24, 24)
@@ -1273,6 +1076,203 @@ size = Vector2(8, 14)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlgwl"]
 size = Vector2(16, 9)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4c8xy"]
+size = Vector2(17, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jhuvt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("101_hl0eo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_nov6g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_708gh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_gnlq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_qa0xl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_lv3yw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_5q1ge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("118_x2ac1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("119_numhm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("120_2ao5w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("121_ev2em")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_c6fve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("123_qm4a8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("124_ultn8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("125_53vpr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("126_nv1v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("127_e0url")
+}, {
+"duration": 1.0,
+"texture": ExtResource("128_yxed4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("129_pmlxg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("130_c6fve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("131_qm4a8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("132_ultn8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("133_53vpr")
+}],
+"loop": false,
+"name": &"enemy2Attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("110_h7ea0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111_p2wxp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_rf4q7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_76koy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_ktb27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115_uil6m")
+}],
+"loop": true,
+"name": &"enemy2Chase",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("140_w0c4r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("141_ste0v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("142_doojd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("143_t80hs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("144_d77s7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("145_kigls")
+}, {
+"duration": 1.0,
+"texture": ExtResource("146_dx8qs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("147_vbttc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("148_723yh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("149_cr6mk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("150_l4k6j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("151_fldd5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("152_muqxe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("153_cuva4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("154_0ri4p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("155_hjpbf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("156_lgim7")
+}],
+"loop": false,
+"name": &"enemy2Death",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("101_ps7y1")
+}],
+"loop": false,
+"name": &"enemy2Hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("110_h7ea0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111_p2wxp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_rf4q7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_76koy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_ktb27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115_uil6m")
+}],
+"loop": true,
+"name": &"enemy2Walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_smcir"]
+size = Vector2(11, 38)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2eo8w"]
+radius = 9.0
+height = 36.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4e3io"]
 size = Vector2(12, 18)
 
@@ -1504,31 +1504,6 @@ script = ExtResource("68_84vju")
 position = Vector2(1, 3.5)
 shape = SubResource("RectangleShape2D_57f5r")
 
-[node name="OGZwei1" type="CharacterBody2D" parent="Player"]
-position = Vector2(2066, -698)
-script = ExtResource("100_84vju")
-
-[node name="AttackArea" type="Area2D" parent="Player/OGZwei1"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/OGZwei1/AttackArea"]
-position = Vector2(-8.5, 7)
-shape = SubResource("RectangleShape2D_4c8xy")
-
-[node name="Enemy2AnimatedSprite2D" type="AnimatedSprite2D" parent="Player/OGZwei1"]
-position = Vector2(8, -1)
-sprite_frames = SubResource("SpriteFrames_jhuvt")
-animation = &"enemy2Walk"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/OGZwei1"]
-position = Vector2(5.5, 4)
-shape = SubResource("RectangleShape2D_smcir")
-
-[node name="hurtbox2" type="Area2D" parent="Player/OGZwei1"]
-
-[node name="collision" type="CollisionShape2D" parent="Player/OGZwei1/hurtbox2"]
-position = Vector2(5, 5)
-shape = SubResource("CapsuleShape2D_2eo8w")
-
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2(600.834, 1083.47)
 collision_mask = 2
@@ -1668,6 +1643,31 @@ position = Vector2(0, 7.5)
 shape = SubResource("RectangleShape2D_nlgwl")
 
 [node name="ZweiGroup" type="Node" parent="Enemies"]
+
+[node name="OGZwei1" type="CharacterBody2D" parent="Enemies/ZweiGroup"]
+position = Vector2(1031, 211)
+script = ExtResource("100_84vju")
+
+[node name="AttackArea" type="Area2D" parent="Enemies/ZweiGroup/OGZwei1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/ZweiGroup/OGZwei1/AttackArea"]
+position = Vector2(-8.5, 7)
+shape = SubResource("RectangleShape2D_4c8xy")
+
+[node name="Enemy2AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemies/ZweiGroup/OGZwei1"]
+position = Vector2(8, -1)
+sprite_frames = SubResource("SpriteFrames_jhuvt")
+animation = &"enemy2Walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/ZweiGroup/OGZwei1"]
+position = Vector2(5.5, 4)
+shape = SubResource("RectangleShape2D_smcir")
+
+[node name="hurtbox2" type="Area2D" parent="Enemies/ZweiGroup/OGZwei1"]
+
+[node name="collision" type="CollisionShape2D" parent="Enemies/ZweiGroup/OGZwei1/hurtbox2"]
+position = Vector2(5, 5)
+shape = SubResource("CapsuleShape2D_2eo8w")
 
 [node name="Zwei2" type="CharacterBody2D" parent="Enemies/ZweiGroup"]
 position = Vector2(1382, 876)
