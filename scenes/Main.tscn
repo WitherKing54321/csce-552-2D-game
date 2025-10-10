@@ -1930,7 +1930,7 @@ pause_menu_path = NodePath("UIGroup/MenuUIGroup/PauseMenuLayer/PauseMenu")
 
 [node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
 top_level = true
-position = Vector2(-905, 765)
+position = Vector2(835, 148)
 script = ExtResource("1_rvslj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
@@ -2285,6 +2285,31 @@ shape = SubResource("RectangleShape2D_dvcyk")
 position = Vector2(-2, 2)
 shape = SubResource("RectangleShape2D_ln1sq")
 
+[node name="OGZwei1" type="CharacterBody2D" parent="Enemies"]
+position = Vector2(952, 170)
+script = ExtResource("100_84vju")
+
+[node name="AttackArea" type="Area2D" parent="Enemies/OGZwei1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/OGZwei1/AttackArea"]
+position = Vector2(-8.5, 7)
+shape = SubResource("RectangleShape2D_4c8xy")
+
+[node name="Enemy2AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemies/OGZwei1"]
+position = Vector2(8, -1)
+sprite_frames = SubResource("SpriteFrames_jhuvt")
+animation = &"enemy2Walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/OGZwei1"]
+position = Vector2(5.5, 4)
+shape = SubResource("RectangleShape2D_smcir")
+
+[node name="hurtbox2" type="Area2D" parent="Enemies/OGZwei1"]
+
+[node name="collision" type="CollisionShape2D" parent="Enemies/OGZwei1/hurtbox2"]
+position = Vector2(5, 5)
+shape = SubResource("CapsuleShape2D_2eo8w")
+
 [node name="UIGroup" type="Node" parent="."]
 
 [node name="DialogUI" type="CanvasLayer" parent="UIGroup"]
@@ -2457,31 +2482,6 @@ text = "Main Menu"
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "Quit"
-
-[node name="OGZwei1" type="CharacterBody2D" parent="."]
-position = Vector2(1849, -592)
-script = ExtResource("100_84vju")
-
-[node name="AttackArea" type="Area2D" parent="OGZwei1"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OGZwei1/AttackArea"]
-position = Vector2(-8.5, 7)
-shape = SubResource("RectangleShape2D_4c8xy")
-
-[node name="Enemy2AnimatedSprite2D" type="AnimatedSprite2D" parent="OGZwei1"]
-position = Vector2(8, -1)
-sprite_frames = SubResource("SpriteFrames_jhuvt")
-animation = &"enemy2Walk"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OGZwei1"]
-position = Vector2(5.5, 4)
-shape = SubResource("RectangleShape2D_smcir")
-
-[node name="hurtbox2" type="Area2D" parent="OGZwei1"]
-
-[node name="collision" type="CollisionShape2D" parent="OGZwei1/hurtbox2"]
-position = Vector2(5, 5)
-shape = SubResource("CapsuleShape2D_2eo8w")
 
 [node name="TheCrucible" type="CharacterBody2D" parent="."]
 position = Vector2(-2177, 932)
