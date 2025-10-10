@@ -1,6 +1,6 @@
 extends BossState
 class_name BossAttack4State
-
+#SPEAR attack
 @export var attack_duration := 2.0  # 20 frames at 10 FPS
 @export var damage := 20
 
@@ -29,7 +29,7 @@ func enter(Boss):
 
 	# Disable hitbox initially
 	attack_area.get_node("CollisionPolygon2D").disabled = true
-	attack_area.scale.x = 1 if not locked_flip_h else -1
+	attack_area.scale.x = -1 if not locked_flip_h else 1
 
 
 func physics_update(Boss, delta):
