@@ -30,7 +30,7 @@ func enter(Boss):
 	attack_area.get_node("CollisionShape2D").disabled = true
 
 	# Flip hitbox to match locked direction
-	attack_area.scale.x = 1 if not locked_flip_h else -1
+	attack_area.scale.x = -1 if not locked_flip_h else 1
 
 func physics_update(Boss, delta):
 	timer += delta

@@ -1,4 +1,4 @@
-[gd_scene load_steps=379 format=4 uid="uid://ba0hh5pd8m2bk"]
+[gd_scene load_steps=414 format=4 uid="uid://ba0hh5pd8m2bk"]
 
 [ext_resource type="Script" uid="uid://bsm7xp1yotyxe" path="res://scenes/main.gd" id="1_nc5fr"]
 [ext_resource type="Script" uid="uid://bposq7mw4gtma" path="res://player/scripts/Player.gd" id="1_rvslj"]
@@ -343,6 +343,36 @@
 [ext_resource type="Texture2D" uid="uid://kufjuhvpvev8" path="res://TheCrucible/crucibleAnimations/bossspears/bossspear19.png" id="332_mlikr"]
 [ext_resource type="Texture2D" uid="uid://cxamj8f1prpej" path="res://TheCrucible/crucibleAnimations/bossspears/bossspear20.png" id="333_2dpiu"]
 [ext_resource type="Texture2D" uid="uid://ppkthlrvk4bw" path="res://TheCrucible/crucibleAnimations/bossspears/bossspear21.png" id="334_imxna"]
+[ext_resource type="Texture2D" uid="uid://btjbt82t6101m" path="res://TheCrucible/crucibleAnimations/bossdeath/bossDesath1.png" id="335_v8mcp"]
+[ext_resource type="Texture2D" uid="uid://bonbar4itfjqo" path="res://TheCrucible/crucibleAnimations/bossdeath/bossDesath2.png" id="336_mlikr"]
+[ext_resource type="Texture2D" uid="uid://ce7h5u4vsl02h" path="res://TheCrucible/crucibleAnimations/bossdeath/bossDesath3.png" id="337_2dpiu"]
+[ext_resource type="Texture2D" uid="uid://bqbm8uuyjxq34" path="res://TheCrucible/crucibleAnimations/bossdeath/bossDesath4.png" id="338_imxna"]
+[ext_resource type="Texture2D" uid="uid://xkcao5g4isd1" path="res://TheCrucible/crucibleAnimations/bossdeath/bossDesath5.png" id="339_06o5j"]
+[ext_resource type="Texture2D" uid="uid://chs6q1bdar4rv" path="res://TheCrucible/crucibleAnimations/bossdeath/bossDesath6.png" id="340_ouk1k"]
+[ext_resource type="Texture2D" uid="uid://cdksqd15lxmsy" path="res://TheCrucible/crucibleAnimations/bossdeath/bossDesath7.png" id="341_tra3b"]
+[ext_resource type="Texture2D" uid="uid://6dgcivrir6s8" path="res://TheCrucible/crucibleAnimations/bossdeath/bossDesath8.png" id="342_5dy05"]
+[ext_resource type="Texture2D" uid="uid://drs5b66vng0xj" path="res://TheCrucible/crucibleAnimations/bossdeath/bossDesath9.png" id="343_v2cqe"]
+[ext_resource type="Texture2D" uid="uid://d2ddiufnis7q8" path="res://TheCrucible/crucibleAnimations/bossdeath/bossDesath10.png" id="344_4m8vs"]
+[ext_resource type="Texture2D" uid="uid://dg6ywxljeckv" path="res://TheCrucible/crucibleAnimations/bossdeath/bossDesath11.png" id="345_rmx21"]
+[ext_resource type="Texture2D" uid="uid://b43n018ks8vaq" path="res://TheCrucible/crucibleAnimations/bossdeath/bossDesath12.png" id="346_beypw"]
+[ext_resource type="Texture2D" uid="uid://cda37lfm0ysp7" path="res://TheCrucible/crucibleAnimations/bossdeath/bossDesath13.png" id="347_dtnoj"]
+[ext_resource type="Texture2D" uid="uid://dccj8pmrfc63g" path="res://TheCrucible/crucibleAnimations/bossdeath/bossDesath14.png" id="348_i465x"]
+[ext_resource type="Texture2D" uid="uid://btu5wm1v77sg4" path="res://TheCrucible/crucibleAnimations/bossdeath/bossDesath15.png" id="349_0t5ov"]
+[ext_resource type="Texture2D" uid="uid://68eolehfq34a" path="res://TheCrucible/crucibleAnimations/bossdeath/bossDesath16.png" id="350_p7sik"]
+[ext_resource type="Texture2D" uid="uid://crtyngj6bjeyg" path="res://TheCrucible/crucibleAnimations/bossdeath/bossDesath17.png" id="351_vptdc"]
+[ext_resource type="Script" uid="uid://bxnvwk0r1kfa4" path="res://thecruciblewasted/scripts/crucible_wasted.gd" id="361_i465x"]
+[ext_resource type="Texture2D" uid="uid://b8qi1bu5mf8c8" path="res://thecruciblewasted/animation/death/wasredcricibledeath1.png" id="362_0t5ov"]
+[ext_resource type="Texture2D" uid="uid://7su2p2m0h6lv" path="res://thecruciblewasted/animation/death/wasredcricibledeath2.png" id="363_p7sik"]
+[ext_resource type="Texture2D" uid="uid://dqsvpwmo4fsju" path="res://thecruciblewasted/animation/death/wasredcricibledeath3.png" id="364_vptdc"]
+[ext_resource type="Texture2D" uid="uid://bvf6k0amfrvoi" path="res://thecruciblewasted/animation/death/wasredcricibledeath4.png" id="365_o8yci"]
+[ext_resource type="Texture2D" uid="uid://3gk3barmbi5r" path="res://thecruciblewasted/animation/death/wasredcricibledeath5.png" id="366_dfq5o"]
+[ext_resource type="Texture2D" uid="uid://c5wid6exeoytv" path="res://thecruciblewasted/animation/death/wasredcricibledeath6.png" id="367_80ot5"]
+[ext_resource type="Texture2D" uid="uid://laqyvewbjd5l" path="res://thecruciblewasted/animation/hurt/wastedcruciblehurt.png" id="368_f5wba"]
+[ext_resource type="Texture2D" uid="uid://cvhtp5finu4pl" path="res://thecruciblewasted/animation/idle/cruciblewasted1.png" id="369_cox6b"]
+[ext_resource type="Texture2D" uid="uid://c0mcs0xy6tdti" path="res://thecruciblewasted/animation/idle/cruciblewasted2.png" id="370_gfa0u"]
+[ext_resource type="Texture2D" uid="uid://ds44aooc7ug2k" path="res://thecruciblewasted/animation/idle/cruciblewasted3.png" id="371_kk6o1"]
+[ext_resource type="Texture2D" uid="uid://btukadgdq5r1o" path="res://thecruciblewasted/animation/idle/cruciblewasted4.png" id="372_yp1rm"]
+[ext_resource type="Texture2D" uid="uid://brupk1iy7sdvd" path="res://thecruciblewasted/animation/idle/cruciblewasted5.png" id="373_1assc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
 size = Vector2(11, 17.75)
@@ -1571,6 +1601,7 @@ func hide_box() -> void:
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_otest"]
+size = Vector2(14, 9.5)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8vg3j"]
 animations = [{
@@ -1884,6 +1915,62 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("335_v8mcp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("336_mlikr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("337_2dpiu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("338_imxna")
+}, {
+"duration": 1.0,
+"texture": ExtResource("339_06o5j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("340_ouk1k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("341_tra3b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("342_5dy05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("343_v2cqe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("344_4m8vs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("345_rmx21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("346_beypw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("347_dtnoj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("348_i465x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("349_0t5ov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("350_p7sik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("351_vptdc")
+}],
+"loop": false,
+"name": &"death",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("239_730sn")
 }, {
 "duration": 1.0,
@@ -1916,7 +2003,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_730sn"]
-size = Vector2(20, 66)
+size = Vector2(13, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dmggb"]
 size = Vector2(217, 5)
@@ -1924,13 +2011,79 @@ size = Vector2(217, 5)
 [sub_resource type="CircleShape2D" id="CircleShape2D_22r11"]
 radius = 67.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8mcp"]
+size = Vector2(16, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1x16r"]
+size = Vector2(20, 6)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fkco6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("362_0t5ov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("363_p7sik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("364_vptdc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("365_o8yci")
+}, {
+"duration": 1.0,
+"texture": ExtResource("366_dfq5o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("367_80ot5")
+}],
+"loop": false,
+"name": &"death",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("368_f5wba")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("369_cox6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("370_gfa0u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("371_kk6o1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("372_yp1rm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("373_1assc")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_742y3"]
+size = Vector2(24, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t2ten"]
+size = Vector2(22.5, 5)
+
 [node name="Main" type="Node2D"]
 script = ExtResource("1_nc5fr")
 pause_menu_path = NodePath("UIGroup/MenuUIGroup/PauseMenuLayer/PauseMenu")
 
 [node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
 top_level = true
-position = Vector2(835, 148)
+position = Vector2(850, 939)
 script = ExtResource("1_rvslj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
@@ -2514,25 +2667,22 @@ script = ExtResource("238_4sdmg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TheCrucible"]
 light_mask = 2
-position = Vector2(4, 34)
+position = Vector2(2, 40.25)
 shape = SubResource("RectangleShape2D_otest")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TheCrucible"]
 position = Vector2(1, -55)
 sprite_frames = SubResource("SpriteFrames_8vg3j")
 animation = &"attack4"
-frame = 10
 
 [node name="hurtbox" type="Area2D" parent="TheCrucible"]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TheCrucible/hurtbox"]
 light_mask = 1024
-position = Vector2(4, 11)
+position = Vector2(1.5, 28)
 shape = SubResource("RectangleShape2D_730sn")
 
 [node name="attackarea1" type="Area2D" parent="TheCrucible"]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TheCrucible/attackarea1"]
 position = Vector2(-140.5, 26.5)
@@ -2552,10 +2702,42 @@ position = Vector2(4, 34)
 polygon = PackedVector2Array(1, 4, -30, -19, -30, -19, -55, -23, -56, -23, -55, 11, -32, 11, 252, 11, 251, 7)
 
 [node name="attackarea4" type="Area2D" parent="TheCrucible"]
+visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TheCrucible/attackarea4"]
 position = Vector2(1, 0)
 polygon = PackedVector2Array(68, -41, 214, 5, 206, 47, -219, 46, -242, 5, -89, -43, -57, 45, -40, 46, -40, -7, -33, -7, -32, 46, 34, 46)
+
+[node name="attackarea0" type="Area2D" parent="TheCrucible"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TheCrucible/attackarea0"]
+position = Vector2(2, 18)
+shape = SubResource("RectangleShape2D_v8mcp")
+
+[node name="crucible_wasted" type="CharacterBody2D" parent="."]
+position = Vector2(-641, 476)
+script = ExtResource("361_i465x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="crucible_wasted"]
+position = Vector2(0, 22)
+shape = SubResource("RectangleShape2D_1x16r")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="crucible_wasted"]
+position = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_fkco6")
+animation = &"hurt"
+
+[node name="attackarea" type="Area2D" parent="crucible_wasted"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="crucible_wasted/attackarea"]
+position = Vector2(0, 21)
+shape = SubResource("RectangleShape2D_742y3")
+
+[node name="hurtbox" type="Area2D" parent="crucible_wasted"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="crucible_wasted/hurtbox"]
+position = Vector2(0, 22)
+shape = SubResource("RectangleShape2D_t2ten")
 
 [connection signal="body_entered" from="Player/spike_detection" to="Player" method="_on_spike_detection_body_entered"]
 [connection signal="body_entered" from="Butler/TalkZone" to="." method="_on_talk_zone_body_entered"]

@@ -33,7 +33,7 @@ func enter(Boss):
 
 	# Disable hitbox initially
 	attack_area.get_node("CollisionPolygon2D").disabled = true
-	attack_area.scale.x = 1 if not locked_flip_h else -1
+	attack_area.scale.x = -1 if not locked_flip_h else 1
 
 
 func physics_update(Boss, delta):
@@ -50,7 +50,7 @@ func physics_update(Boss, delta):
 
 	# --- Movement logic ---
 	if timer >= hit_start and timer <= hit_end:
-		var direction = 1 if locked_flip_h else -1
+		var direction = -1 if locked_flip_h else 1
 		Boss.velocity.x = direction * attack_speed
 	else:
 		Boss.velocity = Vector2.ZERO
