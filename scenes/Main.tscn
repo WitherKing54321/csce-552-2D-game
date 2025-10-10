@@ -2104,6 +2104,31 @@ shape = SubResource("RectangleShape2D_nlgwl")
 
 [node name="ZweiGroup" type="Node" parent="Enemies"]
 
+[node name="OGZwei1" type="CharacterBody2D" parent="Enemies/ZweiGroup"]
+position = Vector2(1031, 211)
+script = ExtResource("100_84vju")
+
+[node name="AttackArea" type="Area2D" parent="Enemies/ZweiGroup/OGZwei1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/ZweiGroup/OGZwei1/AttackArea"]
+position = Vector2(-8.5, 7)
+shape = SubResource("RectangleShape2D_4c8xy")
+
+[node name="Enemy2AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemies/ZweiGroup/OGZwei1"]
+position = Vector2(8, -1)
+sprite_frames = SubResource("SpriteFrames_jhuvt")
+animation = &"enemy2Walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/ZweiGroup/OGZwei1"]
+position = Vector2(5.5, 4)
+shape = SubResource("RectangleShape2D_smcir")
+
+[node name="hurtbox2" type="Area2D" parent="Enemies/ZweiGroup/OGZwei1"]
+
+[node name="collision" type="CollisionShape2D" parent="Enemies/ZweiGroup/OGZwei1/hurtbox2"]
+position = Vector2(5, 5)
+shape = SubResource("CapsuleShape2D_2eo8w")
+
 [node name="Zwei2" type="CharacterBody2D" parent="Enemies/ZweiGroup"]
 position = Vector2(1382, 876)
 script = ExtResource("100_84vju")
