@@ -133,3 +133,11 @@ func choose_attack():
 
 	# Fallback if none chosen
 	change_state(BossIdleState.new())
+
+signal boss_defeated
+
+func die():
+	# Whatever your death logic is (play animation, etc.)
+	print("Boss defeated!")
+	emit_signal("boss_defeated")
+	queue_free()

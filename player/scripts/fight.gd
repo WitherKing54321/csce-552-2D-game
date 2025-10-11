@@ -18,7 +18,7 @@ func enter(player):
 
 	var attack_area = player.get_node("AttackArea")
 	player.get_node("AttackArea/PlayerHurtBox").disabled = false
-	attack_timer = 0.3
+	attack_timer = 0.1
 	player.anim.play("fight1")
 
 	# play attack sound

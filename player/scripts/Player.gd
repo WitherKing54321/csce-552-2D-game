@@ -11,7 +11,7 @@ var current_state: PlayerState
 var has_double_jumped := false
 var facing_dir := -1
 var max_health := 100
-var health := 100
+var health := 10000
 
 # ------------------ Death tracking ------------------
 var deathActive := 0
@@ -110,6 +110,13 @@ func _process(delta):
 
 func _physics_process(delta):
 	velocity.y += GRAVITY * delta
+	# --- GLIDE: allow starting glide any time the player is airborne ---
+	if not is_on_floor() \
+	and Input.is_action_just_pressed("glide") \
+	and !(current_state is GlideState):
+		change_state(GlideState.new())
+	# --- end GLIDE block ---
+
 	if current_state:
 		current_state.physics_update(self, delta)
 	move_and_slide()

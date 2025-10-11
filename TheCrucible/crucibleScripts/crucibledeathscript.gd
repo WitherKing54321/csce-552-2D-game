@@ -2,37 +2,61 @@ extends BossState
 class_name BossDeathState
 
 var timer := 2.3
+var done := false
+
 var DEATH_STREAM: AudioStream = preload("res://Sounds/ZweihanderDeath.wav")
 var death_sfx: AudioStreamPlayer2D
 
-func enter(Boss):
+var _boss: Boss  # we'll store a typed ref once in enter()
+
+func enter(b: CharacterBody2D) -> void:
+	_boss = b as Boss
 	print("Boss begins death sequence")
 
-	# Stop all sounds that may still be playing
-	for child in Boss.get_children():
-		if child is AudioStreamPlayer or child is AudioStreamPlayer2D:
-			if child.playing:
-				child.stop()
+	# stop any sounds
+	for child in _boss.get_children():
+		if (child is AudioStreamPlayer or child is AudioStreamPlayer2D) and child.playing:
+			child.stop()
 
-	# Play death animation
-	if Boss.sprite:
-		Boss.sprite.play("death")
+	# play death anim + listen for finish (no args in Godot 4)
+	if _boss.sprite:
+		_boss.sprite.play("death")
+		if not _boss.sprite.animation_finished.is_connected(_on_anim_finished):
+			_boss.sprite.animation_finished.connect(_on_anim_finished)
 
-	# Play death sound
+	# play death sfx
 	if death_sfx == null:
 		death_sfx = AudioStreamPlayer2D.new()
 		death_sfx.stream = DEATH_STREAM
-		Boss.add_child(death_sfx)
+		_boss.add_child(death_sfx)
 	death_sfx.play()
 
-	# Ensure boss stays completely still
-	Boss.velocity = Vector2.ZERO
+	_boss.velocity = Vector2.ZERO
 
-
-func physics_update(Boss, delta):
-	Boss.velocity = Vector2.ZERO
+func physics_update(b: CharacterBody2D, delta: float) -> void:
+	if _boss == null: 
+		return
+	_boss.velocity = Vector2.ZERO
+	if done:
+		return
 	timer -= delta
+	# Fallback in case the animation never fires
+	if timer <= 0.0:
+		_finish()
 
-func exit(Boss):
-	# No cleanup necessary, but keep consistent behavior
-	Boss.velocity = Vector2.ZERO
+func exit(b: CharacterBody2D) -> void:
+	if _boss:
+		_boss.velocity = Vector2.ZERO
+		if _boss.sprite and _boss.sprite.animation_finished.is_connected(_on_anim_finished):
+			_boss.sprite.animation_finished.disconnect(_on_anim_finished)
+
+# --- signal handlers / helpers ---
+
+func _on_anim_finished() -> void:
+	if _boss and _boss.sprite and _boss.sprite.animation == "death" and not done:
+		_finish()
+
+func _finish() -> void:
+	done = true
+	if _boss:
+		_boss.die()  # <-- emits boss_defeated, FogWall opens
