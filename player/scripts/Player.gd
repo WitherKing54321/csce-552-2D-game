@@ -11,7 +11,7 @@ var current_state: PlayerState
 var has_double_jumped := false
 var facing_dir := -1
 var max_health := 100
-var health := 10000
+var health := 100
 
 # ------------------ Death tracking ------------------
 var deathActive := 0
