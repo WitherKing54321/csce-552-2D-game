@@ -24,7 +24,7 @@ var anim: AnimatedSprite2D
 
 func _ready() -> void:
 	anim = $AnimatedSprite2D
-	$AnimatedSprite2D.flip_h = true
+	$AnimatedSprite2D.flip_h = false
 	anim.play("idle")
 	# Connect once
 	if zone and not zone.body_entered.is_connected(_on_zone_body_entered):
