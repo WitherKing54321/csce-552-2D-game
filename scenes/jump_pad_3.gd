@@ -1,7 +1,7 @@
 # jump_pad.gd — attach to your Area2D (the node with the CollisionShape2D)
 extends Area2D
 
-@export var power: float = 1600.0        # launch strength
+@export var power: float = 8500.0        # launch strength
 @export var cooldown: float = 0.15      # debounce
 @export var direction: Vector2 = Vector2.UP  # keep as UP for vertical
 
