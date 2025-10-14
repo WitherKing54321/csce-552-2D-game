@@ -32,18 +32,6 @@ func enter(Boss):
 	# Flip hitbox to match locked direction
 	attack_area.scale.x = -1 if not locked_flip_h else 1
 
-	# --- Audio: single attack sound at start ---
-	var attack_sfx = Boss.get_node_or_null("Attack1Sfx")
-	if attack_sfx == null:
-		attack_sfx = AudioStreamPlayer2D.new()
-		attack_sfx.name = "Attack1Sfx"
-		attack_sfx.stream = preload("res://Sounds/CrucibleEnergyBeam.wav") # set your path
-		Boss.add_child(attack_sfx)
-	else:
-		if attack_sfx.playing:
-			attack_sfx.stop()
-	attack_sfx.play()
-
 func physics_update(Boss, delta):
 	timer += delta
 
@@ -75,8 +63,3 @@ func exit(Boss):
 	var attack_area = Boss.get_node("attackarea1")
 	attack_area.get_node("CollisionShape2D").disabled = true
 	Boss.velocity.x = 0
-
-	# Stop attack sound on state change
-	var attack_sfx = Boss.get_node_or_null("Attack1Sfx")
-	if attack_sfx and attack_sfx.playing:
-		attack_sfx.stop()

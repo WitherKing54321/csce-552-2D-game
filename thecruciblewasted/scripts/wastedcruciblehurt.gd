@@ -5,6 +5,8 @@ const KNOCKBACK_X := 20
 const KNOCKBACK_Y := -70
 var damage_taken: int = 0
 
+
+# --- exported volume (editable in Inspector) ---
 @export var hurt_volume_db: float = +5.0  # 0 = normal, negative = quieter, positive = louder
 
 func enter(Blob):
@@ -26,19 +28,6 @@ func enter(Blob):
 	# Play hurt animation
 	if Blob.anim:
 		Blob.anim.play("hurt")  # adjust to your Blob hurt animation
-
-	# Play hurt sound
-	var hurt_sfx = Blob.get_node_or_null("HurtSfx")
-	if hurt_sfx == null:
-		hurt_sfx = AudioStreamPlayer2D.new()
-		hurt_sfx.name = "HurtSfx"
-		hurt_sfx.stream = preload("res://Sounds/CrucibleWastedHurt.wav") # set your path
-		Blob.add_child(hurt_sfx)
-	else:
-		if hurt_sfx.playing:
-			hurt_sfx.stop()
-	hurt_sfx.volume_db = hurt_volume_db
-	hurt_sfx.play()
 
 	# Knockback direction: opposite of facing
 	var direction = -1 if Blob.anim.flip_h else 1

@@ -1,4 +1,3 @@
-# jump_pad.gd — attach to your Area2D
 extends Area2D
 
 @export var power: float = 1200.0
@@ -8,25 +7,13 @@ extends Area2D
 @export var replace_velocity: bool = true     # force exact launch dir
 @export var player_group: String = "player"   # optional: only boost bodies in this group
 
-# --- AUDIO ---
-var PAD_STREAM: AudioStream = preload("res://Sounds/Boing.wav")
-var pad_sfx: AudioStreamPlayer2D
-
 var _cooling_down := false
 
 func _ready() -> void:
 	monitoring = true
 	monitorable = true
+	# Use shape signal to avoid duplicate body_entered calls from multiple shapes
 	body_shape_entered.connect(_on_body_shape_entered)
-
-	# Create audio player once
-	if pad_sfx == null:
-		pad_sfx = AudioStreamPlayer2D.new()
-		pad_sfx.stream = PAD_STREAM
-		pad_sfx.bus = "Master"
-		pad_sfx.volume_db = 0.0
-		pad_sfx.attenuation = 0.0
-		add_child(pad_sfx)
 
 func _on_body_shape_entered(body_rid: RID, body: Node, body_shape_idx: int, local_shape_idx: int) -> void:
 	if _cooling_down:
@@ -34,7 +21,9 @@ func _on_body_shape_entered(body_rid: RID, body: Node, body_shape_idx: int, loca
 	if body is CharacterBody2D == false:
 		return
 	if player_group != "" and not body.is_in_group(player_group):
+		# Optional filter so we don't boost enemies or physics debris
 		return
+	# If another pad is already boosting this body, ignore
 	if body.has_meta("pad_boosting") and body.get_meta("pad_boosting"):
 		return
 
@@ -43,7 +32,10 @@ func _on_body_shape_entered(body_rid: RID, body: Node, body_shape_idx: int, loca
 	if dir == Vector2.ZERO:
 		return
 
+	# Mark as boosting so other pads won't interfere for a moment
 	c.set_meta("pad_boosting", true)
+
+	# TEMP disable floor snap so move_and_slide doesn't project velocity upward
 	var old_snap := c.floor_snap_length
 	c.floor_snap_length = 0.0
 
@@ -54,17 +46,15 @@ func _on_body_shape_entered(body_rid: RID, body: Node, body_shape_idx: int, loca
 		var perp := v - v.project(dir)
 		c.velocity = perp + dir * power
 
-	# Play sound like EnemyDeathState style
-	if pad_sfx:
-		pad_sfx.stop()
-		pad_sfx.play()
-
+	# Prevent this pad from re-triggering while overlapping
 	set_deferred("monitoring", false)
 	_cooling_down = true
 
-	await get_tree().process_frame
+	# Re-enable things after a short delay
+	await get_tree().process_frame            # let one physics tick apply the new velocity
 	await get_tree().create_timer(cooldown).timeout
 
+	# restore
 	c.floor_snap_length = old_snap
 	c.set_meta("pad_boosting", false)
 	monitoring = true

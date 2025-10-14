@@ -6,7 +6,7 @@ const KNOCKBACK_Y := -70
 var damage_taken: int = 0
 
 # --- AUDIO: preload hurt sound ---
-var HURT_STREAM: AudioStream = preload("res://Sounds/CloakHurt.wav")
+var HURT_STREAM: AudioStream = preload("res://Sounds/NuckHurt.wav")
 var hurt_sfx: AudioStreamPlayer2D
 
 # --- exported volume (editable in Inspector) ---

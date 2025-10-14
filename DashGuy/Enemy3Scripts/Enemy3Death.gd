@@ -5,7 +5,7 @@ var timer = 2.0
 var knockback_timer = 0.3   # time in seconds to let knockback happen
 const KNOCKBACK_X := 50   # bigger for visible effect (adjust as needed)
 const KNOCKBACK_Y := -60
-var DEATH_STREAM: AudioStream = preload("res://Sounds/CloakAttack.wav")
+var DEATH_STREAM: AudioStream = preload("res://Sounds/NuckDeath.wav")
 var death_sfx: AudioStreamPlayer2D
 
 func enter(Enemy3):

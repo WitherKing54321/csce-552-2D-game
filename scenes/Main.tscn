@@ -1,4 +1,4 @@
-[gd_scene load_steps=429 format=4 uid="uid://ba0hh5pd8m2bk"]
+[gd_scene load_steps=427 format=4 uid="uid://ba0hh5pd8m2bk"]
 
 [ext_resource type="Script" uid="uid://bsm7xp1yotyxe" path="res://scenes/main.gd" id="1_nc5fr"]
 [ext_resource type="Script" uid="uid://bposq7mw4gtma" path="res://player/scripts/Player.gd" id="1_rvslj"]
@@ -382,7 +382,6 @@
 [ext_resource type="Texture2D" uid="uid://brupk1iy7sdvd" path="res://thecruciblewasted/animation/idle/cruciblewasted5.png" id="373_1assc"]
 [ext_resource type="Script" uid="uid://ch66clcpkwkek" path="res://scenes/jump_pad.gd" id="376_vptdc"]
 [ext_resource type="Script" uid="uid://birswrdybhwqf" path="res://scenes/fog_wall.gd" id="378_dfq5o"]
-[ext_resource type="Script" uid="uid://benabqg3uvbhw" path="res://scenes/goal_ladder.gd" id="383_kk6o1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
 size = Vector2(11, 17.75)
@@ -2100,15 +2099,13 @@ size = Vector2(22.5, 5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dfq5o"]
 size = Vector2(20, 72)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kk6o1"]
-
 [node name="Main" type="Node2D"]
 script = ExtResource("1_nc5fr")
 pause_menu_path = NodePath("UIGroup/MenuUIGroup/PauseMenuLayer/PauseMenu")
 
 [node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
 top_level = true
-position = Vector2(-7046, 850)
+position = Vector2(-5556, 591)
 script = ExtResource("1_rvslj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
@@ -3123,7 +3120,7 @@ position = Vector2(2, 18)
 shape = SubResource("RectangleShape2D_v8mcp")
 
 [node name="crucible_wasted" type="CharacterBody2D" parent="TheCrucibleGroup"]
-position = Vector2(-6398, 996)
+position = Vector2(-6414, 992)
 script = ExtResource("361_i465x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TheCrucibleGroup/crucible_wasted"]
@@ -3153,7 +3150,7 @@ script = ExtResource("378_dfq5o")
 boss_path = NodePath("../TheCrucible")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TheCrucibleGroup/FogWall"]
-position = Vector2(13, -1)
+position = Vector2(14, -1)
 shape = SubResource("RectangleShape2D_dfq5o")
 
 [node name="ColorRect" type="ColorRect" parent="TheCrucibleGroup/FogWall"]
@@ -3169,77 +3166,6 @@ offset_bottom = 35.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.447059, 0.447059, 0, 0.705882)
-
-[node name="Ladder" type="Area2D" parent="."]
-position = Vector2(-7092, 857)
-script = ExtResource("383_kk6o1")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder"]
-shape = SubResource("RectangleShape2D_kk6o1")
-
-[node name="InteractionPrompt" type="Label" parent="Ladder"]
-z_index = 20
-offset_left = -37.0
-offset_top = -24.0
-offset_right = 45.0
-offset_bottom = -1.0
-theme_override_font_sizes/font_size = 9
-horizontal_alignment = 1
-
-[node name="ColorRect" type="ColorRect" parent="Ladder"]
-offset_left = -14.0
-offset_top = -319.0
-offset_right = -10.0
-offset_bottom = 10.0
-color = Color(0.460875, 0.313238, 0, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="Ladder"]
-offset_left = 10.0
-offset_top = -319.0
-offset_right = 14.0
-offset_bottom = 10.0
-color = Color(0.460875, 0.313238, 0, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="Ladder"]
-offset_left = -10.0
-offset_top = -2.0
-offset_right = 10.0
-color = Color(0.460875, 0.313238, 0, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="Ladder"]
-offset_left = -10.0
-offset_top = -14.0
-offset_right = 10.0
-offset_bottom = -12.0
-color = Color(0.460875, 0.313238, 0, 1)
-
-[node name="ColorRect5" type="ColorRect" parent="Ladder"]
-offset_left = -10.0
-offset_top = -26.0
-offset_right = 10.0
-offset_bottom = -24.0
-color = Color(0.460875, 0.313238, 0, 1)
-
-[node name="ColorRect6" type="ColorRect" parent="Ladder"]
-offset_left = -10.0
-offset_top = -38.0
-offset_right = 10.0
-offset_bottom = -36.0
-color = Color(0.460875, 0.313238, 0, 1)
-
-[node name="ColorRect7" type="ColorRect" parent="Ladder"]
-offset_left = -10.0
-offset_top = -50.0
-offset_right = 10.0
-offset_bottom = -48.0
-color = Color(0.460875, 0.313238, 0, 1)
-
-[node name="ColorRect8" type="ColorRect" parent="Ladder"]
-offset_left = -10.0
-offset_top = -62.0
-offset_right = 10.0
-offset_bottom = -60.0
-color = Color(0.460875, 0.313238, 0, 1)
 
 [connection signal="body_entered" from="Player/spike_detection" to="Player" method="_on_spike_detection_body_entered"]
 [connection signal="body_entered" from="ButlerGroup/Butler1/TalkZone" to="." method="_on_talk_zone_body_entered"]
