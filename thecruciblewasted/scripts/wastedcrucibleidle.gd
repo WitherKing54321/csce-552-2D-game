@@ -28,6 +28,28 @@ func physics_update(Blob, delta):
 		if offset <= 0:
 			moving_right = true
 
+	# ====== WALK SOUND (patrol loop) ======
+	var walk = Blob.get_node_or_null("WalkLoop")
+	if Blob.velocity.x != 0.0:
+		if walk == null:
+			walk = AudioStreamPlayer2D.new()
+			walk.name = "WalkLoop"
+			walk.stream = preload("res://Sounds/CrucibleWastedChase.wav") # set your path
+			Blob.add_child(walk)
+		if not walk.playing:
+			walk.play()
+	else:
+		if walk and walk.playing:
+			walk.stop()
+
 	# ====== CHASE PLAYER ======
 	if Blob.player and Blob.position.distance_to(Blob.player.position) < Blob.chase_range:
+		# stop walk loop before switching state
+		if walk and walk.playing:
+			walk.stop()
 		Blob.change_state(BlobChaseState.new())
+
+func exit(Blob):
+	var walk = Blob.get_node_or_null("WalkLoop")
+	if walk and walk.playing:
+		walk.stop()

@@ -7,7 +7,7 @@ var hit_start := 0.6  # seconds when the swing begins
 var hit_end := 0.9    # seconds when the swing ends
 
 # --- AUDIO ---
-var ATTACK_STREAM: AudioStream = preload("res://Sounds/NuckAttack.wav")
+var ATTACK_STREAM: AudioStream = preload("res://Sounds/CloakAttack.wav")
 var attack_sfx: AudioStreamPlayer2D
 var attack_volume_db: float = +1.0
 

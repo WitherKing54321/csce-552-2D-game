@@ -13,6 +13,10 @@ func enter(Blob):
 	if not attack_area.body_entered.is_connected(_on_player_enter_hitbox):
 		attack_area.body_entered.connect(_on_player_enter_hitbox)
 
+	# Stop any leftover chase loop
+	var chase = Blob.get_node_or_null("ChaseLoop")
+	if chase and chase.playing:
+		chase.stop()
 
 func physics_update(Blob, delta):
 	if not Blob.player:
@@ -34,6 +38,20 @@ func physics_update(Blob, delta):
 	if Blob.position.distance_to(Blob.player.position) < Blob.attack_range:
 		pass
 
+	# Chase audio (no hit audio)
+	var chase = Blob.get_node_or_null("ChaseLoop")
+	if Blob.velocity.x != 0.0:
+		if chase == null:
+			chase = AudioStreamPlayer2D.new()
+			chase.name = "ChaseLoop"
+			chase.stream = preload("res://Sounds/CrucibleWastedChase.wav") # set your path
+			Blob.add_child(chase)
+		if not chase.playing:
+			chase.play()
+	else:
+		if chase and chase.playing:
+			chase.stop()
+
 func _on_player_enter_hitbox(body):
 	if body.is_in_group("player"):
 		print("Enemy hits the player!")
@@ -49,3 +67,8 @@ func exit(Blob):
 		var hitbox = attack_area.get_node("CollisionShape2D")
 		if hitbox:
 			hitbox.disabled = true
+
+	# Stop chase audio on state change
+	var chase = Blob.get_node_or_null("ChaseLoop")
+	if chase and chase.playing:
+		chase.stop()
