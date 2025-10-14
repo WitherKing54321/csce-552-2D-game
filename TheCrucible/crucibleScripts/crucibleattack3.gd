@@ -35,6 +35,17 @@ func enter(Boss):
 	attack_area.get_node("CollisionPolygon2D").disabled = true
 	attack_area.scale.x = -1 if not locked_flip_h else 1
 
+	# --- Audio: single attack sound at start ---
+	var attack_sfx = Boss.get_node_or_null("Attack3Sfx")
+	if attack_sfx == null:
+		attack_sfx = AudioStreamPlayer2D.new()
+		attack_sfx.name = "Attack3Sfx"
+		attack_sfx.stream = preload("res://Sounds/CrucibleCrawl.wav") # set your path
+		Boss.add_child(attack_sfx)
+	else:
+		if attack_sfx.playing:
+			attack_sfx.stop()
+	attack_sfx.play()
 
 func physics_update(Boss, delta):
 	timer += delta
@@ -59,8 +70,11 @@ func physics_update(Boss, delta):
 	if timer > attack_duration:
 		hitbox.disabled = true
 		Boss.collision_mask = original_collision_mask
+		# stop attack sound before leaving state
+		var attack_sfx = Boss.get_node_or_null("Attack3Sfx")
+		if attack_sfx and attack_sfx.playing:
+			attack_sfx.stop()
 		Boss.change_state(BossIdleState.new())
-
 
 func _on_hitbox_body_entered(body):
 	if body.is_in_group("player") and not has_hit_player:
@@ -69,9 +83,13 @@ func _on_hitbox_body_entered(body):
 			body.take_damage(damage)
 		has_hit_player = true
 
-
 func exit(Boss):
 	var attack_area = Boss.get_node("attackarea3")
 	attack_area.get_node("CollisionPolygon2D").disabled = true
 	Boss.velocity = Vector2.ZERO
 	Boss.collision_mask = original_collision_mask
+
+	# Stop attack sound on state change
+	var attack_sfx = Boss.get_node_or_null("Attack3Sfx")
+	if attack_sfx and attack_sfx.playing:
+		attack_sfx.stop()

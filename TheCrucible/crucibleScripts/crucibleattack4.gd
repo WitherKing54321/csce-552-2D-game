@@ -31,6 +31,18 @@ func enter(Boss):
 	attack_area.get_node("CollisionPolygon2D").disabled = true
 	attack_area.scale.x = -1 if not locked_flip_h else 1
 
+	# Audio - single attack sound at start
+	var attack_sfx = Boss.get_node_or_null("Attack4Sfx")
+	if attack_sfx == null:
+		attack_sfx = AudioStreamPlayer2D.new()
+		attack_sfx.name = "Attack4Sfx"
+		attack_sfx.stream = preload("res://Sounds/CrucibleSpear.wav") # set your path
+		Boss.add_child(attack_sfx)
+	else:
+		if attack_sfx.playing:
+			attack_sfx.stop()
+	attack_sfx.play()
+
 
 func physics_update(Boss, delta):
 	timer += delta
@@ -48,6 +60,10 @@ func physics_update(Boss, delta):
 	# --- End attack after full duration ---
 	if timer > attack_duration:
 		hitbox.disabled = true
+		# Stop sound before changing state
+		var attack_sfx = Boss.get_node_or_null("Attack4Sfx")
+		if attack_sfx and attack_sfx.playing:
+			attack_sfx.stop()
 		Boss.change_state(BossIdleState.new())
 
 
@@ -63,3 +79,8 @@ func exit(Boss):
 	var attack_area = Boss.get_node("attackarea4")
 	attack_area.get_node("CollisionPolygon2D").disabled = true
 	Boss.velocity = Vector2.ZERO
+
+	# Stop sound on state change
+	var attack_sfx = Boss.get_node_or_null("Attack4Sfx")
+	if attack_sfx and attack_sfx.playing:
+		attack_sfx.stop()

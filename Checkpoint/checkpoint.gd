@@ -69,12 +69,24 @@ func start_activation() -> void:
 	in_activation = true
 	activate_timer = activate_duration
 
+	# Play activation sound (one-shot)
+	var sfx = get_node_or_null("ActivateSfx")
+	if sfx == null:
+		sfx = AudioStreamPlayer2D.new()
+		sfx.name = "ActivateSfx"
+		sfx.stream = preload("res://Sounds/Checkpoint.wav") # set your path
+		add_child(sfx)
+	else:
+		if sfx.playing:
+			sfx.stop()
+	sfx.play()
+
 	# Visuals
 	hide_prompt()
 	if anim and anim.sprite_frames and anim.sprite_frames.has_animation("Activate"):
 		anim.play("Activate")
 
-	# ✅ Save the checkpoint (scene path + precise world position)
+	# Save the checkpoint (scene path + precise world position)
 	Game.set_checkpoint(
 		get_tree().current_scene.scene_file_path,
 		global_position + spawn_offset

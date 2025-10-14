@@ -4,7 +4,7 @@ class_name BossDeathState
 var timer := 2.3
 var done := false
 
-var DEATH_STREAM: AudioStream = preload("res://Sounds/ZweihanderDeath.wav")
+var DEATH_STREAM: AudioStream = preload("res://Sounds/CrucibleDeath.wav")
 var death_sfx: AudioStreamPlayer2D
 
 var _boss: Boss  # we'll store a typed ref once in enter()

@@ -19,8 +19,24 @@ func enter(Blob):
 	if Blob.anim:
 		Blob.anim.play("death")  # adjust to your Blob death animation
 
+	# Play death sound
+	var death_sfx = Blob.get_node_or_null("DeathSfx")
+	if death_sfx == null:
+		death_sfx = AudioStreamPlayer2D.new()
+		death_sfx.name = "DeathSfx"
+		death_sfx.stream = preload("res://Sounds/CrucibleWastedDeath.wav") # set your path
+		Blob.add_child(death_sfx)
+	else:
+		if death_sfx.playing:
+			death_sfx.stop()
+	death_sfx.play()
+
 func physics_update(Blob, delta):
 	timer -= delta
 	Blob.velocity = Vector2.ZERO
 	if timer <= 0.0:
+		# Optional: stop death sfx just before freeing
+		var death_sfx = Blob.get_node_or_null("DeathSfx")
+		if death_sfx and death_sfx.playing:
+			death_sfx.stop()
 		Blob.queue_free()
