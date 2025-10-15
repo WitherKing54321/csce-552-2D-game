@@ -2,17 +2,32 @@ extends Node2D
 
 # Lines of dialogue
 @export var lines: Array[String] = [
-	"The path has been difficult.",#0
-	"It will only get harder.",#0
-	"I still don't fully understand why I'm doing this.",
-	"Well all I know is that you came down here with two others.",
-	"I don't know the whole story...",
-	"But maybe if you carry on you can find out yourself."#3
-	
-]
+	"Salutations, Mia.",#0
+	"I was just snacking on the guards leftover bread and-",#0
+	"-reading these old manuscripts.",
+	"Wanna hear about it?",
+	"Once upon a time, there was ancient civilization that loved gold.",
+	"They used Primordial Fire to smelt it",
+	"and power their weapons of war.",
+	"They created a war machine that could rival all others",
+	"and called it The Crucible.",
+	"but their ambition burned out of control.",
+	"and the seige engine destroyed them.",
+	"Pretty gruesome right?",
+	"Indeed.",
+	"But it sounds like they got what they deserved.",
+	"you think?",
+	"Is a soceity condemmed by it's most evil men?",
+	"Is a person to be judged at their lowest moment?",
+	"It seems with your mindset you might be inclined to- ",
+	"-turn to swift and final judgement.",
+	"For now I disagree.",
+	"After all, nobody has done me wrong yet.",
+	"At least from what I remember."
+	]
 
 # Portrait index for each line (0 = face1, 1 = face2, etc.)
-@export var line_portraits_idx: Array[int] = [0, 0, 3, 0, 0, 2]
+@export var line_portraits_idx: Array[int] = [2, 2, 1, 0, 1, 1, 1, 1, 1, 1, 1, 2, 3, 3, 0, 0, 0, 0, 0, 3, 3, 3]
 
 # Nodes
 @onready var zone: Area2D = $TalkZone
@@ -31,7 +46,7 @@ var _in_range := false
 var _line_idx := -1  # -1 = not showing
 
 func _ready() -> void:
-	anim.flip_h = false
+	anim.flip_h = true
 	anim.play("idle")
 
 	# Connect signals

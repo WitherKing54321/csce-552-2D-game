@@ -5,7 +5,7 @@ var speed := 50
 var attack_range := 20
 var chase_range := 200
 var gravity := 800
-var health := 10
+var health := 400
 var player: Node = null
 var sprite: AnimatedSprite2D
 var state: BossState = null
@@ -13,7 +13,7 @@ var directionFacingRight := true
 var invincible_timer := 0.0
 var death := false
 
-@export var contact_damage := 10
+@export var contact_damage := 3
 
 var attack_weights = {
 	"attack1": 2.5,

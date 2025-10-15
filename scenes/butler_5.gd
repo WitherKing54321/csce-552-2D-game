@@ -2,17 +2,17 @@ extends Node2D
 
 # Lines of dialogue
 @export var lines: Array[String] = [
-	"The path has been difficult.",#0
-	"It will only get harder.",#0
-	"I still don't fully understand why I'm doing this.",
-	"Well all I know is that you came down here with two others.",
-	"I don't know the whole story...",
-	"But maybe if you carry on you can find out yourself."#3
-	
-]
+	"Well? Do you Remember?",#0
+	"I remember enough.",#0
+	"I need to stop them from using that relic.",
+	"Just head up this ladder and you'll be free.",
+	"Good luck, Mia.",
+	"Thank you for everything. Goodbye.",
+	"Well if you'll miss me that much, maybe I'll see you up top!"
+	]
 
 # Portrait index for each line (0 = face1, 1 = face2, etc.)
-@export var line_portraits_idx: Array[int] = [0, 0, 3, 0, 0, 2]
+@export var line_portraits_idx: Array[int] = [0, 3, 3, 0, 0, 3, 2]
 
 # Nodes
 @onready var zone: Area2D = $TalkZone
@@ -31,7 +31,7 @@ var _in_range := false
 var _line_idx := -1  # -1 = not showing
 
 func _ready() -> void:
-	anim.flip_h = false
+	anim.flip_h = true
 	anim.play("idle")
 
 	# Connect signals

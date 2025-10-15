@@ -46,5 +46,5 @@ func physics_update(Blob, delta):
 			print("Warning: Could not find next enemy at path '../TheCrucible'")
 
 	# Queue free the Blob after the last input counter (optional)
-	if Blob.inputcounter == 7:
+	if Blob.inputcounter == 8:
 		Blob.queue_free()

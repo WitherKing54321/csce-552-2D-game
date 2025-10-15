@@ -150,19 +150,19 @@ func play_cutscene():
 	cutscene_overlay.visible = true
 	if inputcounter == 0:
 		show_dialogue(
-			["Wait..","I know I've been here before"] as Array[String],
+			["Wait..","I know I've been here before."] as Array[String],
 			dialog_panel.get_node("MiaPortrait")
 		)
 		cutscene_anim.play("cutscene00")
 	if inputcounter == 2:
 		show_dialogue(
-			["so we've found it","the ancient primordial fire"] as Array[String],
+			["We've found it.","The ancient primordial fire."] as Array[String],
 			dialog_panel.get_node("AlgenonPortrait")
 		)
 		cutscene_anim.play("cutscene01")
 	if inputcounter == 4:
 		show_dialogue(
-			["and it seems we've found it's guardian"] as Array[String],
+			["And it seems we've found it's guardian."] as Array[String],
 			dialog_panel.get_node("RodionPortrait")
 		)
 		cutscene_anim.play("cutscene02")
@@ -171,12 +171,14 @@ func play_cutscene():
 			["You can't leave me here!"] as Array[String],
 			dialog_panel.get_node("MiaPortrait")
 		)
+		cutscene_anim.play("cutscene03")
+	if inputcounter == 6:
 		show_dialogue(
-			["Farewell Mia","There is no place for you in the new world we will create."] as Array[String],
+			["Farewell Mia.","There is no place for you in the new world we will create."] as Array[String],
 			dialog_panel.get_node("AlgenonPortrait")
 		)
-		cutscene_anim.play("cutscene03")
-	if inputcounter == 7:
+	if inputcounter == 8:
 		print("cutsceneover")
+		cutscene_anim.play("cutscene04")
 		cutsceneover = true
 		cutscene_overlay.visible = false
