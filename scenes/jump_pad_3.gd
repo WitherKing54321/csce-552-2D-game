@@ -33,6 +33,7 @@ func _on_body_entered(body: Node) -> void:
 		pad_sfx = AudioStreamPlayer2D.new()
 		pad_sfx.stream = PAD_STREAM
 		add_child(pad_sfx)
+		pad_sfx.volume_db = 0.0
 	pad_sfx.stop()
 	pad_sfx.play()
 

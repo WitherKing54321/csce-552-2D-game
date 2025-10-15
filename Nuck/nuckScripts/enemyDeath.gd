@@ -25,6 +25,7 @@ func enter(Enemy):
 	if death_sfx == null:
 		death_sfx = AudioStreamPlayer2D.new()
 		death_sfx.stream = DEATH_STREAM
+		death_sfx.volume_db = 0.0
 		Enemy.add_child(death_sfx)
 	death_sfx.play()
 

@@ -28,6 +28,7 @@ func enter(b: CharacterBody2D) -> void:
 	if death_sfx == null:
 		death_sfx = AudioStreamPlayer2D.new()
 		death_sfx.stream = DEATH_STREAM
+		death_sfx.volume_db = 0.0
 		_boss.add_child(death_sfx)
 	death_sfx.play()
 

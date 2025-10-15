@@ -7,6 +7,7 @@ func _play_sound(player, stream: AudioStream) -> void:
 	raven_sfx = AudioStreamPlayer.new()   # use AudioStreamPlayer2D if you want positional audio
 	raven_sfx.stream = stream
 	player.add_child(raven_sfx)
+	raven_sfx.volume_db = 0.0
 	raven_sfx.play()
 	
 func enter(player):

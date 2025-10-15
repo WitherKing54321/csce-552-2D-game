@@ -14,6 +14,7 @@ func enter(player):
 		run_sfx = AudioStreamPlayer.new()
 		run_sfx.name = "RunSFX"
 		run_sfx.stream = RUN_SOUND
+		run_sfx.volume_db = 0.0
 		player.add_child(run_sfx)
 
 	# Only start if it's not already playing

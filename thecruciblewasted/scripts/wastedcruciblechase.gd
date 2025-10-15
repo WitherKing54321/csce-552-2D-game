@@ -46,6 +46,7 @@ func physics_update(Blob, delta):
 			chase.name = "ChaseLoop"
 			chase.stream = preload("res://Sounds/CrucibleWastedChase.wav") # set your path
 			Blob.add_child(chase)
+			chase.volume_db = 0.0
 		if not chase.playing:
 			chase.play()
 	else:

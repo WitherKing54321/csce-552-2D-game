@@ -10,6 +10,7 @@ func enter(player):
 	if _death_player == null:
 		_death_player = AudioStreamPlayer.new()
 		_death_player.autoplay = false
+		_death_player.volume_db = 0.0
 		# _death_player.bus = "SFX"  # (optional) route to your SFX bus
 		player.add_child(_death_player)
 	_death_player.stream = DEATH_SFX

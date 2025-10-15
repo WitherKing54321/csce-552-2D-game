@@ -12,6 +12,7 @@ func _play_sound(player, stream: AudioStream) -> void:
 	hurt_sfx = AudioStreamPlayer.new()   # use AudioStreamPlayer2D if you want positional audio
 	hurt_sfx.stream = stream
 	player.add_child(hurt_sfx)
+	hurt_sfx.volume_db = 0.0
 	hurt_sfx.play()
 	
 func enter(player):

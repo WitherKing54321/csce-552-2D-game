@@ -10,6 +10,7 @@ func _play_sound(player, stream: AudioStream) -> void:
 	sfx.stream = stream
 	player.add_child(sfx)
 	sfx.finished.connect(func(): sfx.queue_free())
+	sfx.volume_db = 0.0
 	sfx.play()
 
 func enter(player):

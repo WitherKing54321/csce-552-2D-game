@@ -75,6 +75,7 @@ func start_activation() -> void:
 		sfx = AudioStreamPlayer2D.new()
 		sfx.name = "ActivateSfx"
 		sfx.stream = preload("res://Sounds/Checkpoint.wav") # set your path
+		sfx.volume_db = 0.0
 		add_child(sfx)
 	else:
 		if sfx.playing:

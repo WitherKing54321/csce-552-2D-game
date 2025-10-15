@@ -42,6 +42,7 @@ func enter(Boss):
 		attack_sfx.name = "Attack3Sfx"
 		attack_sfx.stream = preload("res://Sounds/CrucibleCrawl.wav") # set your path
 		Boss.add_child(attack_sfx)
+		attack_sfx.volume_db = 0.0
 	else:
 		if attack_sfx.playing:
 			attack_sfx.stop()

@@ -3355,7 +3355,7 @@ offset_bottom = 40.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="UIGroup/HealthUI/TextureRect"]
 position = Vector2(179, 91)
 sprite_frames = SubResource("SpriteFrames_pnmop")
-animation = &"cutscene04"
+animation = &"cutscene03"
 
 [node name="MenuUIGroup" type="Node" parent="UIGroup"]
 
