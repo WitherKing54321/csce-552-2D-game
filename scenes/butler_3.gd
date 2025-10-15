@@ -5,9 +5,9 @@ extends Node2D
 	"The path has been difficult.",#0
 	"It will only get harder.",#0
 	"I still don't fully understand why I'm doing this.",
-	"Well all I know is that you came down here with two others.",
+	"Well, all I know is that you came down here with two others.",
 	"I don't know the whole story...",
-	"But maybe if you carry on you can find out yourself."#3
+	"But maybe if you carry on, you can find out yourself."#3
 	
 ]
 

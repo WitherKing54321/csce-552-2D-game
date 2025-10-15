@@ -9,12 +9,12 @@ extends Node2D
 	"Well that's not good.",#3
 	"Although I suppose you were very hurt when I found you.",#6
 	"Anyway I'm sure it's fine!",#7
-	"Go ahead and have a look around",#8
+	"Go ahead and have a look around.",#8
 	"Oh, your spells?",#9
-	"Try the arrow keys or WASD to move and space to jump.",#10
-	"Press Z to summon your raven familiar.",#11
-	"Press X to swing your staff.",
-	"I literally have no idea what you're talking about.",
+	"You have your magic blade and skeleton summon.",#10
+	"Don't forget your raven familiar!",#11
+	"These will help you with the journey ahead.",
+	"I have no idea what you're talking about.",
 	"Don't worry! It'll all come back to you!"
 	
 ]
