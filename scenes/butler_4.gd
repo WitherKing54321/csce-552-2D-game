@@ -3,7 +3,7 @@ extends Node2D
 # Lines of dialogue
 @export var lines: Array[String] = [
 	"Below is where I found you injured.",#0
-	"Perhaps the view will jog your memory",#0
+	"Perhaps the view will jog your memory.",#0
 	"But be careful, a Burning Presence still lurks down there.",
 	"...",
 	"So be it."
