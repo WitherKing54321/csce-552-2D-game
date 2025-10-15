@@ -5,7 +5,7 @@ var speed := 50
 var attack_range := 20
 var chase_range := 200
 var gravity := 800
-var health := 1000
+var health := 10
 var player: Node = null
 var sprite: AnimatedSprite2D
 var state: BossState = null

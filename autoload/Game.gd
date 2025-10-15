@@ -5,6 +5,10 @@ var has_checkpoint: bool = false
 var checkpoint_scene_path: String = ""
 var checkpoint_position: Vector2 = Vector2.ZERO
 
+# ---- Enemy state tracking ----
+var defeated_enemies := {}  # Dictionary: scene_path -> [enemy_ids]
+
+
 # ---- Resume gating (only warp when this is true) ----
 var resume_from_checkpoint: bool = false
 
@@ -73,3 +77,13 @@ func _pause() -> void: get_tree().paused = true
 func _unpause() -> void: get_tree().paused = false
 func respawn_at_checkpoint() -> void: respawn()
 func reload_current_scene() -> void: get_tree().reload_current_scene()
+
+func mark_enemy_defeated(scene_path: String, enemy_id: String) -> void:
+	if not defeated_enemies.has(scene_path):
+		defeated_enemies[scene_path] = []
+	if enemy_id not in defeated_enemies[scene_path]:
+		defeated_enemies[scene_path].append(enemy_id)
+	print("[Game] Enemy defeated:", enemy_id, "in", scene_path)
+
+func is_enemy_defeated(scene_path: String, enemy_id: String) -> bool:
+	return defeated_enemies.has(scene_path) and enemy_id in defeated_enemies[scene_path]
