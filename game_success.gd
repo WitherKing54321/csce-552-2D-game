@@ -4,11 +4,12 @@ extends Control
 # Node paths (rename in the editor only if yours differ)
 @onready var quit_btn: Button = %Quit            # Button node named "Quit"
 @onready var root_panel: Control = self          # Root Control for visibility (optional)
+@onready var success_sprite: AnimatedSprite2D = $"/root/GameSuccess/AnimatedSprite2D"
 
 func _ready() -> void:
 	# Ensure we're not paused on the success screen
 	get_tree().paused = false
-
+	success_sprite.play("default")
 	# Show the mouse cursor and focus the Quit button for keyboard users
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	if quit_btn:
