@@ -46,6 +46,14 @@ func _ready():
 			next_enemy.set_process(true)
 			next_enemy.set_physics_process(true)
 		queue_free()  # Don’t spawn a dead enemy again
+		
+		# unmute crucible now
+		next_enemy.set_meta("crucible_muted", false)
+		for n in next_enemy.get_children():
+				if n is AudioStreamPlayer or n is AudioStreamPlayer2D:
+					if not n.has_meta("orig_vol"):
+						n.set_meta("orig_vol", n.volume_db)
+					n.volume_db = n.get_meta("orig_vol")
 
 	cutscene_overlay.visible = false
 	player = get_tree().get_first_node_in_group("player")
