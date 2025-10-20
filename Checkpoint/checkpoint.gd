@@ -2,7 +2,8 @@ extends Area2D
 
 @export var player_group: String = "player"
 @export var activate_duration: float = 1.3        # seconds for "Activate" animation
-@export var spawn_offset: Vector2 = Vector2(0, -8) # where the player should be placed on respawn (relative to shrine)
+@export var spawn_offset: Vector2 = Vector2(0, -8) # default offset
+@export var respawn_position: Vector2 = Vector2.ZERO # exact respawn pos; if (0,0), use default
 @export var reactivatable: bool = false            # set true if you want to allow re-activating
 
 var anim: AnimatedSprite2D
@@ -87,10 +88,14 @@ func start_activation() -> void:
 	if anim and anim.sprite_frames and anim.sprite_frames.has_animation("Activate"):
 		anim.play("Activate")
 
-	# Save the checkpoint (scene path + precise world position)
+	# Save the checkpoint: use respawn_position if set, otherwise default
+	var final_respawn = respawn_position
+	if final_respawn == Vector2.ZERO:
+		final_respawn = global_position + spawn_offset
+
 	Game.set_checkpoint(
 		get_tree().current_scene.scene_file_path,
-		global_position + spawn_offset
+		final_respawn
 	)
 
 	activated = true

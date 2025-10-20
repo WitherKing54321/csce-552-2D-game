@@ -12,8 +12,20 @@ var state: BossState = null
 var directionFacingRight := true
 var invincible_timer := 0.0
 var death := false
+var _line_idx := -1
+var _dialog_active := false
+var inputcounter = 0
+var cutsceneover := false
 
 @export var contact_damage := 3
+@onready var dialog_panel: CanvasItem   = $"/root/Main/UIGroup/DialogUI/DialogPanel"
+@onready var dialog_text: RichTextLabel = $"/root/Main/UIGroup/DialogUI/DialogPanel/Text"
+@onready var dialog_face: TextureRect   = $"/root/Main/UIGroup/DialogUI/DialogPanel/MiaPortrait"
+@onready var cutscene_overlay: TextureRect = $"/root/Main/UIGroup/HealthUI/TextureRect"
+@onready var cutscene_anim: AnimatedSprite2D = $"/root/Main/UIGroup/HealthUI/TextureRect/AnimatedSprite2D"
+
+@export var _dialogue_lines: Array[String] = []
+@export var portrait_texture: Texture2D
 
 var attack_weights = {
 	"attack1": 2.5,
@@ -132,3 +144,83 @@ func die():
 		s.stop()
 
 	queue_free()
+# -------------------------------------------------------
+# DIALOGUE SYSTEM (local, callable from anywhere)
+# -------------------------------------------------------
+
+func show_dialogue(lines: Array[String], portrait_rect: TextureRect):
+	for child in dialog_panel.get_children():
+		if child is TextureRect:
+			child.visible = false
+
+	if portrait_rect:
+		portrait_rect.visible = true
+
+	dialog_panel.visible = true
+	dialog_text.visible = true
+
+	_dialog_active = true
+	_line_idx = 0
+	_dialogue_lines = lines
+	dialog_text.text = _dialogue_lines[_line_idx]
+
+	set_process_input(true)
+
+func _input(event):
+	if not _dialog_active:
+		return
+
+	if event.is_action_pressed("ui_accept"):
+		inputcounter += 1
+		_line_idx += 1
+		if _line_idx < _dialogue_lines.size():
+			dialog_text.text = _dialogue_lines[_line_idx]
+		else:
+			hide_dialogue()
+
+func hide_dialogue():
+	if not _dialog_active:
+		return
+
+	dialog_panel.visible = false
+	dialog_text.visible = false
+
+	for child in dialog_panel.get_children():
+		if child is TextureRect:
+			child.visible = false
+
+	_dialog_active = false
+	set_process_input(false)
+	play_cutscene()
+
+# -------------------------------------------------------
+# CUTSCENE FUNCTION
+# -------------------------------------------------------
+
+func play_cutscene():
+	cutscene_overlay.visible = true
+	if inputcounter == 0:
+		show_dialogue(
+			["Those two..."] as Array[String],
+			dialog_panel.get_node("MiaPortrait")
+		)
+		cutscene_anim.play("fadetoblack")
+	if inputcounter == 1:
+		show_dialogue(
+			["I can't believe it."] as Array[String],
+			dialog_panel.get_node("MiaPortrait")
+		)
+	if inputcounter == 2:
+		show_dialogue(
+			["They left me here to perish."] as Array[String],
+			dialog_panel.get_node("MiaPortrait")
+		)
+	if inputcounter == 3:
+		show_dialogue(
+			["While going to take over the Holy City."] as Array[String],
+			dialog_panel.get_node("MiaPortrait")
+		)
+	if inputcounter == 4:
+		cutscene_anim.play("fadetoclear")
+		cutsceneover = true
+		cutscene_overlay.visible = false

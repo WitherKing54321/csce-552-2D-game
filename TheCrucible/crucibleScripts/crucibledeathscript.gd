@@ -1,7 +1,7 @@
 extends BossState
 class_name BossDeathState
 
-var timer := 2.3
+var timer := 5.0
 var done := false
 
 var DEATH_STREAM: AudioStream = preload("res://Sounds/CrucibleDeath.wav")
@@ -41,8 +41,10 @@ func physics_update(b: CharacterBody2D, delta: float) -> void:
 	if done:
 		return
 	timer -= delta
-	# Fallback in case the animation never fires
 	if timer <= 0.0:
+		_boss.play_cutscene()
+	# Fallback in case the animation never fires
+	if _boss.cutsceneover == true:
 		_finish()
 
 func exit(b: CharacterBody2D) -> void:
@@ -54,7 +56,7 @@ func exit(b: CharacterBody2D) -> void:
 # --- signal handlers / helpers ---
 
 func _on_anim_finished() -> void:
-	if _boss and _boss.sprite and _boss.sprite.animation == "death" and not done:
+	if _boss and _boss.sprite and _boss.sprite.animation == "death" and not done and _boss.cutsceneover == true:
 		_finish()
 
 func _finish() -> void:

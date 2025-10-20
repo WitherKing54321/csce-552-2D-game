@@ -176,7 +176,7 @@ func play_cutscene():
 		cutscene_anim.play("cutscene02")
 	if inputcounter == 5:
 		show_dialogue(
-			["You can't leave me here!"] as Array[String],
+			["Algenon! You can't leave me here!"] as Array[String],
 			dialog_panel.get_node("MiaPortrait")
 		)
 		cutscene_anim.play("cutscene03")
