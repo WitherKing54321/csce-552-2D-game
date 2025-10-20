@@ -37,7 +37,7 @@ func enter(Boss):
 	if attack_sfx == null:
 		attack_sfx = AudioStreamPlayer2D.new()
 		attack_sfx.name = "Attack1Sfx"
-		attack_sfx.stream = preload("res://Sounds/CrucibleEnergyBeam.wav") # set your path
+		attack_sfx.stream = preload("res://Sounds/CrucibleEnergyBeam2.wav") # set your path
 		Boss.add_child(attack_sfx)
 		attack_sfx.volume_db = 0.0
 	else:
