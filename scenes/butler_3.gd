@@ -7,12 +7,14 @@ extends Node2D
 	"I still don't fully understand why I'm doing this.",
 	"Well, all I know is that you came down here with two others.",
 	"I don't know the whole story...",
-	"But maybe if you carry on, you can find out yourself."#3
+	"But maybe if you carry on, you can find out yourself.",#3
+	"Don't forget your raven familiar, it will help slow your fall..."
+	
 	
 ]
 
 # Portrait index for each line (0 = face1, 1 = face2, etc.)
-@export var line_portraits_idx: Array[int] = [0, 0, 3, 0, 0, 2]
+@export var line_portraits_idx: Array[int] = [0, 0, 3, 0, 0, 2, 0]
 
 # Nodes
 @onready var zone: Area2D = $TalkZone
