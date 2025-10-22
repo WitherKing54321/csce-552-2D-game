@@ -8,7 +8,7 @@ Move: WASD or arrow keys
 Double Jump: W
 Attack: X or /
 Glide: Z or '.'(Period)
-Interact: Enter or Spacebar
+Interact: E, 'Enter' or 'Spacebar'
 Pause: Esc
 """
 
