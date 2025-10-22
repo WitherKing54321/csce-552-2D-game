@@ -1,4 +1,4 @@
-[gd_scene load_steps=517 format=4 uid="uid://ba0hh5pd8m2bk"]
+[gd_scene load_steps=519 format=4 uid="uid://ba0hh5pd8m2bk"]
 
 [ext_resource type="Script" uid="uid://bsm7xp1yotyxe" path="res://scenes/main.gd" id="1_nc5fr"]
 [ext_resource type="Script" uid="uid://bposq7mw4gtma" path="res://player/scripts/Player.gd" id="1_rvslj"]
@@ -467,6 +467,7 @@
 [ext_resource type="Texture2D" uid="uid://42kxvn4s08kr" path="res://GUISprites/piss.png" id="443_qida3"]
 [ext_resource type="Script" uid="uid://ku7x6glbqjuh" path="res://scenes/Controls_Lantern.gd" id="445_4s30e"]
 [ext_resource type="Texture2D" uid="uid://bk8gojwlv2gos" path="res://GUISprites/lectern.png" id="447_mkbp4"]
+[ext_resource type="Script" uid="uid://drlyj1aiv4rvf" path="res://scenes/music_zone_2d.gd" id="468_my6px"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
 size = Vector2(10, 17.75)
@@ -3083,13 +3084,16 @@ gradient = SubResource("Gradient_sjtxb")
 [sub_resource type="CircleShape2D" id="CircleShape2D_enr3x"]
 radius = 91.0055
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_my6px"]
+size = Vector2(6449, 3082)
+
 [node name="Main" type="Node2D"]
 script = ExtResource("1_nc5fr")
 pause_menu_path = NodePath("UIGroup/MenuUIGroup/PauseMenuLayer/PauseMenu")
 
 [node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
 top_level = true
-position = Vector2(720, 521)
+position = Vector2(-2977, 436)
 script = ExtResource("1_rvslj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
@@ -4081,7 +4085,8 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="UIGroup/HealthUI/TextureRect"]
-position = Vector2(179, 91)
+position = Vector2(179, 89.5)
+scale = Vector2(1, 1.01667)
 sprite_frames = SubResource("SpriteFrames_pnmop")
 animation = &"fadetoblack"
 
@@ -4351,6 +4356,13 @@ offset_top = -28.0
 offset_right = 30.0
 offset_bottom = 20.0
 texture = ExtResource("447_mkbp4")
+
+[node name="MusicZone2D" type="Area2D" parent="."]
+position = Vector2(-1151, 440)
+script = ExtResource("468_my6px")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MusicZone2D" groups=["player"]]
+shape = SubResource("RectangleShape2D_my6px")
 
 [connection signal="body_entered" from="Player/spike_detection" to="Player" method="_on_spike_detection_body_entered"]
 [connection signal="body_entered" from="ButlerGroup/Butler1/TalkZone" to="." method="_on_talk_zone_body_entered"]
