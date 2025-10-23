@@ -1,7 +1,7 @@
 extends Node
 
 # -------- EDIT ME --------------------------------------------------
-const TEST_BGM_PATH := "res://Sounds/NuckRun.wav"   # your track
+const TEST_BGM_PATH := "res://Sounds/vampirewalk.wav"  # your track
 # -------------------------------------------------------------------
 
 @export var default_volume_db: float = -6.0        # target volume when inside zone
@@ -16,7 +16,7 @@ func _ready() -> void:
 	_player = AudioStreamPlayer.new()
 	add_child(_player)
 	_player.bus = audio_bus
-	_player.autoplay = false
+	_player.autoplay = true
 	_player.volume_db = -60.0  # start silent (safe if we spawn outside all zones)
 	_player.finished.connect(_on_stream_finished)
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=519 format=4 uid="uid://ba0hh5pd8m2bk"]
+[gd_scene load_steps=520 format=4 uid="uid://ba0hh5pd8m2bk"]
 
 [ext_resource type="Script" uid="uid://bsm7xp1yotyxe" path="res://scenes/main.gd" id="1_nc5fr"]
 [ext_resource type="Script" uid="uid://bposq7mw4gtma" path="res://player/scripts/Player.gd" id="1_rvslj"]
@@ -468,6 +468,7 @@
 [ext_resource type="Script" uid="uid://ku7x6glbqjuh" path="res://scenes/Controls_Lantern.gd" id="445_4s30e"]
 [ext_resource type="Texture2D" uid="uid://bk8gojwlv2gos" path="res://GUISprites/lectern.png" id="447_mkbp4"]
 [ext_resource type="Script" uid="uid://drlyj1aiv4rvf" path="res://scenes/music_zone_2d.gd" id="468_my6px"]
+[ext_resource type="AudioStream" uid="uid://c4a4q0mtasfen" path="res://Sounds/vampirewalk.wav" id="469_tbagc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
 size = Vector2(10, 17.75)
@@ -3093,7 +3094,7 @@ pause_menu_path = NodePath("UIGroup/MenuUIGroup/PauseMenuLayer/PauseMenu")
 
 [node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
 top_level = true
-position = Vector2(-2977, 436)
+position = Vector2(589, 523)
 script = ExtResource("1_rvslj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
@@ -4254,6 +4255,10 @@ polygon = PackedVector2Array(68, -41, 214, 5, 206, 47, -219, 46, -242, 5, -89, -
 position = Vector2(2, 18)
 shape = SubResource("RectangleShape2D_v8mcp")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="TheCrucibleGroup/TheCrucible"]
+stream = ExtResource("469_tbagc")
+autoplay = true
+
 [node name="crucible_wasted" type="CharacterBody2D" parent="TheCrucibleGroup"]
 position = Vector2(-6343, 986)
 script = ExtResource("361_i465x")
@@ -4357,7 +4362,7 @@ offset_right = 30.0
 offset_bottom = 20.0
 texture = ExtResource("447_mkbp4")
 
-[node name="MusicZone2D" type="Area2D" parent="."]
+[node name="MusicZone2D" type="Area2D" parent="." groups=["player"]]
 position = Vector2(-1151, 440)
 script = ExtResource("468_my6px")
 
