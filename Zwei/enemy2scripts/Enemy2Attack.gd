@@ -30,7 +30,7 @@ func enter(Enemy2):
 		attack2_sfx = AudioStreamPlayer2D.new()
 		attack2_sfx.stream = ATTACK2_STREAM
 		Enemy2.add_child(attack2_sfx)
-	attack2_sfx.volume_db = 0.0
+	attack2_sfx.volume_db = -5.0
 	attack2_sfx.pitch_scale = randf_range(0.95, 1.05)  # small variation
 	attack2_sfx.play()
 

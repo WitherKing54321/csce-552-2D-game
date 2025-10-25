@@ -1,6 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://cuquv6vdpwlri"]
+[gd_scene load_steps=17 format=3 uid="uid://cuquv6vdpwlri"]
 
-[ext_resource type="Script" uid="uid://ca81rq7evyad0" path="res://game_success.gd" id="1_4o150"]
+[ext_resource type="Script" uid="uid://ca81rq7evyad0" path="res://scenes/game_success.gd" id="1_4o150"]
 [ext_resource type="Texture2D" uid="uid://nmmoboqu3jnm" path="res://GUISprites/endscene/endframe13.png" id="3_r077i"]
 [ext_resource type="Texture2D" uid="uid://blrcbc37nvxwk" path="res://GUISprites/endscene/endframe12.png" id="4_p78br"]
 [ext_resource type="Texture2D" uid="uid://bry8agm4g1vdn" path="res://GUISprites/endscene/endframe11.png" id="5_bicel"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://duygv0b7i3tmc" path="res://GUISprites/endscene/endframe4.png" id="12_xpl54"]
 [ext_resource type="Texture2D" uid="uid://8gbjiue2ovme" path="res://GUISprites/endscene/endframe3.png" id="13_hwtuo"]
 [ext_resource type="Texture2D" uid="uid://533per7qq3ig" path="res://GUISprites/endscene/endframe2.png" id="14_ngh02"]
+[ext_resource type="AudioStream" uid="uid://ga657sxgvbdp" path="res://Sounds/GameSuccess2.wav" id="15_r077i"]
 [ext_resource type="Texture2D" uid="uid://dfrqs4v4biv4r" path="res://GUISprites/endscene/endframe1.png" id="15_rj0gl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_w13qt"]
@@ -92,6 +93,10 @@ alignment = 1
 [node name="Quit" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_r077i")
+autoplay = true
 
 [connection signal="button_down" from="CenterContainer/VBoxContainer/Quit" to="." method="_on_quit_button_down"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

@@ -9,7 +9,7 @@ var hit_end := 0.9    # seconds when the swing ends
 # --- AUDIO ---
 var ATTACK_STREAM: AudioStream = preload("res://Sounds/CloakAttack.wav")
 var attack_sfx: AudioStreamPlayer2D
-var attack_volume_db: float = +0.1
+var attack_volume_db: float = -5.0
 
 var timer := 0.0
 var has_hit_player := false

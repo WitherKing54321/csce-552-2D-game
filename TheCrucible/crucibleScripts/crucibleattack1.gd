@@ -39,7 +39,7 @@ func enter(Boss):
 		attack_sfx.name = "Attack1Sfx"
 		attack_sfx.stream = preload("res://Sounds/CrucibleEnergyBeam2.wav") # set your path
 		Boss.add_child(attack_sfx)
-		attack_sfx.volume_db = 0.0
+		attack_sfx.volume_db = -5.0
 	else:
 		if attack_sfx.playing:
 			attack_sfx.stop()

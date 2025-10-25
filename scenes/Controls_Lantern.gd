@@ -9,6 +9,7 @@ Double Jump: W
 Attack: X or /
 Glide: Z or '.'(Period)
 Interact: E, 'Enter' or 'Spacebar'
+Mute Music: M
 Pause: Esc
 """
 
